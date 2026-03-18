@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Augmentra — AI for Mortgage Brokers</title>
+  <meta name="description" content="Augmentra automates lead qualification, document collection, deal tracking, and post-settlement management for modern mortgage brokerages." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#" class="logo">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">Augmentra</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+      </ul>
+      <a href="#waitlist" class="btn btn-primary btn-sm">Join waitlist</a>
+    </div>
+  </nav>
+
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Now in private beta · 47 brokerages onboarding
+      </div>
+      <h1 class="hero-headline">
+        Your brokerage.<br/>
+        <span class="gradient-text">Augmented.</span>
+      </h1>
+      <p class="hero-sub">
+        Augmentra is an AI operations layer for mortgage brokers. It qualifies leads, chases documents, digests deals, and keeps every file moving — automatically.
+      </p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary btn-lg">Join the waitlist</a>
+        <a href="#how-it-works" class="btn btn-ghost btn-lg">See how it works →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="3800">0</span>
+          <span class="stat-label">leads processed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="68" data-suffix="%">0</span>
+          <span class="stat-label">fewer missed follow-ups</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="4" data-prefix="~" data-suffix="x">0</span>
+          <span class="stat-label">faster doc collection</span>
+        </div>
+      </div>
+    </div>
+    <!-- Floating dashboard preview -->
+    <div class="container">
+      <div class="dashboard-preview">
+        <div class="dashboard-titlebar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="titlebar-label">augmentra · deal dashboard</span>
+        </div>
+        <div class="dashboard-body">
+          <div class="dash-sidebar">
+            <div class="dash-nav-item active">⬡ Overview</div>
+            <div class="dash-nav-item">📋 Leads <span class="badge-count">12</span></div>
+            <div class="dash-nav-item">📁 Deals <span class="badge-count">8</span></div>
+            <div class="dash-nav-item">🔄 Repricing</div>
+            <div class="dash-nav-item">🏠 Post-Settlement</div>
+            <div class="dash-nav-item">💬 WhatsApp</div>
+          </div>
+          <div class="dash-content">
+            <div class="dash-header">Good morning, Sarah ✦</div>
+            <div class="dash-cards">
+              <div class="dash-card">
+                <div class="dash-card-label">New leads today</div>
+                <div class="dash-card-value">4</div>
+                <div class="dash-card-trend up">↑ 2 qualified</div>
+              </div>
+              <div class="dash-card">
+                <div class="dash-card-label">Docs outstanding</div>
+                <div class="dash-card-value">11</div>
+                <div class="dash-card-trend">auto-chasing 6</div>
+              </div>
+              <div class="dash-card">
+                <div class="dash-card-label">Deals active</div>
+                <div class="dash-card-value">8</div>
+                <div class="dash-card-trend up">↑ 1 settling Fri</div>
+              </div>
+            </div>
+            <div class="dash-table-header">Recent leads</div>
+            <div class="dash-table">
+              <div class="dash-row">
+                <div class="dash-cell name">Alex M.</div>
+                <div class="dash-cell">$720k · PAYG</div>
+                <div class="dash-cell"><span class="score score-green">91</span></div>
+                <div class="dash-cell action">Book call</div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-cell name">Jordan P.</div>
+                <div class="dash-cell">$1.2m · Self-Employed</div>
+                <div class="dash-cell"><span class="score score-amber">62</span></div>
+                <div class="dash-cell action">Send checklist</div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-cell name">Sam K.</div>
+                <div class="dash-cell">$450k · PAYG</div>
+                <div class="dash-cell"><span class="score score-red">38</span></div>
+                <div class="dash-cell action">Request info</div>
+              </div>
+              <div class="dash-row">
+                <div class="dash-cell name">Riley T.</div>
+                <div class="dash-cell">$890k · PAYG</div>
+                <div class="dash-cell"><span class="score score-green">84</span></div>
+                <div class="dash-cell action">Book call</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PROBLEM ───────────────────────── -->
+  <section class="problem section" id="problem">
+    <div class="container">
+      <div class="section-label">The problem</div>
+      <h2 class="section-title">Manual processes are <span class="gradient-text">costing you deals</span></h2>
+      <p class="section-sub">Mortgage brokering is a relationship game buried under admin. Augmentra removes the burial.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">⏳</div>
+          <h3>Leads go cold</h3>
+          <p>Hours spent manually triaging enquiries. No consistent scoring. Hot leads treated the same as tyre-kickers.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📄</div>
+          <h3>Doc chasing is a full-time job</h3>
+          <p>Chasing payslips, BAS statements, and bank statements by hand. The same email sent 4 times to the same client.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔇</div>
+          <h3>Deals go quiet after settlement</h3>
+          <p>Post-settlement is where retention happens — and where most brokers drop the ball. Fixed rate expiries missed. Repricing opportunities lost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FEATURES ───────────────────────── -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-label">What Augmentra does</div>
+      <h2 class="section-title">Six AI agents. <span class="gradient-text">One platform.</span></h2>
+      <p class="section-sub">Each agent handles a distinct part of the broker workflow — end to end.</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Lead Qualifier</h3>
+          <p>Scores every new enquiry 0–100 based on urgency, income type, loan size, and contact completeness. Triggers the right next action automatically.</p>
+          <div class="feature-detail">
+            <span class="chip">Score: 91 → Book call</span>
+            <span class="chip">Score: 62 → Send checklist</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Deal Digest</h3>
+          <p>Drop a voice note or text update into a deal. The agent extracts borrower type, property type, loan amount, and generates a structured task list.</p>
+          <div class="feature-detail">
+            <span class="chip">Auto-extracts entities</span>
+            <span class="chip">Generates tasks</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Document Collector</h3>
+          <p>Knows exactly which docs are required for each deal scenario. Tracks what's been uploaded and auto-drafts personalised follow-up emails for anything missing.</p>
+          <div class="feature-detail">
+            <span class="chip">PAYG vs Self-Employed</span>
+            <span class="chip">Investment logic</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <h3>AI Insights</h3>
+          <p>Every deal gets a health status — green, amber, or red. Surface signals, missing items, and recommended next actions at a glance.</p>
+          <div class="feature-detail">
+            <span class="chip score-green-chip">● Green</span>
+            <span class="chip score-amber-chip">● Amber</span>
+            <span class="chip score-red-chip">● Red</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Repricing Engine</h3>
+          <p>Manages the complete repricing lifecycle. Competitor rate snapshots, LVR tracking, indicative customer rates, and broker accreditation — all in one place.</p>
+          <div class="feature-detail">
+            <span class="chip">Competitor tracking</span>
+            <span class="chip">LVR → rate output</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3>Post-Settlement Portal</h3>
+          <p>Full loan lifecycle management after settlement. Valuations, repayment schedules, fixed rate expiry alerts, offset accounts, and retention flags.</p>
+          <div class="feature-detail">
+            <span class="chip">Fixed rate expiry alerts</span>
+            <span class="chip">Retention scoring</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+  <section class="how section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">From enquiry to <span class="gradient-text">post-settlement</span></h2>
+      <p class="section-sub">Augmentra sits behind your existing workflow and handles everything that doesn't need a human.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Lead comes in</h3>
+            <p>Via your website, CRM, or WhatsApp. Augmentra picks it up instantly and runs qualification scoring.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>AI scores & routes</h3>
+            <p>High-value leads flagged for immediate callback. Warm leads get your checklist automatically. Low scores get nurture flows.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Deal is briefed</h3>
+            <p>Broker drops a voice note. Deal Digest agent extracts the key facts, creates tasks, and syncs to your pipeline.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>Docs auto-chased</h3>
+            <p>Augmentra knows what's needed. Missing docs trigger personalised client emails — no manual drafting.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <h3>Settlement & beyond</h3>
+            <p>Post-settlement portal tracks the full loan lifecycle. Repricing opportunities surfaced automatically. Nothing falls through the cracks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── INTEGRATIONS ───────────────────────── -->
+  <section class="integrations section" id="integrations">
+    <div class="container">
+      <div class="section-label">Integrations</div>
+      <h2 class="section-title">Works with the tools <span class="gradient-text">you already use</span></h2>
+      <div class="integrations-grid">
+        <div class="integration-card">
+          <div class="int-icon">💬</div>
+          <div class="int-name">WhatsApp</div>
+          <div class="int-desc">Business API</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">🔵</div>
+          <div class="int-name">Pipedrive</div>
+          <div class="int-desc">CRM & pipeline</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">📋</div>
+          <div class="int-name">Monday.com</div>
+          <div class="int-desc">Task boards</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">🤖</div>
+          <div class="int-name">OpenAI</div>
+          <div class="int-desc">GPT-4 · reasoning</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">🟣</div>
+          <div class="int-name">Anthropic</div>
+          <div class="int-desc">Claude · analysis</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">☁️</div>
+          <div class="int-name">Azure</div>
+          <div class="int-desc">Blob storage · secrets</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">✍️</div>
+          <div class="int-name">Annature</div>
+          <div class="int-desc">e-Signatures</div>
+        </div>
+        <div class="integration-card">
+          <div class="int-icon">🏦</div>
+          <div class="int-name">Mercury</div>
+          <div class="int-desc">Financial data</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SOCIAL PROOF ───────────────────────── -->
+  <section class="social-proof section">
+    <div class="container">
+      <div class="testimonials">
+        <div class="testimonial">
+          <p class="testimonial-text">"We used to spend 40% of our time chasing documents. Augmentra cut that to almost zero. The leads scoring alone paid for itself in week one."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div class="author-name">Sam R.</div>
+              <div class="author-role">Principal Broker · Sydney</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"The post-settlement alerts are a game changer. We caught three fixed rate expiries last month that we would have completely missed."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <div class="author-name">Jamie L.</div>
+              <div class="author-role">Mortgage Broker · Melbourne</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"It's like having an extra admin who never sleeps. Every deal note I drop in comes back as a structured brief with tasks already assigned."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AC</div>
+            <div>
+              <div class="author-name">Alex C.</div>
+              <div class="author-role">Finance Broker · Brisbane</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── WAITLIST ───────────────────────── -->
+  <section class="waitlist section" id="waitlist">
+    <div class="container waitlist-inner">
+      <div class="waitlist-glow"></div>
+      <div class="section-label">Early access</div>
+      <h2 class="section-title">Be first in line.<br/><span class="gradient-text">Join the waitlist.</span></h2>
+      <p class="section-sub">We're rolling out to brokerages gradually. Drop your email and we'll reach out when your spot is ready.</p>
+      <form class="waitlist-form" id="waitlistForm">
+        <div class="form-row">
+          <input type="text" placeholder="Your name" name="name" required class="form-input" />
+          <input type="email" placeholder="Work email" name="email" required class="form-input" />
+          <button type="submit" class="btn btn-primary btn-lg">Get early access</button>
+        </div>
+        <div class="form-sub">No spam. Unsubscribe any time. We'll reach out personally.</div>
+      </form>
+      <div class="waitlist-success" id="waitlistSuccess">
+        <div class="success-icon">✦</div>
+        <h3>You're on the list.</h3>
+        <p>We'll be in touch soon. In the meantime, feel free to share Augmentra with a broker who needs it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">Augmentra</span>
+      </div>
+      <div class="footer-tagline">AI operations for modern mortgage brokers.</div>
+      <div class="footer-links">
+        <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+        <span>·</span>
+        <a href="#waitlist">Join waitlist</a>
+      </div>
+      <div class="footer-copy">© 2026 Augmentra. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
