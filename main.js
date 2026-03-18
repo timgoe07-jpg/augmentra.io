@@ -3,119 +3,164 @@
 ───────────────────────────────────────────────────────── */
 
 // ── Sticky nav on scroll ──
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-// ── Animated stat counters ──
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const prefix = el.dataset.prefix || '';
-  const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const startTime = performance.now();
-
-  function update(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    // easeOutQuart
-    const eased = 1 - Math.pow(1 - progress, 4);
-    const current = Math.round(eased * target);
-    el.textContent = prefix + current.toLocaleString() + suffix;
-    if (progress < 1) requestAnimationFrame(update);
+(function () {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  function updateNav() {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
   }
-  requestAnimationFrame(update);
-}
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+})();
 
-// Trigger counters when hero stats become visible
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('[data-target]').forEach(animateCounter);
-      statsObserver.unobserve(entry.target);
+// ── Mobile nav hamburger ──
+(function () {
+  const btn = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobile');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function () {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // Close on link click
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// ── Smooth scroll for anchor links ──
+(function () {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = document.getElementById('nav').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+})();
+
+// ── Counter animation ──
+(function () {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  if (!counters.length) return;
+
+  function formatNumber(n, suffix) {
+    if (n >= 1000) {
+      return (n / 1000).toFixed(0) + 'k' + suffix;
     }
-  });
-}, { threshold: 0.4 });
+    return n + suffix;
+  }
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const startTime = performance.now();
 
-// ── Fade-in sections ──
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeObserver.unobserve(entry.target);
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(ease * target);
+      el.textContent = formatNumber(current, suffix);
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = formatNumber(target, suffix);
+      }
     }
-  });
-}, { threshold: 0.08 });
 
-document.querySelectorAll(
-  '.problem-card, .feature-card, .step, .integration-card, .testimonial'
-).forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
-  fadeObserver.observe(el);
-});
+    requestAnimationFrame(tick);
+  }
 
-// Add visible class handler
-document.head.insertAdjacentHTML('beforeend', `
-  <style>
-    .visible { opacity: 1 !important; transform: translateY(0) !important; }
-  </style>
-`);
+  // Trigger when section enters viewport
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        counters.forEach(animateCounter);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
 
-// ── Dashboard row hover glow ──
-document.querySelectorAll('.dash-row').forEach(row => {
-  row.addEventListener('mouseenter', () => {
-    row.style.borderColor = 'rgba(99,102,241,0.3)';
-    row.style.background = 'rgba(99,102,241,0.05)';
-  });
-  row.addEventListener('mouseleave', () => {
-    row.style.borderColor = '';
-    row.style.background = '';
-  });
-});
+  const statsSection = document.querySelector('.hero-stats');
+  if (statsSection) observer.observe(statsSection);
+})();
 
 // ── Waitlist form ──
-const form = document.getElementById('waitlistForm');
-const success = document.getElementById('waitlistSuccess');
+(function () {
+  const form = document.getElementById('waitlistForm');
+  const success = document.getElementById('waitlistSuccess');
+  if (!form) return;
 
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    // Simulate async
-    setTimeout(() => {
-      form.style.display = 'none';
-      success.classList.add('visible');
-    }, 900);
-  });
-}
-
-// ── Smooth anchor links ──
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-
-// ── Subtle parallax on hero grid ──
-window.addEventListener('scroll', () => {
-  const grid = document.querySelector('.hero-grid-bg');
-  if (grid) {
-    grid.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+  function getVal(id) {
+    return document.getElementById(id).value.trim();
   }
-}, { passive: true });
+
+  function setError(id, msg) {
+    const el = document.getElementById(id);
+    const input = document.getElementById(id.replace('err', 'wl').toLowerCase());
+    if (!el) return false;
+    el.textContent = msg;
+    if (input) input.classList.toggle('error', !!msg);
+    return !!msg;
+  }
+
+  function clearErrors() {
+    ['errName', 'errEmail', 'errIndustry'].forEach(function (id) {
+      setError(id, '');
+    });
+  }
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+
+    const name     = getVal('wlName');
+    const email    = getVal('wlEmail');
+    const industry = getVal('wlIndustry');
+
+    let hasError = false;
+    if (!name)                    hasError = setError('errName', 'Please enter your name.');
+    if (!email)                   hasError = setError('errEmail', 'Please enter your email.') || hasError;
+    else if (!isValidEmail(email)) hasError = setError('errEmail', 'Please enter a valid email address.') || hasError;
+    if (!industry)                hasError = setError('errIndustry', 'Please enter your industry or role.') || hasError;
+
+    if (hasError) return;
+
+    // Simulate brief async submission
+    const btn = document.getElementById('wlSubmit');
+    btn.disabled = true;
+    btn.querySelector('.btn-label').textContent = 'Submitting…';
+
+    setTimeout(function () {
+      form.hidden = true;
+      success.hidden = false;
+    }, 800);
+  });
+
+  // Live validation — clear error once user types
+  ['wlName', 'wlEmail', 'wlIndustry'].forEach(function (id) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    const errId = 'err' + id.replace('wl', '');
+    input.addEventListener('input', function () {
+      setError(errId, '');
+    });
+  });
+})();
