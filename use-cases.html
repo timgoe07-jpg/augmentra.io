@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Use Cases — Augmentra</title>
-  <meta name="description" content="Six detailed examples of custom systems built for real business requirements. Problems solved across government procurement, financial services, marketing, and more." />
+  <meta name="description" content="Six detailed examples of custom systems built for real business requirements across financial services, government, professional services, operations, healthcare, and analytics." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
@@ -49,455 +49,203 @@
 <!-- USE CASES -->
 <section class="section">
   <div class="container">
-    <div class="use-cases-list">
 
-      <!-- USE CASE 1 — Tender Intelligence Platform -->
-      <div class="use-case-card">
-        <div class="uc-mock">
-          <div style="margin-bottom:12px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Tender Pipeline — Live View</span>
-          </div>
-          <div style="overflow-x:auto;">
-            <table class="mock-table">
-              <thead>
-                <tr>
-                  <th>Tender ID</th>
-                  <th>Agency</th>
-                  <th>Value</th>
-                  <th>Match Score</th>
-                  <th>Deadline</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>TND-2024-1831</td>
-                  <td>Dept. of Infrastructure</td>
-                  <td>$240k</td>
-                  <td><span class="mock-score high">94</span></td>
-                  <td>14 Mar</td>
-                  <td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td>
-                </tr>
-                <tr>
-                  <td>TND-2024-1856</td>
-                  <td>ATO</td>
-                  <td>$85k</td>
-                  <td><span class="mock-score med">78</span></td>
-                  <td>21 Mar</td>
-                  <td style="color:var(--muted);font-size:0.78rem;">Under review</td>
-                </tr>
-                <tr>
-                  <td>TND-2024-1902</td>
-                  <td>DFAT</td>
-                  <td>$1.2m</td>
-                  <td><span class="mock-score med">61</span></td>
-                  <td>28 Mar</td>
-                  <td style="color:var(--warning);font-size:0.78rem;">Flagged</td>
-                </tr>
-                <tr>
-                  <td>TND-2024-1915</td>
-                  <td>NDIS</td>
-                  <td>$320k</td>
-                  <td><span class="mock-score low">32</span></td>
-                  <td>04 Apr</td>
-                  <td style="color:var(--muted);font-size:0.78rem;opacity:0.6;">Skipped</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="uc-content">
-          <span class="teaser-pill">Government Procurement</span>
-          <h3 style="margin-top:10px;">Tender Intelligence Platform</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>A government procurement team needed to monitor Australian public tender portals, match opportunities against their capability profile, and manage the full bid response lifecycle — all of which was manual.</p>
-          </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>Built a full application that continuously monitors procurement portals, uses NLP to score tender-capability match, flags high-relevance opportunities, generates structured draft responses, and tracks all submission deadlines in a compliance workflow.</p>
-          </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Reduced tender scanning time by over 80%. Improved submission quality through structured drafting. Full bid pipeline visibility for the first time.
-          </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Azure</span>
-            <span class="tag">NLP Pipeline</span>
-            <span class="tag">Celery</span>
-          </div>
-        </div>
-      </div>
+    <div class="uc-filters" role="group" aria-label="Filter use cases">
+      <button class="uc-filter-btn active" data-filter="all" tabindex="0">All</button>
+      <button class="uc-filter-btn" data-filter="financial" tabindex="0">Financial Services</button>
+      <button class="uc-filter-btn" data-filter="government" tabindex="0">Government</button>
+      <button class="uc-filter-btn" data-filter="professional" tabindex="0">Professional Services</button>
+      <button class="uc-filter-btn" data-filter="operations" tabindex="0">Operations</button>
+      <button class="uc-filter-btn" data-filter="healthcare" tabindex="0">Healthcare</button>
+      <button class="uc-filter-btn" data-filter="analytics" tabindex="0">Analytics</button>
+    </div>
 
-      <!-- USE CASE 2 — Mortgage Pipeline Copilot -->
-      <div class="use-case-card">
+    <div class="use-cases-list" id="uc-list">
+
+      <!-- USE CASE 1 — Mortgage Document Intelligence -->
+      <div class="use-case-card uc-filterable" data-category="financial">
         <div class="uc-mock">
-          <div style="margin-bottom:12px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Mortgage Pipeline — Overview</span>
-          </div>
+          <div style="margin-bottom:12px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Mortgage Pipeline — Overview</span></div>
           <div class="kanban-flow">
-            <div class="kanban-col">
-              <span class="kanban-label">New Enquiry</span>
-              <span class="kanban-count">4</span>
-            </div>
-            <div class="kanban-col">
-              <span class="kanban-label">Docs Requested</span>
-              <span class="kanban-count">7</span>
-            </div>
-            <div class="kanban-col">
-              <span class="kanban-label">Under Assessment</span>
-              <span class="kanban-count">5</span>
-            </div>
-            <div class="kanban-col">
-              <span class="kanban-label">Submitted</span>
-              <span class="kanban-count">3</span>
-            </div>
-            <div class="kanban-col">
-              <span class="kanban-label">Approved</span>
-              <span class="kanban-count">2</span>
-            </div>
-          </div>
-          <div style="overflow-x:auto;">
-            <table class="mock-table">
-              <thead>
-                <tr>
-                  <th>Client</th>
-                  <th>Loan</th>
-                  <th>Score</th>
-                  <th>Docs</th>
-                  <th>Action Required</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Alex M.</td>
-                  <td>$720k PAYG</td>
-                  <td><span class="mock-score high">91</span></td>
-                  <td style="color:var(--warning);font-family:var(--font-mono);font-size:0.78rem;">4 / 5</td>
-                  <td style="color:var(--text);font-size:0.78rem;">Chase payslip</td>
-                </tr>
-                <tr>
-                  <td>Jordan P.</td>
-                  <td>$1.2m Self-Employed</td>
-                  <td><span class="mock-score med">62</span></td>
-                  <td style="color:var(--danger);font-family:var(--font-mono);font-size:0.78rem;">2 / 7</td>
-                  <td style="color:var(--text);font-size:0.78rem;">Send checklist</td>
-                </tr>
-                <tr>
-                  <td>Sam K.</td>
-                  <td>$450k PAYG</td>
-                  <td><span class="mock-score high">84</span></td>
-                  <td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;">5 / 5</td>
-                  <td style="color:var(--success);font-size:0.78rem;">Submit</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="kanban-col"><span class="kanban-label">New Enquiry</span><span class="kanban-count">4</span></div>
+            <div class="kanban-col"><span class="kanban-label">Docs Requested</span><span class="kanban-count">7</span></div>
+            <div class="kanban-col"><span class="kanban-label">Under Assessment</span><span class="kanban-count">5</span></div>
+            <div class="kanban-col"><span class="kanban-label">Approved</span><span class="kanban-count">2</span></div>
           </div>
         </div>
         <div class="uc-content">
           <span class="teaser-pill">Financial Services</span>
-          <h3 style="margin-top:10px;">Mortgage Pipeline Copilot</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>A mortgage brokerage was managing their entire pipeline through spreadsheets and email. No visibility into deal status, document completeness, or compliance readiness. Brokers spent hours each week chasing missing paperwork.</p>
+          <h3 style="margin-top:10px;">From payslip upload to compliance approval in 8 minutes</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Automated ingestion, ML classification, compliance check, and CRM update — replacing 4 hours of manual broker work per file.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Azure Doc Intelligence</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
           </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>A full-stack AI operations platform with automated document collection, real-time pipeline intelligence, AI-powered deal scoring, client communication hub, compliance audit trail, and role-based access control.</p>
-          </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Document collection time reduced by approximately 75%. Real-time pipeline visibility replacing spreadsheets. Compliance-ready audit trail across all client interactions.
-          </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Angular</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Azure</span>
-            <span class="tag">OpenAI</span>
-            <span class="tag">JWT Auth</span>
-            <span class="tag">Twilio</span>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-1">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-1" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Manual process: 4 hours/application, 12% error rate</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Automated: 8 min/application, 0.3% error rate</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- USE CASE 3 — Digital Marketing Analytics Engine -->
-      <div class="use-case-card">
+      <!-- USE CASE 2 — Immigration Matter Portal -->
+      <div class="use-case-card uc-filterable" data-category="professional">
         <div class="uc-mock">
-          <div style="margin-bottom:14px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Channel Performance — 30 Day Impressions</span>
-          </div>
-          <div class="bar-chart">
-            <div class="bar-row">
-              <span class="bar-label">Display</span>
-              <div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div>
-              <span class="bar-value">61,000</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Google Search</span>
-              <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
-              <span class="bar-value">42,800</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Meta Ads</span>
-              <div class="bar-track"><div class="bar-fill" style="width:51%;"></div></div>
-              <span class="bar-value">31,200</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">YouTube</span>
-              <div class="bar-track"><div class="bar-fill" style="width:32%;"></div></div>
-              <span class="bar-value">19,600</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">LinkedIn</span>
-              <div class="bar-track"><div class="bar-fill" style="width:14%;"></div></div>
-              <span class="bar-value">8,400</span>
-            </div>
-          </div>
-        </div>
-        <div class="uc-content">
-          <span class="teaser-pill">Digital Marketing</span>
-          <h3 style="margin-top:10px;">Digital Marketing Analytics Engine</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>A marketing agency managing 15+ client accounts had performance data fragmented across ad platforms, social channels, and analytics tools. Reporting was manual, slow, and prone to error.</p>
-          </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>Custom data ingestion pipeline consolidating all channel data into a single source of truth, with automated client reporting, anomaly detection alerts, and a multi-client dashboard with drill-down capability.</p>
-          </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Single source of truth across all client accounts. Manual reporting eliminated. Proactive anomaly alerts enabling faster campaign intervention.
-          </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">dbt</span>
-            <span class="tag">Angular</span>
-            <span class="tag">REST Integrations</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- USE CASE 4 — Client Onboarding Automation -->
-      <div class="use-case-card">
-        <div class="uc-mock">
-          <div style="margin-bottom:14px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Onboarding Status — Active Client</span>
-          </div>
+          <div style="margin-bottom:14px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Matter Timeline — Active Case</span></div>
           <div class="progress-flow">
-            <div class="pf-step">
-              <span class="pf-label complete">Enquiry Received</span>
-              <span class="pf-arrow">&gt;</span>
-            </div>
-            <div class="pf-step">
-              <span class="pf-label complete">Identity Verified</span>
-              <span class="pf-arrow">&gt;</span>
-            </div>
-            <div class="pf-step">
-              <span class="pf-label active">Documents Submitted</span>
-              <span class="pf-arrow">&gt;</span>
-            </div>
-            <div class="pf-step">
-              <span class="pf-label">Assessment</span>
-              <span class="pf-arrow">&gt;</span>
-            </div>
-            <div class="pf-step">
-              <span class="pf-label">Agreement Signed</span>
-              <span class="pf-arrow">&gt;</span>
-            </div>
-            <div class="pf-step">
-              <span class="pf-label">Active Client</span>
-            </div>
+            <div class="pf-step"><span class="pf-label complete">Intake</span><span class="pf-arrow">&gt;</span></div>
+            <div class="pf-step"><span class="pf-label complete">Docs Collected</span><span class="pf-arrow">&gt;</span></div>
+            <div class="pf-step"><span class="pf-label active">Application Lodged</span><span class="pf-arrow">&gt;</span></div>
+            <div class="pf-step"><span class="pf-label">Decision</span><span class="pf-arrow">&gt;</span></div>
+            <div class="pf-step"><span class="pf-label">Granted</span></div>
           </div>
-          <div class="doc-checklist">
-            <div class="doc-item">
-              <span class="doc-check">x</span>
-              <span class="doc-text">Photo ID submitted</span>
-            </div>
-            <div class="doc-item">
-              <span class="doc-check">x</span>
-              <span class="doc-text">Proof of address submitted</span>
-            </div>
-            <div class="doc-item">
-              <span class="doc-check empty"></span>
-              <span class="doc-text pending">Completed intake form — awaiting</span>
-            </div>
-            <div class="doc-item">
-              <span class="doc-check empty"></span>
-              <span class="doc-text pending">Signed engagement letter — not yet sent</span>
-            </div>
+          <div class="doc-checklist" style="margin-top:12px;">
+            <div class="doc-item"><span class="doc-check">&#x2713;</span><span class="doc-text">Passport (all pages)</span></div>
+            <div class="doc-item"><span class="doc-check">&#x2713;</span><span class="doc-text">Skills assessment</span></div>
+            <div class="doc-item"><span class="doc-check empty"></span><span class="doc-text pending">Police clearance — awaiting</span></div>
           </div>
         </div>
         <div class="uc-content">
           <span class="teaser-pill">Professional Services</span>
-          <h3 style="margin-top:10px;">Client Onboarding Automation</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>A professional services firm was losing prospective clients due to slow, inconsistent onboarding. New client intake was handled manually via email, with no tracking, no automation, and no visibility.</p>
+          <h3 style="margin-top:10px;">Visa deadline tracking across 200+ active matters</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Portal with automated alerts, client self-service, and matter timeline — replacing spreadsheets and email chains.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span><span class="tag">Graph API</span>
           </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>An intelligent intake and onboarding application with smart form routing, automated document requests, a client-facing status portal, CRM synchronisation, and completion notifications.</p>
-          </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Onboarding time reduced from days to hours. Zero missed follow-ups. Clients given real-time visibility into their own status.
-          </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Angular</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">AWS Lambda</span>
-            <span class="tag">S3</span>
-            <span class="tag">Webhook Integrations</span>
-            <span class="tag">PostgreSQL</span>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-2">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-2" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Deadlines in spreadsheets, client updates by email, missed renewals</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Automated alerts, client self-service portal, zero missed deadlines</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- USE CASE 5 — Compliance and Audit Data Layer -->
-      <div class="use-case-card">
+      <!-- USE CASE 3 — Government Tender Intelligence -->
+      <div class="use-case-card uc-filterable" data-category="government">
         <div class="uc-mock">
-          <div style="margin-bottom:12px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Audit Log — Live Stream</span>
-          </div>
-          <div class="audit-log">
-            <div class="audit-header">
-              <span>Timestamp</span>
-              <span>User</span>
-              <span>Action</span>
-              <span>Resource</span>
-              <span>Hash</span>
-            </div>
-            <div class="audit-row">
-              <span class="col-time">09:14:33</span>
-              <span class="col-user">broker_02</span>
-              <span class="col-action">READ</span>
-              <span class="col-resource">deal_id:4821</span>
-              <span class="col-hash">a3f9b2</span>
-            </div>
-            <div class="audit-row">
-              <span class="col-time">09:15:01</span>
-              <span class="col-user">admin_01</span>
-              <span class="col-action">UPDATE</span>
-              <span class="col-resource">lead_id:9134</span>
-              <span class="col-hash">c71e44</span>
-            </div>
-            <div class="audit-row">
-              <span class="col-time">09:15:47</span>
-              <span class="col-user">broker_01</span>
-              <span class="col-action">CREATE</span>
-              <span class="col-resource">doc_id:7723</span>
-              <span class="col-hash">f8a201</span>
-            </div>
-            <div class="audit-row">
-              <span class="col-time">09:16:22</span>
-              <span class="col-user">system</span>
-              <span class="col-action">EXPORT</span>
-              <span class="col-resource">report:monthly</span>
-              <span class="col-hash">3bc990</span>
-            </div>
-            <div class="audit-row">
-              <span class="col-time">09:16:58</span>
-              <span class="col-user">broker_02</span>
-              <span class="col-action">READ</span>
-              <span class="col-resource">deal_id:5017</span>
-              <span class="col-hash">91de73</span>
-            </div>
+          <div style="margin-bottom:12px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Tender Pipeline — Live View</span></div>
+          <div style="overflow-x:auto;">
+            <table class="mock-table">
+              <thead><tr><th>Tender ID</th><th>Agency</th><th>Value</th><th>Match Score</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>TND-2024-1831</td><td>Dept. of Infrastructure</td><td>$240k</td><td><span class="mock-score high">94</span></td><td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td></tr>
+                <tr><td>TND-2024-1856</td><td>ATO</td><td>$85k</td><td><span class="mock-score med">78</span></td><td style="color:var(--muted);font-size:0.78rem;">Under review</td></tr>
+                <tr><td>TND-2024-1902</td><td>DFAT</td><td>$1.2m</td><td><span class="mock-score med">61</span></td><td style="color:var(--warning);font-size:0.78rem;">Flagged</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="uc-content">
-          <span class="teaser-pill">Regulated Financial Services</span>
-          <h3 style="margin-top:10px;">Compliance and Audit Data Layer</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>A regulated financial business needed a tamper-proof audit trail across all data operations, with role-based access control, field-level encryption, and automated compliance reporting.</p>
+          <span class="teaser-pill">Government</span>
+          <h3 style="margin-top:10px;">NLP matching of procurement opportunities to capability profiles</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Automated monitoring of 8 government portals with NLP scoring, bid lifecycle management, and AI-assisted draft generation.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLTK</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span>
           </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>A custom security data layer with field-level encryption via Azure Key Vault, RBAC middleware, immutable audit log streaming, automated compliance report generation, and role-based access dashboards.</p>
-          </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Full audit trail on all data access and modification events. Compliance reports generated automatically. Zero manual compliance overhead.
-          </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Azure Key Vault</span>
-            <span class="tag">RBAC Middleware</span>
-            <span class="tag">JWT</span>
-            <span class="tag">FastAPI</span>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-3">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-3" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Manually checking 8 portals daily — opportunities regularly missed</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Automated monitoring, NLP scoring, bid lifecycle managed end-to-end</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- USE CASE 6 — Executive Intelligence Dashboard -->
-      <div class="use-case-card">
+      <!-- USE CASE 4 — Multi-Client Accounting Dashboard -->
+      <div class="use-case-card uc-filterable" data-category="analytics">
         <div class="uc-mock">
-          <div style="margin-bottom:12px;">
-            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Executive KPI Dashboard — MTD</span>
-          </div>
+          <div style="margin-bottom:12px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Client KPI Dashboard — MTD</span></div>
           <div class="kpi-grid">
-            <div class="kpi-cell">
-              <div class="kpi-name">Revenue MTD</div>
-              <div class="kpi-value">$842k</div>
-              <div class="kpi-delta green">+6.4% vs target</div>
+            <div class="kpi-cell"><div class="kpi-name">Revenue MTD</div><div class="kpi-value">$842k</div><div class="kpi-delta green">+6.4% vs target</div></div>
+            <div class="kpi-cell"><div class="kpi-name">Active Clients</div><div class="kpi-value">60</div><div class="kpi-delta neutral">+3 this month</div></div>
+            <div class="kpi-cell"><div class="kpi-name">Reports Sent</div><div class="kpi-value">60</div><div class="kpi-delta green">Automated</div></div>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Analytics</span>
+          <h3 style="margin-top:10px;">Automated financial reporting across 60 SME clients</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Automated pipeline, client-specific dashboards, and anomaly alerts — replacing 3 days/month of manual report building.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">Python</span><span class="tag">dbt</span><span class="tag">PostgreSQL</span><span class="tag">Plotly</span><span class="tag">PowerBI</span><span class="tag">Xero API</span>
+          </div>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-4">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-4" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Analyst spends 3 days/month building same reports for each client</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Fully automated pipeline — reports generated and delivered on schedule</p></div>
+              </div>
             </div>
-            <div class="kpi-cell">
-              <div class="kpi-name">Open Projects</div>
-              <div class="kpi-value">34</div>
-              <div class="kpi-delta neutral">+3 vs prior month</div>
-            </div>
-            <div class="kpi-cell">
-              <div class="kpi-name">On-Time Delivery</div>
-              <div class="kpi-value">87%</div>
-              <div class="kpi-delta amber">-4pp vs target</div>
-            </div>
-            <div class="kpi-cell">
-              <div class="kpi-name">Support Tickets</div>
-              <div class="kpi-value">128</div>
-              <div class="kpi-delta green">-18% vs prior week</div>
-            </div>
-            <div class="kpi-cell">
-              <div class="kpi-name">Pipeline Value</div>
-              <div class="kpi-value">$2.1m</div>
-              <div class="kpi-delta green">+11% vs prior month</div>
-            </div>
-            <div class="kpi-cell">
-              <div class="kpi-name">Staff Utilisation</div>
-              <div class="kpi-value">79%</div>
-              <div class="kpi-delta neutral">-1pp vs target</div>
-            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USE CASE 5 — Construction Variation Tracker -->
+      <div class="use-case-card uc-filterable" data-category="operations">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Variation Log — Audit Stream</span></div>
+          <div class="audit-log">
+            <div class="audit-header"><span>Timestamp</span><span>User</span><span>Action</span><span>Resource</span><span>Hash</span></div>
+            <div class="audit-row"><span class="col-time">08:14:02</span><span class="col-user">site_mgr_01</span><span class="col-action">CREATE</span><span class="col-resource">var_id:V0421</span><span class="col-hash">a3f9b2</span></div>
+            <div class="audit-row"><span class="col-time">09:31:17</span><span class="col-user">pm_02</span><span class="col-action">APPROVE</span><span class="col-resource">var_id:V0421</span><span class="col-hash">c71e44</span></div>
+            <div class="audit-row"><span class="col-time">10:05:44</span><span class="col-user">subcon_03</span><span class="col-action">COMPLETE</span><span class="col-resource">var_id:V0421</span><span class="col-hash">f8a201</span></div>
           </div>
         </div>
         <div class="uc-content">
           <span class="teaser-pill">Operations</span>
-          <h3 style="margin-top:10px;">Executive Intelligence Dashboard</h3>
-          <div class="uc-block uc-problem">
-            <div class="uc-block-label">Problem</div>
-            <p>An operations business had data across six systems with no unified view. Leadership decisions were made on delayed, manually compiled reports.</p>
+          <h3 style="margin-top:10px;">Real-time subcontractor and variation management</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Structured variation log, approval workflow, and tamper-proof audit trail — replacing email threads and disputed undocumented changes.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">Webhooks</span>
           </div>
-          <div class="uc-block uc-solution">
-            <div class="uc-block-label">Solution</div>
-            <p>A custom data warehouse with automated ETL pipelines from all six source systems and an executive dashboard providing unified KPIs, trend analysis, variance alerts, and drill-down capability.</p>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-5">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-5" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Variations tracked in emails — disputes over undocumented changes</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Structured log with approval workflow and immutable audit trail</p></div>
+              </div>
+            </div>
           </div>
-          <div class="uc-outcome">
-            <strong>Outcome</strong>
-            Single source of truth updated in near real-time. Leadership reporting time reduced from half a day per week to zero. Anomaly alerts surfaced proactively.
+        </div>
+      </div>
+
+      <!-- USE CASE 6 — Allied Health Analytics -->
+      <div class="use-case-card uc-filterable" data-category="healthcare">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;"><span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Practice Performance — MTD</span></div>
+          <div class="kpi-grid">
+            <div class="kpi-cell"><div class="kpi-name">Appointments</div><div class="kpi-value">1,284</div><div class="kpi-delta green">+8% vs prior</div></div>
+            <div class="kpi-cell"><div class="kpi-name">Revenue MTD</div><div class="kpi-value">$142k</div><div class="kpi-delta green">+5.2% vs target</div></div>
+            <div class="kpi-cell"><div class="kpi-name">Referrals</div><div class="kpi-value">94</div><div class="kpi-delta amber">+2 pending</div></div>
           </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">dbt</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Angular</span>
-            <span class="tag">Celery</span>
-            <span class="tag">REST APIs</span>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Healthcare</span>
+          <h3 style="margin-top:10px;">Cross-system patient and practice performance analytics</h3>
+          <p style="font-size:0.9rem;margin:8px 0 12px;">Unified dashboard, referral tracking, and revenue forecasting — bridging billing, appointments, and analytics systems.</p>
+          <div class="tags" style="margin-bottom:14px;">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">PostgreSQL</span><span class="tag">Dash</span><span class="tag">REST APIs</span><span class="tag">Azure</span>
+          </div>
+          <div class="uc-flip-toggle">
+            <button class="uc-flip-btn" data-target="flip-6">Before / After &#x2192;</button>
+            <div class="uc-flip-panel" id="flip-6" hidden>
+              <div class="uc-before-after">
+                <div class="uc-before"><div class="uc-ba-label">Before</div><p>Billing in one system, appointments in another, no unified visibility</p></div>
+                <div class="uc-after"><div class="uc-ba-label">After</div><p>Unified dashboard, automated referral tracking, revenue forecasting</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -533,7 +281,7 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <span>&copy; 2026 Augmentra. Independent technology contractor.</span>
       <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
     </div>
   </div>

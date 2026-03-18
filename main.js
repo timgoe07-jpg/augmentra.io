@@ -244,3 +244,166 @@
   });
 
 }());
+
+  /* ----------------------------------------------------------
+     7. PIPELINE MONITOR — cycling events + throughput counter
+     ---------------------------------------------------------- */
+  (function() {
+    var pmEvents = document.getElementById('pm-events');
+    var pmThroughput = document.getElementById('pm-throughput');
+    if (!pmEvents || !pmThroughput) return;
+
+    var allPmEvents = [
+      { time: '09:42:01', module: 'ml.classifier',    color: '#06b6d4', msg: 'income_doc scored 0.94 \u2192 APPROVE' },
+      { time: '09:42:04', module: 'rag.retrieval',    color: '#2dd4bf', msg: 'query matched 3 policy chunks (0.87 sim)' },
+      { time: '09:42:07', module: 'pg.write',         color: '#818cf8', msg: 'applicant_id=8821 committed in 11ms' },
+      { time: '09:42:10', module: 'compliance.check', color: '#22c55e', msg: 'result=PASS flags=[] threshold=0.90' },
+      { time: '09:42:13', module: 'webhook.dispatch', color: '#a78bfa', msg: 'target=pipedrive status=201 deal=9043' },
+      { time: '09:42:16', module: 'audit.log',        color: '#f59e0b', msg: 'hash=3f9a2c user=broker_07 action=approve' },
+      { time: '09:42:19', module: 'doc.ingest',       color: '#94a3b8', msg: 'file=payslip_scan.pdf parser=azure_di' },
+      { time: '09:42:22', module: 'ml.classifier',    color: '#06b6d4', msg: 'expense_ratio=0.31 risk_band=LOW' },
+      { time: '09:42:25', module: 'rag.retrieval',    color: '#2dd4bf', msg: 'context_tokens=1840 model=gpt-4o' },
+      { time: '09:42:28', module: 'pg.write',         color: '#818cf8', msg: 'transaction_log updated rows=3' }
+    ];
+    var pmEventIdx = 6;
+    var pmCount = 1847;
+
+    function addPmEvent() {
+      var evt = allPmEvents[pmEventIdx % allPmEvents.length];
+      pmEventIdx++;
+      var row = document.createElement('div');
+      row.className = 'pm-event';
+      row.innerHTML =
+        '<span class="pm-time">' + evt.time + '</span>' +
+        '<span class="pm-event-name" style="color:' + evt.color + ';">' + evt.module + '</span>' +
+        '<span class="pm-event-data">' + evt.msg + '</span>';
+      pmEvents.insertBefore(row, pmEvents.firstChild);
+      var rows = pmEvents.querySelectorAll('.pm-event');
+      if (rows.length > 6) { pmEvents.removeChild(rows[rows.length - 1]); }
+    }
+
+    function updateThroughput() {
+      pmCount++;
+      pmThroughput.textContent = pmCount.toLocaleString();
+    }
+
+    setInterval(addPmEvent, 2500);
+    setInterval(updateThroughput, 3000);
+  }());
+
+  /* ----------------------------------------------------------
+     8. TECH STACK TABS
+     ---------------------------------------------------------- */
+  (function() {
+    var btns = document.querySelectorAll('.stack-tab-btn');
+    var panels = document.querySelectorAll('.stack-tab-panel');
+    if (!btns.length) return;
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = this.getAttribute('data-tab');
+        btns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        var panel = document.querySelector('.stack-tab-panel[data-panel="' + tab + '"]');
+        if (panel) panel.classList.add('active');
+      }.bind(btn));
+    });
+  }());
+
+  /* ----------------------------------------------------------
+     9. SERVICES PAGE — left nav tab switching
+     ---------------------------------------------------------- */
+  (function() {
+    var items = document.querySelectorAll('.svc-nav-item');
+    var panels = document.querySelectorAll('.svc-panel');
+    if (!items.length) return;
+    items.forEach(function(item) {
+      item.addEventListener('click', function() {
+        var svc = this.getAttribute('data-service');
+        items.forEach(function(i) { i.classList.remove('active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        var panel = document.querySelector('.svc-panel[data-panel="' + svc + '"]');
+        if (panel) panel.classList.add('active');
+      }.bind(item));
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+      }.bind(item));
+    });
+  }());
+
+  /* ----------------------------------------------------------
+     10. USE CASES — filter buttons
+     ---------------------------------------------------------- */
+  (function() {
+    var filterBtns = document.querySelectorAll('.uc-filter-btn');
+    var cards = document.querySelectorAll('.uc-filterable');
+    if (!filterBtns.length) return;
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = this.getAttribute('data-filter');
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        cards.forEach(function(card) {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }.bind(btn));
+    });
+  }());
+
+  /* ----------------------------------------------------------
+     11. USE CASES — before/after flip panels
+     ---------------------------------------------------------- */
+  (function() {
+    document.querySelectorAll('.uc-flip-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var targetId = this.getAttribute('data-target');
+        var panel = document.getElementById(targetId);
+        if (!panel) return;
+        if (panel.hidden) {
+          panel.hidden = false;
+          this.textContent = 'Hide \u2190';
+        } else {
+          panel.hidden = true;
+          this.textContent = 'Before / After \u2192';
+        }
+      });
+    });
+  }());
+
+  /* ----------------------------------------------------------
+     12. CASE STUDIES — architecture modals
+     ---------------------------------------------------------- */
+  (function() {
+    document.querySelectorAll('.cs-arch-expand-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var modalId = this.getAttribute('data-modal');
+        var modal = document.getElementById(modalId);
+        if (modal) { modal.hidden = false; document.body.style.overflow = 'hidden'; }
+      });
+    });
+    document.querySelectorAll('.cs-modal-close').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var modalId = this.getAttribute('data-modal');
+        var modal = document.getElementById(modalId);
+        if (modal) { modal.hidden = true; document.body.style.overflow = ''; }
+      });
+    });
+    document.querySelectorAll('.cs-modal-overlay').forEach(function(overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) { overlay.hidden = true; document.body.style.overflow = ''; }
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.cs-modal-overlay:not([hidden])').forEach(function(m) {
+          m.hidden = true; document.body.style.overflow = '';
+        });
+      }
+    });
+  }());

@@ -46,183 +46,272 @@
   </div>
 </section>
 
-<!-- SERVICES GRID -->
+<!-- SERVICES SPLIT LAYOUT -->
 <section class="section">
   <div class="container">
-    <div class="services-grid">
+    <div class="services-split">
+      <nav class="services-nav" aria-label="Services navigation">
+        <button class="svc-nav-item active" data-service="ai" tabindex="0">Custom AI &amp; Machine Learning</button>
+        <button class="svc-nav-item" data-service="data" tabindex="0">Data Engineering &amp; Pipelines</button>
+        <button class="svc-nav-item" data-service="bi" tabindex="0">Business Intelligence</button>
+        <button class="svc-nav-item" data-service="app" tabindex="0">Application Development</button>
+        <button class="svc-nav-item" data-service="integrations" tabindex="0">System Integrations &amp; APIs</button>
+        <button class="svc-nav-item" data-service="automation" tabindex="0">Automation &amp; Orchestration</button>
+        <button class="svc-nav-item" data-service="security" tabindex="0">Security Architecture</button>
+        <button class="svc-nav-item" data-service="gov" tabindex="0">Government &amp; Regulated Industry</button>
+      </nav>
+      <div class="services-panel" id="services-panel">
 
-      <div class="service-card">
-        <span class="service-num">01</span>
-        <h3>Custom AI and Machine Learning</h3>
-        <p>Intelligent systems built into your existing workflows — not bolted on. Lead scoring, document classification, prediction models, and recommendation engines trained on your data.</p>
-        <div class="service-deliverables">
-          <p>Scoring and classification models</p>
-          <p>RAG knowledge base systems</p>
-          <p>Voice and document intelligence pipelines</p>
+        <div class="svc-panel active" data-panel="ai">
+          <h2>Custom AI &amp; Machine Learning</h2>
+          <p class="svc-desc">Intelligent systems trained on your data, built into your workflow.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[Raw Data]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Feature Eng.]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[scikit-learn Model]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[API Endpoint]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[MLflow Registry]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Trained classification or regression model, production-ready</li>
+            <li>RAG pipeline with Azure OpenAI or Anthropic</li>
+            <li>Scheduled retraining with MLflow experiment tracking</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+            <span class="tag">scikit-learn</span><span class="tag">MLflow</span><span class="tag">FastAPI</span>
+            <span class="tag">Azure OpenAI</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
         </div>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenAI</span>
-          <span class="tag">Anthropic</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Azure</span>
+
+        <div class="svc-panel" data-panel="data">
+          <h2>Data Engineering &amp; Pipelines</h2>
+          <p class="svc-desc">Reliable end-to-end data movement from ingestion to delivery.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[Source APIs]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[ETL / Kafka]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[dbt Transforms]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[PostgreSQL DW]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Azure Data Lake]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>ETL/ELT pipeline design and implementation</li>
+            <li>Real-time event streaming with Kafka</li>
+            <li>Data warehouse schema and dbt models</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span>
+            <span class="tag">dbt</span><span class="tag">SQLAlchemy</span><span class="tag">Azure Data Lake</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
         </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A mortgage brokerage needed every inbound lead scored on urgency, income type, loan size, and contact completeness before reaching a broker. We built a multi-agent AI scoring system that routes each enquiry to the right workflow within seconds.</p>
+
+        <div class="svc-panel" data-panel="bi">
+          <h2>Business Intelligence</h2>
+          <p class="svc-desc">Custom dashboards and reports built on your actual data.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[PostgreSQL]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[dbt Models]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Plotly / D3.js]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Dashboard]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Anomaly Alerts]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Operational and executive dashboards, real-time</li>
+            <li>Automated scheduled reporting pipeline</li>
+            <li>Anomaly detection with configurable alerting</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">React</span><span class="tag">D3.js</span>
+            <span class="tag">Plotly</span><span class="tag">dbt</span><span class="tag">PowerBI</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
         </div>
+
+        <div class="svc-panel" data-panel="app">
+          <h2>Application Development</h2>
+          <p class="svc-desc">Full-stack applications built precisely for your workflow.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[React / Angular]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[FastAPI]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[PostgreSQL]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[JWT Auth + RBAC]</span>
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Docker + GitHub Actions]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Full-stack web and internal applications</li>
+            <li>Client-facing portals and intake systems</li>
+            <li>Mobile-responsive, accessibility-compliant UI</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">React</span><span class="tag">TypeScript</span>
+            <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
+        </div>
+
+        <div class="svc-panel" data-panel="integrations">
+          <h2>System Integrations &amp; APIs</h2>
+          <p class="svc-desc">Connect your CRMs, ERPs, SaaS tools, and legacy systems.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[Salesforce CRM]</span>
+              <span class="svc-diag-arrow"> &#x21c4; </span>
+              <span class="svc-diag-node">[API Middleware]</span>
+              <span class="svc-diag-arrow"> &#x21c4; </span>
+              <span class="svc-diag-node">[Pipedrive]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Webhook Events]</span>
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Annature / Xero]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>REST and GraphQL API development</li>
+            <li>Bidirectional CRM and ERP sync</li>
+            <li>Webhook handling and event-driven triggers</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">REST</span><span class="tag">GraphQL</span><span class="tag">Webhooks</span>
+            <span class="tag">Pipedrive</span><span class="tag">Salesforce</span><span class="tag">HubSpot</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
+        </div>
+
+        <div class="svc-panel" data-panel="automation">
+          <h2>Automation &amp; Orchestration</h2>
+          <p class="svc-desc">Eliminate manual steps with intelligent, event-driven automation.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[Trigger Event]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Celery Worker]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Action Pipeline]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Azure Functions]</span>
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[CRM Update + Notify]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Automated document collection and routing</li>
+            <li>Multi-step approval and notification workflows</li>
+            <li>Event-driven pipeline orchestration</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Celery</span><span class="tag">FastAPI</span>
+            <span class="tag">Azure Functions</span><span class="tag">Kafka</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
+        </div>
+
+        <div class="svc-panel" data-panel="security">
+          <h2>Security Architecture</h2>
+          <p class="svc-desc">Security and compliance built into the architecture from day one.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[API Request]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[JWT + RBAC]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Encrypted Store]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Azure Key Vault]</span>
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Audit Log SHA-256]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Field-level encryption with Azure Key Vault</li>
+            <li>RBAC middleware and JWT authentication</li>
+            <li>Tamper-proof audit log with hash chaining</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Azure Key Vault</span><span class="tag">RBAC</span><span class="tag">JWT</span>
+            <span class="tag">Python</span><span class="tag">PostgreSQL</span>
+          </div>
+          <a href="security.html" class="svc-usecase-link">See security details &#x2192;</a>
+        </div>
+
+        <div class="svc-panel" data-panel="gov">
+          <h2>Government &amp; Regulated Industry</h2>
+          <p class="svc-desc">Compliance-ready systems for high-assurance environments.</p>
+          <div class="svc-diagram">
+            <div class="svc-diag-row">
+              <span class="svc-diag-node">[Govt Portals]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[NLP Pipeline]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Compliance Engine]</span>
+              <span class="svc-diag-arrow"> &#x2192; </span>
+              <span class="svc-diag-node">[Dashboard]</span>
+            </div>
+            <div class="svc-diag-row svc-diag-branch">
+              <span class="svc-diag-spacer"></span>
+              <span class="svc-diag-down">&#x2195;</span>
+              <span class="svc-diag-node svc-diag-secondary">[Audit Trail + RBAC]</span>
+            </div>
+          </div>
+          <ul class="svc-deliverables">
+            <li>Compliance workflow and checklist systems</li>
+            <li>Structured submission and audit trail management</li>
+            <li>Government API integrations</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">PostgreSQL</span>
+            <span class="tag">FastAPI</span><span class="tag">Azure</span>
+          </div>
+          <a href="use-cases.html" class="svc-usecase-link">See a use case &#x2192;</a>
+        </div>
+
       </div>
-
-      <div class="service-card">
-        <span class="service-num">02</span>
-        <h3>Data Engineering and Pipelines</h3>
-        <p>End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery, built to your throughput requirements.</p>
-        <div class="service-deliverables">
-          <p>ETL/ELT pipeline design and implementation</p>
-          <p>Real-time event streaming architectures</p>
-          <p>Data warehouse and schema design</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Kafka</span>
-          <span class="tag">dbt</span>
-          <span class="tag">Azure</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A marketing agency managing 15 client accounts needed a unified performance data layer across fragmented ad platforms. We built an automated ingestion pipeline with scheduled transformation and a reporting layer that replaced weekly manual exports.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">03</span>
-        <h3>Business Intelligence and Dashboards</h3>
-        <p>Custom reporting and visibility tools built on your actual data — not generic templates. Operational dashboards, executive KPI views, and drill-down analytics.</p>
-        <div class="service-deliverables">
-          <p>Operational and executive dashboards</p>
-          <p>Automated scheduled reporting</p>
-          <p>Anomaly detection and alerting</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Angular</span>
-          <span class="tag">Python</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">dbt</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>An operations business had financial data across six systems with no single view. We built a custom data warehouse with ETL from all sources and an executive dashboard updated in near real-time.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">04</span>
-        <h3>Application Development</h3>
-        <p>Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up.</p>
-        <div class="service-deliverables">
-          <p>Full-stack web and internal applications</p>
-          <p>Client-facing portals and intake systems</p>
-          <p>Mobile-responsive interfaces</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Angular</span>
-          <span class="tag">React</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">TypeScript</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A government procurement team needed a structured application to manage the full tender lifecycle, from opportunity identification through submission, with version control and audit logging.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">05</span>
-        <h3>System Integrations and APIs</h3>
-        <p>Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases. Bidirectional sync, webhook handling, and real-time data exchange.</p>
-        <div class="service-deliverables">
-          <p>REST and GraphQL API development</p>
-          <p>CRM and ERP deep integrations</p>
-          <p>Legacy system connectivity</p>
-        </div>
-        <div class="tags">
-          <span class="tag">REST</span>
-          <span class="tag">Webhooks</span>
-          <span class="tag">Pipedrive</span>
-          <span class="tag">HubSpot</span>
-          <span class="tag">Salesforce</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A financial services firm needed their CRM, document storage, e-signature platform, and client portal to share state in real time. We built the integration layer that keeps all four systems in sync.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">06</span>
-        <h3>Automation and Workflow Orchestration</h3>
-        <p>Intelligent process automation that eliminates manual steps, reduces error, and accelerates throughput. Document handling, approval flows, notifications, and event-driven triggers.</p>
-        <div class="service-deliverables">
-          <p>Automated document collection and routing</p>
-          <p>Multi-step approval workflows</p>
-          <p>Event-driven notification systems</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Celery</span>
-          <span class="tag">Azure Functions</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A professional services firm was losing 6-8 hours per week manually chasing document submissions from clients. We automated the entire collection flow — detection, personalised outreach, follow-ups, and confirmation.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">07</span>
-        <h3>Security-First Data Architecture</h3>
-        <p>Security and privacy built into the architecture from day one. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments.</p>
-        <div class="service-deliverables">
-          <p>Field-level encryption and key management</p>
-          <p>Role-based access control (RBAC)</p>
-          <p>Tamper-proof audit logging</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Azure Key Vault</span>
-          <span class="tag">RBAC</span>
-          <span class="tag">JWT</span>
-          <span class="tag">Python</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A regulated financial business required field-level encryption, RBAC, and a tamper-proof audit log across all data operations to meet compliance requirements. We built the full security data layer.</p>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-num">08</span>
-        <h3>Government and Regulated Industry</h3>
-        <p>Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments.</p>
-        <div class="service-deliverables">
-          <p>Compliance workflow and checklist systems</p>
-          <p>Structured submission and audit trail management</p>
-          <p>Government API integrations</p>
-        </div>
-        <div class="tags">
-          <span class="tag">Government APIs</span>
-          <span class="tag">Compliance</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Azure</span>
-        </div>
-        <div class="example-block">
-          <span class="example-label">Example</span>
-          <p>A government contractor needed to monitor Australian procurement portals continuously, match tenders to their capability profile, and track submission deadlines — all within a compliance-ready workflow.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -254,7 +343,7 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <span>&copy; 2026 Augmentra. Independent technology contractor.</span>
       <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
     </div>
   </div>

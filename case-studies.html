@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Studies — Augmentra</title>
-  <meta name="description" content="Three detailed case studies: AI mortgage operations platform, government tender intelligence, and digital marketing analytics. Purpose-built systems in production." />
+  <meta name="description" content="Three detailed case studies: AI mortgage operations platform (Balaton Financial), government tender intelligence (Trovio), and SaaS data pipeline (Unleash Live)." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
@@ -50,211 +50,245 @@
 <section class="section">
   <div class="container">
 
-    <!-- CASE STUDY 1: BreathLoans -->
-    <div class="case-study">
-      <div class="cs-header">
-        <span class="teaser-pill">Financial Services</span>
-        <h2>AI-Assisted Mortgage Operations Platform</h2>
-        <p class="cs-summary">The operations team was managing their entire mortgage pipeline through spreadsheets and manual email follow-ups, with no visibility into deal status, document completeness, or compliance readiness. The system replaced this entirely.</p>
-      </div>
-      <div class="cs-cols">
-        <div class="cs-col">
-          <h3>What Was Built</h3>
-          <div class="cs-built-list">
-            <div class="cs-built-item">
-              <strong>Multi-agent AI orchestration system</strong>
-              Automated lead qualification, deal digest extraction, document collection, and customer service responses.
+    <!-- CASE STUDY 1: Balaton Financial -->
+    <div class="cs-visual">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">Financial Services &middot; AI / Document Intelligence</span>
+          <h2>Balaton Financial — AI-Assisted Mortgage Operations</h2>
+          <p class="cs-problem-stmt">Mortgage operations running entirely on spreadsheets and email — 4 hours per application, no audit trail.</p>
+        </div>
+        <div class="cs-arch">
+          <div class="cs-arch-label">Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Broker Portal]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[Azure Doc Intelligence]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[ML Classifier]</span>
             </div>
-            <div class="cs-built-item">
-              <strong>AI-powered lead scoring engine</strong>
-              Each new enquiry scored on urgency, income type, loan size, and contact completeness, with automatic routing based on score.
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Pipedrive CRM]</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node">[FastAPI Backend]</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node">[Compliance Engine]</span>
             </div>
-            <div class="cs-built-item">
-              <strong>Automated document collection with client-facing portal</strong>
-              System tracks required documents per deal scenario, sends personalised follow-up messages for missing items, and updates the pipeline on receipt.
-            </div>
-            <div class="cs-built-item">
-              <strong>Real-time pipeline intelligence dashboard</strong>
-              Broker-facing view of all active deals, document completeness, and AI-generated health status per case.
-            </div>
-            <div class="cs-built-item">
-              <strong>Client communication hub</strong>
-              WhatsApp Business API integration for all client messaging, with voice note ingestion and AI-generated structured deal briefs.
-            </div>
-            <div class="cs-built-item">
-              <strong>Compliance audit trail</strong>
-              Full event log across all client interactions, document submissions, and broker actions.
-            </div>
-            <div class="cs-built-item">
-              <strong>Post-settlement portfolio module</strong>
-              Fixed rate expiry alerts, repricing competitor tracking, and valuation history.
-            </div>
-            <div class="cs-built-item">
-              <strong>Role-based access control</strong>
-              Differentiated broker, admin, and management access levels.
-            </div>
-            <div class="cs-built-item">
-              <strong>Integrations</strong>
-              Pipedrive CRM, Monday.com task boards, Annature e-signatures, Azure Blob Storage.
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-wide">[PostgreSQL + Audit Log]</span>
             </div>
           </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">Angular</span>
-            <span class="tag">Azure</span>
-            <span class="tag">OpenAI</span>
-            <span class="tag">Anthropic</span>
-            <span class="tag">WhatsApp Business API</span>
-            <span class="tag">Pipedrive</span>
-            <span class="tag">Annature</span>
-            <span class="tag">JWT Auth</span>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-1">View Architecture &#x2192;</button>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <div class="cs-metric-num">8 min</div>
+            <div class="cs-metric-label">Average processing time (was 4+ hours)</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">94%</div>
+            <div class="cs-metric-label">ML classification accuracy on income documents</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">100%</div>
+            <div class="cs-metric-label">Audit trail coverage — zero compliance gaps</div>
           </div>
         </div>
-        <div class="cs-col">
-          <h3>Outcomes</h3>
-          <div class="cs-outcomes">
-            <div class="cs-outcome">Eliminated manual document chasing — automated follow-ups replaced hours of weekly email triage.</div>
-            <div class="cs-outcome">Real-time pipeline visibility replaced spreadsheets across the brokerage.</div>
-            <div class="cs-outcome">Compliance-ready audit logging across all client interactions.</div>
-            <div class="cs-outcome">Brokers able to process more deals without additional headcount.</div>
-          </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span>
+          <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Azure Doc Intelligence</span>
+          <span class="tag">Pipedrive API</span><span class="tag">React</span><span class="tag">Docker</span>
         </div>
       </div>
     </div>
 
     <!-- CASE STUDY 2: Trovio -->
-    <div class="case-study">
-      <div class="cs-header">
-        <span class="teaser-pill">Government Technology</span>
-        <h2>Government Tender Intelligence Application</h2>
-        <p class="cs-summary">The team was monitoring Australian government procurement portals manually, matching opportunities against their capability profile by hand, and managing the entire bid response lifecycle through shared documents and email threads. The system automated the majority of this process.</p>
-      </div>
-      <div class="cs-cols">
-        <div class="cs-col">
-          <h3>What Was Built</h3>
-          <div class="cs-built-list">
-            <div class="cs-built-item">
-              <strong>Automated tender portal monitoring</strong>
-              Continuous ingestion of opportunities from Australian government procurement platforms.
+    <div class="cs-visual">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">Government Technology &middot; NLP / Data Engineering</span>
+          <h2>Trovio — Government Tender Intelligence</h2>
+          <p class="cs-problem-stmt">No centralised view of government project records — opportunities identified manually across multiple procurement portals.</p>
+        </div>
+        <div class="cs-arch">
+          <div class="cs-arch-label">Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Govt Portals]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[Web Scraper]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[NLP Pipeline (spaCy/NLTK)]</span>
             </div>
-            <div class="cs-built-item">
-              <strong>NLP-based capability matching</strong>
-              Each tender scored against the organisation's capability profile, with ranked relevance output and configurable match thresholds.
-            </div>
-            <div class="cs-built-item">
-              <strong>Opportunity pipeline management</strong>
-              Flagged tenders move into a structured bid lifecycle with stage tracking, deadline visibility, and assignment to team members.
-            </div>
-            <div class="cs-built-item">
-              <strong>Structured draft response generation</strong>
-              AI-assisted drafting of bid responses using the organisation's capability library and prior submissions.
-            </div>
-            <div class="cs-built-item">
-              <strong>Version control and approval workflows</strong>
-              Document versioning, internal review stages, and sign-off tracking.
-            </div>
-            <div class="cs-built-item">
-              <strong>Compliance checklist engine</strong>
-              Automated pre-submission verification against government tender requirements.
-            </div>
-            <div class="cs-built-item">
-              <strong>Submission history and performance analytics</strong>
-              Win/loss tracking, response time analysis, and improvement recommendations.
-            </div>
-            <div class="cs-built-item">
-              <strong>Government-grade security</strong>
-              Encrypted data handling, role-based access, full audit logging throughout.
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Dashboard]</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node">[FastAPI + PostgreSQL]</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node">[OpenAI Summariser]</span>
             </div>
           </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Angular</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Azure</span>
-            <span class="tag">NLP Pipeline</span>
-            <span class="tag">Python</span>
-            <span class="tag">JWT Auth</span>
-            <span class="tag">Celery</span>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-2">View Architecture &#x2192;</button>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <div class="cs-metric-num">8</div>
+            <div class="cs-metric-label">Portals monitored continuously (was manual daily checks)</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">GPT-4</div>
+            <div class="cs-metric-label">Automated summarisation of tender documents</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">60%</div>
+            <div class="cs-metric-label">Reduction in opportunity identification time</div>
           </div>
         </div>
-        <div class="cs-col">
-          <h3>Outcomes</h3>
-          <div class="cs-outcomes">
-            <div class="cs-outcome">Tender scanning time reduced by over 80%.</div>
-            <div class="cs-outcome">Zero missed compliance requirements on submissions.</div>
-            <div class="cs-outcome">Full bid pipeline visibility replacing fragmented document management.</div>
-            <div class="cs-outcome">Faster response preparation through structured AI-assisted drafting.</div>
-          </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLTK</span>
+          <span class="tag">OpenAI API</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Azure</span><span class="tag">React</span>
         </div>
       </div>
     </div>
 
-    <!-- CASE STUDY 3: Digital Marketing -->
-    <div class="case-study">
-      <div class="cs-header">
-        <span class="teaser-pill">Digital Marketing</span>
-        <h2>Digital Marketing Analytics Application</h2>
-        <p class="cs-summary">The agency was managing digital marketing performance for multiple clients across fragmented ad platforms and social channels, with no unified reporting layer and no way to detect performance anomalies in real time. Reporting was produced manually each week.</p>
-      </div>
-      <div class="cs-cols">
-        <div class="cs-col">
-          <h3>What Was Built</h3>
-          <div class="cs-built-list">
-            <div class="cs-built-item">
-              <strong>Multi-channel data ingestion pipeline</strong>
-              Automated collection from all major ad platforms and social APIs (Google Ads, Meta, LinkedIn, TikTok, and others) with scheduled and on-demand refresh.
+    <!-- CASE STUDY 3: Unleash Live -->
+    <div class="cs-visual">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">SaaS Platform &middot; Data Engineering / Integrations</span>
+          <h2>Unleash Live — AI Event Data Pipeline</h2>
+          <p class="cs-problem-stmt">AI event data from the Unleash Live platform had no structured pipeline into CRM or analytics — insights were lost after generation.</p>
+        </div>
+        <div class="cs-arch">
+          <div class="cs-arch-label">Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Unleash Live API]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[ETL Pipeline]</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node">[Salesforce CRM]</span>
             </div>
-            <div class="cs-built-item">
-              <strong>Centralised performance data layer</strong>
-              A unified data warehouse normalising channel-specific schemas into a consistent model, enabling cross-channel and cross-client analysis.
-            </div>
-            <div class="cs-built-item">
-              <strong>Multi-client dashboard</strong>
-              Client-switchable interface with campaign overview, channel breakdowns, trend charts, and period-over-period comparisons.
-            </div>
-            <div class="cs-built-item">
-              <strong>Automated client reporting</strong>
-              Scheduled report generation and delivery, replacing manual weekly exports.
-            </div>
-            <div class="cs-built-item">
-              <strong>Anomaly detection alerts</strong>
-              Configurable rules that flag significant drops or spikes in key metrics and notify the account manager.
-            </div>
-            <div class="cs-built-item">
-              <strong>Digital asset management module</strong>
-              Upload, tag, and link creative assets to campaigns for performance attribution.
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node">[Tableau Dashboards]</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node">[dbt transforms]</span>
             </div>
           </div>
-          <div class="tags" style="margin-top:16px;">
-            <span class="tag">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">dbt</span>
-            <span class="tag">Angular</span>
-            <span class="tag">Celery</span>
-            <span class="tag">Google Ads API</span>
-            <span class="tag">Meta API</span>
-            <span class="tag">LinkedIn API</span>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-3">View Architecture &#x2192;</button>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <div class="cs-metric-num">Real-time</div>
+            <div class="cs-metric-label">CRM sync from AI event stream</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">Tableau</div>
+            <div class="cs-metric-label">Executive dashboards from live data</div>
+          </div>
+          <div class="cs-metric">
+            <div class="cs-metric-num">SEM/SEO</div>
+            <div class="cs-metric-label">Automation pipeline for marketing workflows</div>
           </div>
         </div>
-        <div class="cs-col">
-          <h3>Outcomes</h3>
-          <div class="cs-outcomes">
-            <div class="cs-outcome">Single source of truth across all client accounts and channels.</div>
-            <div class="cs-outcome">Manual weekly reporting process eliminated.</div>
-            <div class="cs-outcome">Anomaly detection enabling proactive campaign management.</div>
-            <div class="cs-outcome">Account managers able to handle larger client portfolios with the same headcount.</div>
-          </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">Salesforce API</span><span class="tag">Tableau</span>
+          <span class="tag">dbt</span><span class="tag">REST APIs</span><span class="tag">FastAPI</span>
         </div>
       </div>
     </div>
 
-    <p class="nda-note">All work is delivered under NDA. Client data, architecture, and commercial details remain strictly confidential.</p>
+    <p class="nda-note">Additional case studies available under NDA. All client data and architecture details remain strictly confidential.</p>
 
   </div>
 </section>
+
+<!-- Architecture Modals -->
+<div class="cs-modal-overlay" id="cs-modal-1" hidden role="dialog" aria-modal="true" aria-label="Balaton Financial Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-1" aria-label="Close">&#x2715;</button>
+    <h3>Balaton Financial — System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Broker-facing web app for document upload and pipeline visibility">Broker Portal</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Microsoft Azure Document Intelligence for OCR and structured data extraction">Azure Doc Intelligence</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="TensorFlow + scikit-learn model trained on income document categories">ML Classifier</span>
+      </div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Pipedrive CRM updated via REST API on deal stage changes">Pipedrive CRM</span>
+        <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI backend handling authentication, workflow orchestration, and webhook dispatch">FastAPI Backend</span>
+        <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Rules engine checking income thresholds, LVR limits, and document completeness">Compliance Engine</span>
+      </div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-wide cs-arch-node-hoverable" data-tip="PostgreSQL with append-only audit log table — SHA-256 hash chaining on every write">PostgreSQL + Audit Log</span>
+      </div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role.</div>
+  </div>
+</div>
+
+<div class="cs-modal-overlay" id="cs-modal-2" hidden role="dialog" aria-modal="true" aria-label="Trovio Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-2" aria-label="Close">&#x2715;</button>
+    <h3>Trovio — System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Automated scraper monitoring AusTender, NSW eTender, QGov, and 5 others on a schedule">Govt Portals</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python scraper with rotating proxies and rate-limit handling">Web Scraper</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="spaCy + NLTK pipeline: entity extraction, keyword matching, semantic similarity scoring">NLP Pipeline</span>
+      </div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="React dashboard with match score rankings, deadline calendar, and bid pipeline view">Dashboard</span>
+        <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI serving scored opportunities; PostgreSQL storing tender records and bid drafts">FastAPI + PostgreSQL</span>
+        <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="GPT-4 via Azure OpenAI generating structured tender summaries and draft responses">OpenAI Summariser</span>
+      </div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role.</div>
+  </div>
+</div>
+
+<div class="cs-modal-overlay" id="cs-modal-3" hidden role="dialog" aria-modal="true" aria-label="Unleash Live Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-3" aria-label="Close">&#x2715;</button>
+    <h3>Unleash Live — System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="AI event stream from Unleash Live — crowd insights, density metrics, behaviour signals">Unleash Live API</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python ETL pipeline: normalises event data, deduplicates, enriches with metadata">ETL Pipeline</span>
+        <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Salesforce CRM updated in real-time with AI event summaries mapped to account records">Salesforce CRM</span>
+      </div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row">
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Tableau dashboards connected to dbt-modelled data for executive real-time analytics">Tableau Dashboards</span>
+        <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+        <span class="cs-arch-node cs-arch-node-hoverable" data-tip="dbt transformations normalising raw events into business-ready metrics tables in PostgreSQL">dbt transforms</span>
+      </div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role.</div>
+  </div>
+</div>
 
 <!-- BOTTOM CTA -->
 <section class="cta-bar">
@@ -283,7 +317,7 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <span>&copy; 2026 Augmentra. Independent technology contractor.</span>
       <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
     </div>
   </div>

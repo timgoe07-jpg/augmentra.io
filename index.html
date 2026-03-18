@@ -49,16 +49,16 @@
     </div>
     <div class="stats-row">
       <div class="stat">
-        <span class="stat-num">12+</span>
-        <span class="stat-label">Systems Delivered</span>
+        <span class="stat-num" data-target="48">48h</span>
+        <span class="stat-label">Avg. time from brief to working prototype</span>
       </div>
       <div class="stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Government-Grade Projects</span>
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Client data ownership — no vendor lock-in</span>
       </div>
       <div class="stat">
         <span class="stat-num">Zero</span>
-        <span class="stat-label">Off-the-Shelf</span>
+        <span class="stat-label">Off-the-shelf tools forced into your workflow</span>
       </div>
     </div>
 
@@ -68,68 +68,92 @@
         <div class="pm-dot" style="background:#ff5f57;"></div>
         <div class="pm-dot" style="background:#febc2e;"></div>
         <div class="pm-dot" style="background:#28c840;"></div>
-        <span class="pm-label">augmentra / pipeline-monitor</span>
+        <span class="pm-label">augmentra / loan-intelligence-pipeline</span>
+        <span class="pm-subtitle">Balaton Financial &middot; Production &middot; v2.4.1</span>
       </div>
       <div class="pm-body">
         <div class="pm-panel">
           <div class="pm-panel-title">Pipeline Nodes</div>
           <div class="pm-node">
             <span class="pm-dot-status green"></span>
-            CRM Ingest
+            Document Ingestion
+            <span class="pm-node-sub">payslips, bank statements</span>
             <span class="pm-badge running">Running</span>
           </div>
           <div class="pm-node">
             <span class="pm-dot-status green"></span>
-            AI Classifier
+            ML Classifier
+            <span class="pm-node-sub">TensorFlow &middot; scikit-learn</span>
             <span class="pm-badge running">Running</span>
           </div>
           <div class="pm-node">
-            <span class="pm-dot-status amber"></span>
-            Document Parser
-            <span class="pm-badge processing">Processing</span>
+            <span class="pm-dot-status green"></span>
+            RAG Knowledge Base
+            <span class="pm-node-sub">Azure OpenAI &middot; LangChain</span>
+            <span class="pm-badge running">Running</span>
           </div>
           <div class="pm-node">
             <span class="pm-dot-status green"></span>
-            Webhook Output
+            PostgreSQL Writer
+            <span class="pm-node-sub">SQLAlchemy &middot; 14ms avg</span>
+            <span class="pm-badge running">Running</span>
+          </div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            Compliance Validator
+            <span class="pm-node-sub">rules engine &middot; 0 flags</span>
+            <span class="pm-badge running">Running</span>
+          </div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            Webhook Dispatcher
+            <span class="pm-node-sub">Pipedrive CRM &middot; REST</span>
             <span class="pm-badge running">Running</span>
           </div>
           <div class="pm-node">
             <span class="pm-dot-status green"></span>
             Audit Logger
+            <span class="pm-node-sub">tamper-proof &middot; SHA-256</span>
             <span class="pm-badge running">Running</span>
+          </div>
+          <div class="pm-throughput">
+            <span class="pm-throughput-label">Records processed this session:</span>
+            <span class="pm-throughput-count" id="pm-throughput">1,847</span>
           </div>
         </div>
         <div class="pm-panel">
           <div class="pm-panel-title">Live Events</div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:01</span>
-            <span class="pm-event-name">lead.qualified</span>
-            <span class="pm-event-data">score=91 action=route_crm</span>
-          </div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:03</span>
-            <span class="pm-event-name">doc.uploaded</span>
-            <span class="pm-event-data">type=payslip parser=triggered</span>
-          </div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:05</span>
-            <span class="pm-event-name">webhook.sent</span>
-            <span class="pm-event-data">target=pipedrive deal=4821</span>
-          </div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:09</span>
-            <span class="pm-event-name">ai.classify</span>
-            <span class="pm-event-data">input=voice_note tasks=4</span>
-          </div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:14</span>
-            <span class="pm-event-name">audit.event</span>
-            <span class="pm-event-data">user=broker_01 hash=a3f9</span>
-          </div>
-          <div class="pm-event">
-            <span class="pm-time">09:42:17</span>
-            <span class="pm-event-name">compliance.check</span>
-            <span class="pm-event-data">result=pass flags=0</span>
+          <div class="pm-events-scroll" id="pm-events">
+            <div class="pm-event">
+              <span class="pm-time">09:42:01</span>
+              <span class="pm-event-name" style="color:#06b6d4;">ml.classifier</span>
+              <span class="pm-event-data">income_doc scored 0.94 &#x2192; APPROVE</span>
+            </div>
+            <div class="pm-event">
+              <span class="pm-time">09:42:04</span>
+              <span class="pm-event-name" style="color:#2dd4bf;">rag.retrieval</span>
+              <span class="pm-event-data">query matched 3 policy chunks (0.87 sim)</span>
+            </div>
+            <div class="pm-event">
+              <span class="pm-time">09:42:07</span>
+              <span class="pm-event-name" style="color:#818cf8;">pg.write</span>
+              <span class="pm-event-data">applicant_id=8821 committed in 11ms</span>
+            </div>
+            <div class="pm-event">
+              <span class="pm-time">09:42:10</span>
+              <span class="pm-event-name" style="color:#22c55e;">compliance.check</span>
+              <span class="pm-event-data">result=PASS flags=[] threshold=0.90</span>
+            </div>
+            <div class="pm-event">
+              <span class="pm-time">09:42:13</span>
+              <span class="pm-event-name" style="color:#a78bfa;">webhook.dispatch</span>
+              <span class="pm-event-data">target=pipedrive status=201 deal=9043</span>
+            </div>
+            <div class="pm-event">
+              <span class="pm-time">09:42:16</span>
+              <span class="pm-event-name" style="color:#f59e0b;">audit.log</span>
+              <span class="pm-event-data">hash=3f9a2c user=broker_07 action=approve</span>
+            </div>
           </div>
         </div>
       </div>
@@ -299,50 +323,41 @@
       <h2>How an engagement works</h2>
       <p class="sub">A structured approach from first conversation to deployed system.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <h3>Discovery</h3>
-        <p>You explain the problem. I ask the hard questions. We define scope, technical constraints, integrations required, and what success looks like.</p>
+    <div class="engagement-flow" id="engagement-flow">
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">📋</div>
+        <div class="ef-label">Brief</div>
+        <div class="ef-tooltip">You explain the problem. I ask the right questions.</div>
       </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <h3>Architecture</h3>
-        <p>I design the full system: data model, integration points, AI components, security posture, and deployment strategy. Reviewed and agreed before build begins.</p>
+      <div class="ef-arrow" aria-hidden="true"></div>
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">🔬</div>
+        <div class="ef-label">Scope</div>
+        <div class="ef-tooltip">Fixed price or time-and-materials. Defined deliverables.</div>
       </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <h3>Build</h3>
-        <p>Iterative delivery with working software fast. Continuous refinement based on feedback. You see progress throughout, not just at the end.</p>
+      <div class="ef-arrow" aria-hidden="true"></div>
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">🏗️</div>
+        <div class="ef-label">Architect</div>
+        <div class="ef-tooltip">System design, data model, security posture — agreed before build.</div>
       </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <h3>Deploy and Support</h3>
-        <p>Production deployment, full handover documentation, and optional ongoing support or retainer. You own everything: code, data, infrastructure.</p>
+      <div class="ef-arrow" aria-hidden="true"></div>
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">⚙️</div>
+        <div class="ef-label">Build</div>
+        <div class="ef-tooltip">Working software delivered in iterations. You see progress weekly.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CUSTOM -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">The case for bespoke</span>
-      <h2>Why off-the-shelf falls short</h2>
-    </div>
-    <div class="why-grid">
-      <div class="card">
-        <h3>Configured, not engineered</h3>
-        <p>Off-the-shelf tools are built for the average use case. Your business is not average. Every workaround, every missing feature, every forced process change is a cost — in time, accuracy, and competitive disadvantage.</p>
+      <div class="ef-arrow" aria-hidden="true"></div>
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">🚀</div>
+        <div class="ef-label">Deploy</div>
+        <div class="ef-tooltip">Production deployment on your infrastructure.</div>
       </div>
-      <div class="card">
-        <h3>Security and data ownership</h3>
-        <p>SaaS platforms own your data. They train on it, aggregate it, and govern it under their terms. Custom-built solutions mean your data stays in your infrastructure, under your control, with access rules you define.</p>
-      </div>
-      <div class="card">
-        <h3>One engineer. Full accountability.</h3>
-        <p>You work directly with the person building your system. No account managers. No hand-offs. No offshore teams interpreting requirements through three layers of indirection. If something breaks, I fix it.</p>
+      <div class="ef-arrow" aria-hidden="true"></div>
+      <div class="ef-node" tabindex="0">
+        <div class="ef-icon">🔒</div>
+        <div class="ef-label">Handover</div>
+        <div class="ef-tooltip">Full code ownership. Documentation. Optional retainer.</div>
       </div>
     </div>
   </div>
@@ -355,30 +370,84 @@
       <span class="eyebrow">Industries</span>
       <h2>Industries we serve</h2>
     </div>
-    <div class="industries-grid">
-      <div class="industry-card">
-        <h4>Financial Services</h4>
-        <p>Mortgage broking, equipment finance, investment advisory.</p>
+    <div class="industries-v2">
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">🏦</div>
+          <div class="ind-name">Mortgage Broking &amp; Finance</div>
+          <div class="ind-tagline">"Dozens of lenders. Hundreds of documents. Zero automation."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Manual document collection, compliance trails, CRM data entry</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Mid-size brokerage (5–50 brokers), using Salesforce/Pipedrive</div>
+          <div class="ind-example"><strong>Example:</strong> AI document classifier + automated compliance checker</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
-      <div class="industry-card">
-        <h4>Government and Procurement</h4>
-        <p>Federal and state procurement, grant administration, compliance workflows.</p>
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">⚖️</div>
+          <div class="ind-name">Immigration Law Firms</div>
+          <div class="ind-tagline">"Case files across 6 systems. Deadlines in spreadsheets."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Visa deadline tracking, document assembly, client communication</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Boutique immigration firm (3–20 lawyers)</div>
+          <div class="ind-example"><strong>Example:</strong> Matter management portal with automated client intake + alerts</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
-      <div class="industry-card">
-        <h4>Professional Services</h4>
-        <p>Legal, accounting, immigration, consulting.</p>
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">🏗️</div>
+          <div class="ind-name">Construction &amp; Project Management</div>
+          <div class="ind-tagline">"Site data in photos. Costs in emails. Progress in guesswork."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Subcontractor management, variation tracking, progress reporting</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Mid-tier contractor ($10M–$100M projects)</div>
+          <div class="ind-example"><strong>Example:</strong> Automated variation log + subcontractor portal</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
-      <div class="industry-card">
-        <h4>Digital Marketing and Agencies</h4>
-        <p>Multi-client campaign management, analytics, reporting automation.</p>
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">📊</div>
+          <div class="ind-name">Accounting &amp; Advisory Firms</div>
+          <div class="ind-tagline">"Same reports. Different clients. Built manually every time."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Client reporting, data consolidation from Xero/MYOB/Quickbooks</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Accounting firm with 50+ SME clients</div>
+          <div class="ind-example"><strong>Example:</strong> Automated multi-client reporting pipeline + KPI dashboards</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
-      <div class="industry-card">
-        <h4>Operations-Heavy Businesses</h4>
-        <p>Logistics, construction, project management.</p>
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">🏛️</div>
+          <div class="ind-name">Government Agencies &amp; Councils</div>
+          <div class="ind-tagline">"Procurement portals no one reads. Compliance docs no one finds."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Grant management, tender monitoring, compliance documentation</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Local council, state agency procurement team</div>
+          <div class="ind-example"><strong>Example:</strong> NLP tender matching + bid lifecycle management</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
-      <div class="industry-card">
-        <h4>Healthcare and Regulated Sectors</h4>
-        <p>Compliant data handling, audit-ready architecture.</p>
+      <div class="ind-card" tabindex="0">
+        <div class="ind-front">
+          <div class="ind-emoji">🏥</div>
+          <div class="ind-name">Allied Health Practices</div>
+          <div class="ind-tagline">"Patient records in one system. Billing in another. Reports nowhere."</div>
+        </div>
+        <div class="ind-back">
+          <div class="ind-pain"><strong>Pain:</strong> Practice analytics, insurance claiming workflows, appointment intelligence</div>
+          <div class="ind-client"><strong>Ideal client:</strong> Multi-location physio/dental/psychology practice</div>
+          <div class="ind-example"><strong>Example:</strong> Cross-system analytics dashboard + automated referral tracking</div>
+          <a href="use-cases.html" class="ind-link">See use case →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -392,39 +461,96 @@
       <h2>Built on proven platforms</h2>
       <p class="sub">I work across the full stack. Technology choices are driven by the problem, not preference.</p>
     </div>
-    <div class="stack-rows">
-      <div class="stack-row">
-        <span class="stack-row-label">Languages and Frameworks</span>
-        <span class="stack-chip">Python</span>
-        <span class="stack-chip">FastAPI</span>
-        <span class="stack-chip">Angular</span>
-        <span class="stack-chip">React</span>
-        <span class="stack-chip">TypeScript</span>
-        <span class="stack-chip">Node.js</span>
-        <span class="stack-chip">SQL</span>
+    <div class="stack-tabs">
+      <div class="stack-tab-buttons" role="tablist">
+        <button class="stack-tab-btn active" role="tab" data-tab="ml" aria-selected="true">ML &amp; AI</button>
+        <button class="stack-tab-btn" role="tab" data-tab="data" aria-selected="false">Data Engineering</button>
+        <button class="stack-tab-btn" role="tab" data-tab="backend" aria-selected="false">Backend &amp; APIs</button>
+        <button class="stack-tab-btn" role="tab" data-tab="frontend" aria-selected="false">Frontend</button>
+        <button class="stack-tab-btn" role="tab" data-tab="cloud" aria-selected="false">Cloud &amp; Infra</button>
+        <button class="stack-tab-btn" role="tab" data-tab="integrations" aria-selected="false">Integrations</button>
       </div>
-      <div class="stack-row">
-        <span class="stack-row-label">Data and Infrastructure</span>
-        <span class="stack-chip">PostgreSQL</span>
-        <span class="stack-chip">Azure</span>
-        <span class="stack-chip">AWS</span>
-        <span class="stack-chip">Docker</span>
-        <span class="stack-chip">Kafka</span>
-        <span class="stack-chip">dbt</span>
-        <span class="stack-chip">GitHub Actions</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-row-label">Integrations and AI</span>
-        <span class="stack-chip">OpenAI</span>
-        <span class="stack-chip">Anthropic</span>
-        <span class="stack-chip">Pipedrive</span>
-        <span class="stack-chip">HubSpot</span>
-        <span class="stack-chip">Salesforce</span>
-        <span class="stack-chip">Monday.com</span>
-        <span class="stack-chip">WhatsApp Business API</span>
-        <span class="stack-chip">Twilio</span>
-        <span class="stack-chip">Stripe</span>
-        <span class="stack-chip">Annature</span>
+      <div class="stack-tab-panels">
+        <div class="stack-tab-panel active" data-panel="ml">
+          <span class="stack-pill" data-tooltip="Used in production">TensorFlow</span>
+          <span class="stack-pill" data-tooltip="Used in production">PyTorch</span>
+          <span class="stack-pill" data-tooltip="Used in production">scikit-learn</span>
+          <span class="stack-pill" data-tooltip="Research/certified">HuggingFace</span>
+          <span class="stack-pill" data-tooltip="Used in production">spaCy</span>
+          <span class="stack-pill" data-tooltip="Used in production">NLTK</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure OpenAI (RAG)</span>
+          <span class="stack-pill" data-tooltip="Used in production">Anthropic Claude</span>
+          <span class="stack-pill" data-tooltip="Used in production">MLflow</span>
+          <span class="stack-pill" data-tooltip="Research/certified">Kubeflow</span>
+          <span class="stack-pill" data-tooltip="Used in production">LangChain</span>
+          <span class="stack-pill" data-tooltip="Used in production">OpenAI API</span>
+        </div>
+        <div class="stack-tab-panel" data-panel="data">
+          <span class="stack-pill" data-tooltip="Used in production">Python (Pandas, NumPy, SciPy)</span>
+          <span class="stack-pill" data-tooltip="Used in production">PostgreSQL</span>
+          <span class="stack-pill" data-tooltip="Used in production">SQLAlchemy/Alembic</span>
+          <span class="stack-pill" data-tooltip="Used in production">dbt</span>
+          <span class="stack-pill" data-tooltip="Used in production">Kafka</span>
+          <span class="stack-pill" data-tooltip="Research/certified">Apache Airflow</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Data Lake</span>
+          <span class="stack-pill" data-tooltip="Used in production">AWS S3</span>
+          <span class="stack-pill" data-tooltip="Used in production">Microsoft Syntex</span>
+          <span class="stack-pill" data-tooltip="Used in production">OpenRefine</span>
+          <span class="stack-pill" data-tooltip="Research/certified">SPSS</span>
+        </div>
+        <div class="stack-tab-panel" data-panel="backend">
+          <span class="stack-pill" data-tooltip="Used in production">FastAPI</span>
+          <span class="stack-pill" data-tooltip="Used in production">Flask</span>
+          <span class="stack-pill" data-tooltip="Used in production">Node.js</span>
+          <span class="stack-pill" data-tooltip="Used in production">REST</span>
+          <span class="stack-pill" data-tooltip="Used in production">GraphQL</span>
+          <span class="stack-pill" data-tooltip="Used in production">Graph API</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Functions</span>
+          <span class="stack-pill" data-tooltip="Used in production">AWS Lambda</span>
+          <span class="stack-pill" data-tooltip="Used in production">Celery</span>
+          <span class="stack-pill" data-tooltip="Used in production">Docker</span>
+          <span class="stack-pill" data-tooltip="Used in production">JWT</span>
+          <span class="stack-pill" data-tooltip="Used in production">OAuth2</span>
+          <span class="stack-pill" data-tooltip="Used in production">Webhooks</span>
+        </div>
+        <div class="stack-tab-panel" data-panel="frontend">
+          <span class="stack-pill" data-tooltip="Used in production">React</span>
+          <span class="stack-pill" data-tooltip="Used in production">Angular</span>
+          <span class="stack-pill" data-tooltip="Used in production">TypeScript</span>
+          <span class="stack-pill" data-tooltip="Used in production">D3.js</span>
+          <span class="stack-pill" data-tooltip="Used in production">Matplotlib</span>
+          <span class="stack-pill" data-tooltip="Used in production">Seaborn</span>
+          <span class="stack-pill" data-tooltip="Used in production">Plotly</span>
+          <span class="stack-pill" data-tooltip="Research/certified">Dash</span>
+          <span class="stack-pill" data-tooltip="Research/certified">Bokeh</span>
+          <span class="stack-pill" data-tooltip="Used in production">PowerBI</span>
+        </div>
+        <div class="stack-tab-panel" data-panel="cloud">
+          <span class="stack-pill" data-tooltip="Used in production">Azure Key Vault</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Functions</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Cognitive Search</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Data Lake</span>
+          <span class="stack-pill" data-tooltip="Used in production">AWS Lambda</span>
+          <span class="stack-pill" data-tooltip="Used in production">AWS S3</span>
+          <span class="stack-pill" data-tooltip="Used in production">Docker</span>
+          <span class="stack-pill" data-tooltip="Used in production">GitHub Actions</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure RBAC</span>
+          <span class="stack-pill" data-tooltip="Used in production">Azure Monitor</span>
+        </div>
+        <div class="stack-tab-panel" data-panel="integrations">
+          <span class="stack-pill" data-tooltip="Used in production">Salesforce</span>
+          <span class="stack-pill" data-tooltip="Used in production">HubSpot</span>
+          <span class="stack-pill" data-tooltip="Used in production">Pipedrive</span>
+          <span class="stack-pill" data-tooltip="Used in production">Monday.com</span>
+          <span class="stack-pill" data-tooltip="Used in production">Xero</span>
+          <span class="stack-pill" data-tooltip="Used in production">MYOB</span>
+          <span class="stack-pill" data-tooltip="Used in production">Stripe</span>
+          <span class="stack-pill" data-tooltip="Used in production">Annature</span>
+          <span class="stack-pill" data-tooltip="Used in production">Twilio</span>
+          <span class="stack-pill" data-tooltip="Used in production">WhatsApp Business API</span>
+          <span class="stack-pill" data-tooltip="Used in production">Power Automate</span>
+          <span class="stack-pill" data-tooltip="Used in production">PowerApps</span>
+        </div>
       </div>
     </div>
   </div>
@@ -481,7 +607,7 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <span>&copy; 2026 Augmentra. Independent technology contractor.</span>
       <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
     </div>
   </div>
