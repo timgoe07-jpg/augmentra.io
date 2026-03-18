@@ -3,450 +3,490 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Augmentra — Custom-Built Intelligence for Your Business</title>
-  <meta name="description" content="Independent technology contractor building custom AI systems, data pipelines, integrations, and applications for businesses of any size." />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Augmentra — Custom-built intelligence for your business.</title>
+  <meta name="description" content="Independent technology contractor building custom AI, data pipelines, and software integrations. Every system engineered precisely for your problem." />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="dot-bg">
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
-      <ul class="nav-links">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="security.html">Security</a></li>
-      </ul>
-      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile" id="nav-mobile">
       <a href="services.html">Services</a>
       <a href="use-cases.html">Use Cases</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="security.html">Security</a>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Independent Technology Contractor</div>
+    <h1>Custom-built intelligence<br>for your business.</h1>
+    <p class="sub">From AI pipelines to full-stack applications — every system I deliver is engineered precisely for your problem, your data, and your workflow.</p>
+    <div class="hero-ctas">
       <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+      <a href="case-studies.html" class="btn btn-outline">See Client Work</a>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="grid-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">Independent Technology Contractor</div>
-        <h1>Custom-built intelligence<br>for your business.</h1>
-        <p class="hero-sub">From AI pipelines to full-stack applications — every system delivered is engineered precisely for your problem, your data, and your workflow. No off-the-shelf compromises.</p>
-        <div class="hero-ctas">
-          <a href="quote.html" class="btn btn-primary btn-lg">Get a Quote</a>
-          <a href="case-studies.html" class="btn btn-outline btn-lg">See Our Work</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num" data-target="12" data-suffix="+">0</span>
-            <span class="stat-label">Systems delivered</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="3">0</span>
-            <span class="stat-label">Government-grade projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="0">0</span>
-            <span class="stat-label">Off-the-shelf solutions</span>
-          </div>
-        </div>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Systems Delivered</span>
       </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Government-Grade Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Zero</span>
+        <span class="stat-label">Off-the-Shelf</span>
+      </div>
+    </div>
 
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span class="t-dot r"></span>
-          <span class="t-dot y"></span>
-          <span class="t-dot g"></span>
-          <span class="terminal-label">augmentra / pipeline-monitor</span>
-        </div>
-        <div class="terminal-body">
-          <div class="terminal-panel">
-            <div class="terminal-panel-title">Pipeline Nodes</div>
-            <div class="pipeline-node">
-              <span class="node-dot green"></span>
-              <span class="node-name">CRM Ingest</span>
-              <span class="node-badge badge-running">Running</span>
-            </div>
-            <div class="pipeline-node">
-              <span class="node-dot green"></span>
-              <span class="node-name">AI Classifier</span>
-              <span class="node-badge badge-running">Running</span>
-            </div>
-            <div class="pipeline-node">
-              <span class="node-dot amber"></span>
-              <span class="node-name">Document Parser</span>
-              <span class="node-badge badge-processing">Processing</span>
-            </div>
-            <div class="pipeline-node">
-              <span class="node-dot green"></span>
-              <span class="node-name">Webhook Output</span>
-              <span class="node-badge badge-running">Running</span>
-            </div>
-            <div class="pipeline-node">
-              <span class="node-dot green"></span>
-              <span class="node-name">Audit Logger</span>
-              <span class="node-badge badge-running">Running</span>
-            </div>
+    <!-- Pipeline Monitor Mock UI -->
+    <div class="pipeline-monitor">
+      <div class="pm-titlebar">
+        <div class="pm-dot" style="background:#ff5f57;"></div>
+        <div class="pm-dot" style="background:#febc2e;"></div>
+        <div class="pm-dot" style="background:#28c840;"></div>
+        <span class="pm-label">augmentra / pipeline-monitor</span>
+      </div>
+      <div class="pm-body">
+        <div class="pm-panel">
+          <div class="pm-panel-title">Pipeline Nodes</div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            CRM Ingest
+            <span class="pm-badge running">Running</span>
           </div>
-          <div class="terminal-panel">
-            <div class="terminal-panel-title">Live Events</div>
-            <div class="event-log">
-              <div class="event-line">
-                <span class="ev-time">09:42:01</span>
-                <span class="ev-event">lead.qualified</span>
-                <span class="ev-detail">score=91 action=route_crm</span>
-              </div>
-              <div class="event-line">
-                <span class="ev-time">09:42:03</span>
-                <span class="ev-event">doc.uploaded</span>
-                <span class="ev-detail">type=payslip parser=triggered</span>
-              </div>
-              <div class="event-line">
-                <span class="ev-time">09:42:05</span>
-                <span class="ev-event">webhook.sent</span>
-                <span class="ev-detail">target=pipedrive deal=4821</span>
-              </div>
-              <div class="event-line">
-                <span class="ev-time">09:42:09</span>
-                <span class="ev-event">ai.classify</span>
-                <span class="ev-detail">input=voice_note tasks=4</span>
-              </div>
-              <div class="event-line">
-                <span class="ev-time">09:42:14</span>
-                <span class="ev-event">audit.event</span>
-                <span class="ev-detail">user=broker_01 hash=a3f9</span>
-              </div>
-              <div class="event-line">
-                <span class="ev-time">09:42:17</span>
-                <span class="ev-event">compliance.check</span>
-                <span class="ev-detail">result=pass flags=0</span>
-              </div>
-            </div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            AI Classifier
+            <span class="pm-badge running">Running</span>
+          </div>
+          <div class="pm-node">
+            <span class="pm-dot-status amber"></span>
+            Document Parser
+            <span class="pm-badge processing">Processing</span>
+          </div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            Webhook Output
+            <span class="pm-badge running">Running</span>
+          </div>
+          <div class="pm-node">
+            <span class="pm-dot-status green"></span>
+            Audit Logger
+            <span class="pm-badge running">Running</span>
+          </div>
+        </div>
+        <div class="pm-panel">
+          <div class="pm-panel-title">Live Events</div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:01</span>
+            <span class="pm-event-name">lead.qualified</span>
+            <span class="pm-event-data">score=91 action=route_crm</span>
+          </div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:03</span>
+            <span class="pm-event-name">doc.uploaded</span>
+            <span class="pm-event-data">type=payslip parser=triggered</span>
+          </div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:05</span>
+            <span class="pm-event-name">webhook.sent</span>
+            <span class="pm-event-data">target=pipedrive deal=4821</span>
+          </div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:09</span>
+            <span class="pm-event-name">ai.classify</span>
+            <span class="pm-event-data">input=voice_note tasks=4</span>
+          </div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:14</span>
+            <span class="pm-event-name">audit.event</span>
+            <span class="pm-event-data">user=broker_01 hash=a3f9</span>
+          </div>
+          <div class="pm-event">
+            <span class="pm-time">09:42:17</span>
+            <span class="pm-event-name">compliance.check</span>
+            <span class="pm-event-data">result=pass flags=0</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHAT WE BUILD -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Services</div>
-        <h2>What we build</h2>
-        <p>Every engagement is scoped to your exact requirements. These are the disciplines we work across.</p>
-      </div>
-      <div class="services-grid">
-        <div class="card service-card">
-          <div class="card-num">01</div>
-          <h3>Custom AI &amp; Machine Learning</h3>
-          <p>Intelligent systems built into your existing workflows. Scoring, classification, prediction, and recommendation engines trained on your data.</p>
-          <ul>
-            <li>Scoring and classification models</li>
-            <li>RAG knowledge base systems</li>
-            <li>Voice and document intelligence pipelines</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">FastAPI</span></div>
+<!-- WHAT WE BUILD -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Services</span>
+      <h2>What we build</h2>
+      <p class="sub">Every engagement is scoped to your exact requirements. These are the disciplines we work across.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <h3>Custom AI and Machine Learning</h3>
+        <p>Intelligent systems built into your existing workflows — not bolted on. Lead scoring, document classification, prediction models, and recommendation engines trained on your data.</p>
+        <div class="service-deliverables">
+          <p>Scoring and classification models</p>
+          <p>RAG knowledge base systems</p>
+          <p>Voice and document intelligence pipelines</p>
         </div>
-        <div class="card service-card">
-          <div class="card-num">02</div>
-          <h3>Data Engineering &amp; Pipelines</h3>
-          <p>End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery.</p>
-          <ul>
-            <li>ETL/ELT pipeline design and build</li>
-            <li>Real-time event streaming architectures</li>
-            <li>Data warehouse and schema design</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">dbt</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">03</div>
-          <h3>Business Intelligence &amp; Dashboards</h3>
-          <p>Custom reporting and visibility tools built on your actual data. Operational dashboards, executive KPI views, and drill-down analytics.</p>
-          <ul>
-            <li>Operational and executive dashboards</li>
-            <li>Automated scheduled reporting</li>
-            <li>Anomaly detection and alerting</li>
-          </ul>
-          <div class="tags"><span class="tag">Angular</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">dbt</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">04</div>
-          <h3>Application Development</h3>
-          <p>Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up.</p>
-          <ul>
-            <li>Full-stack web and internal applications</li>
-            <li>Client-facing portals and intake systems</li>
-            <li>Mobile-responsive interfaces</li>
-          </ul>
-          <div class="tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">TypeScript</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">05</div>
-          <h3>System Integrations &amp; APIs</h3>
-          <p>Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases.</p>
-          <ul>
-            <li>REST and GraphQL API development</li>
-            <li>CRM and ERP deep integrations</li>
-            <li>Legacy system connectivity</li>
-          </ul>
-          <div class="tags"><span class="tag">REST</span><span class="tag">Webhooks</span><span class="tag">Pipedrive</span><span class="tag">HubSpot</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">06</div>
-          <h3>Automation &amp; Workflow Orchestration</h3>
-          <p>Intelligent process automation that eliminates manual steps and accelerates throughput. Document handling, approval flows, and event-driven triggers.</p>
-          <ul>
-            <li>Automated document collection and routing</li>
-            <li>Multi-step approval workflows</li>
-            <li>Event-driven notification systems</li>
-          </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Celery</span><span class="tag">Azure Functions</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">07</div>
-          <h3>Security-First Data Architecture</h3>
-          <p>Security and privacy built into the architecture from day one. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments.</p>
-          <ul>
-            <li>Field-level encryption and key management</li>
-            <li>Role-based access control (RBAC)</li>
-            <li>Tamper-proof audit logging</li>
-          </ul>
-          <div class="tags"><span class="tag">Azure Key Vault</span><span class="tag">RBAC</span><span class="tag">JWT</span></div>
-        </div>
-        <div class="card service-card">
-          <div class="card-num">08</div>
-          <h3>Government &amp; Regulated Industry</h3>
-          <p>Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments.</p>
-          <ul>
-            <li>Compliance workflow and checklist systems</li>
-            <li>Structured submission management</li>
-            <li>Government API integrations</li>
-          </ul>
-          <div class="tags"><span class="tag">Compliance</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span></div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">Anthropic</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Azure</span>
         </div>
       </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a href="services.html" class="btn btn-outline">View all services</a>
+
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <h3>Data Engineering and Pipelines</h3>
+        <p>End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery, built to your throughput requirements.</p>
+        <div class="service-deliverables">
+          <p>ETL/ELT pipeline design and implementation</p>
+          <p>Real-time event streaming architectures</p>
+          <p>Data warehouse and schema design</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Azure</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <h3>Business Intelligence and Dashboards</h3>
+        <p>Custom reporting and visibility tools built on your actual data — not generic templates. Operational dashboards, executive KPI views, and drill-down analytics.</p>
+        <div class="service-deliverables">
+          <p>Operational and executive dashboards</p>
+          <p>Automated scheduled reporting</p>
+          <p>Anomaly detection and alerting</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">dbt</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <h3>Application Development</h3>
+        <p>Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up.</p>
+        <div class="service-deliverables">
+          <p>Full-stack web and internal applications</p>
+          <p>Client-facing portals and intake systems</p>
+          <p>Mobile-responsive interfaces</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">React</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <h3>System Integrations and APIs</h3>
+        <p>Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases. Bidirectional sync, webhook handling, and real-time data exchange.</p>
+        <div class="service-deliverables">
+          <p>REST and GraphQL API development</p>
+          <p>CRM and ERP deep integrations</p>
+          <p>Legacy system connectivity</p>
+        </div>
+        <div class="tags">
+          <span class="tag">REST</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">Pipedrive</span>
+          <span class="tag">HubSpot</span>
+          <span class="tag">Salesforce</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <h3>Automation and Workflow Orchestration</h3>
+        <p>Intelligent process automation that eliminates manual steps, reduces error, and accelerates throughput. Document handling, approval flows, notifications, and event-driven triggers.</p>
+        <div class="service-deliverables">
+          <p>Automated document collection and routing</p>
+          <p>Multi-step approval workflows</p>
+          <p>Event-driven notification systems</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Celery</span>
+          <span class="tag">Azure Functions</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">07</span>
+        <h3>Security-First Data Architecture</h3>
+        <p>Security and privacy built into the architecture from day one. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments.</p>
+        <div class="service-deliverables">
+          <p>Field-level encryption and key management</p>
+          <p>Role-based access control (RBAC)</p>
+          <p>Tamper-proof audit logging</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Azure Key Vault</span>
+          <span class="tag">RBAC</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">08</span>
+        <h3>Government and Regulated Industry</h3>
+        <p>Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments.</p>
+        <div class="service-deliverables">
+          <p>Compliance workflow and checklist systems</p>
+          <p>Structured submission and audit trail management</p>
+          <p>Government API integrations</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Government APIs</span>
+          <span class="tag">Compliance</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Azure</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Process</span>
+      <h2>How an engagement works</h2>
+      <p class="sub">A structured approach from first conversation to deployed system.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Discovery</h3>
+        <p>You explain the problem. I ask the hard questions. We define scope, technical constraints, integrations required, and what success looks like.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Architecture</h3>
+        <p>I design the full system: data model, integration points, AI components, security posture, and deployment strategy. Reviewed and agreed before build begins.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Build</h3>
+        <p>Iterative delivery with working software fast. Continuous refinement based on feedback. You see progress throughout, not just at the end.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h3>Deploy and Support</h3>
+        <p>Production deployment, full handover documentation, and optional ongoing support or retainer. You own everything: code, data, infrastructure.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HOW WE WORK -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header center">
-        <div class="eyebrow">Process</div>
-        <h2>How an engagement works</h2>
-        <p>A structured approach from first conversation to deployed system.</p>
+<!-- WHY CUSTOM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">The case for bespoke</span>
+      <h2>Why off-the-shelf falls short</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card">
+        <h3>Configured, not engineered</h3>
+        <p>Off-the-shelf tools are built for the average use case. Your business is not average. Every workaround, every missing feature, every forced process change is a cost — in time, accuracy, and competitive disadvantage.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h3>Discovery</h3>
-          <p>You explain the problem. I ask the hard questions. We define scope, technical constraints, integrations required, and what success looks like.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h3>Architecture</h3>
-          <p>I design the full system: data model, integration points, AI components, security posture, and deployment strategy. Reviewed and agreed before build begins.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h3>Build</h3>
-          <p>Iterative delivery with working software fast. Continuous refinement based on feedback. You see progress throughout, not just at the end.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <h3>Deploy &amp; Support</h3>
-          <p>Production deployment, full handover documentation, and optional ongoing support. You own everything: code, data, infrastructure.</p>
-        </div>
+      <div class="card">
+        <h3>Security and data ownership</h3>
+        <p>SaaS platforms own your data. They train on it, aggregate it, and govern it under their terms. Custom-built solutions mean your data stays in your infrastructure, under your control, with access rules you define.</p>
+      </div>
+      <div class="card">
+        <h3>One engineer. Full accountability.</h3>
+        <p>You work directly with the person building your system. No account managers. No hand-offs. No offshore teams interpreting requirements through three layers of indirection. If something breaks, I fix it.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHY CUSTOM -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">The case for bespoke</div>
-        <h2>Why off-the-shelf falls short</h2>
+<!-- INDUSTRIES -->
+<section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Industries</span>
+      <h2>Industries we serve</h2>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card">
+        <h4>Financial Services</h4>
+        <p>Mortgage broking, equipment finance, investment advisory.</p>
       </div>
-      <div class="why-grid">
-        <div class="card why-card">
-          <h3>Configured, not engineered</h3>
-          <p>Off-the-shelf tools are built for the average use case. Your business is not average. Every workaround, every missing feature, every forced process change is a cost — in time, accuracy, and competitive advantage.</p>
-        </div>
-        <div class="card why-card">
-          <h3>Security and data ownership</h3>
-          <p>SaaS platforms own your data. They train on it, aggregate it, and govern it under their terms. Custom-built solutions mean your data stays in your infrastructure, under your control, with access rules you define.</p>
-        </div>
-        <div class="card why-card">
-          <h3>One engineer. Full accountability.</h3>
-          <p>You work directly with the person building your system. No account managers. No hand-offs. No offshore teams interpreting requirements through three layers of indirection. If something breaks, I fix it.</p>
-        </div>
+      <div class="industry-card">
+        <h4>Government and Procurement</h4>
+        <p>Federal and state procurement, grant administration, compliance workflows.</p>
+      </div>
+      <div class="industry-card">
+        <h4>Professional Services</h4>
+        <p>Legal, accounting, immigration, consulting.</p>
+      </div>
+      <div class="industry-card">
+        <h4>Digital Marketing and Agencies</h4>
+        <p>Multi-client campaign management, analytics, reporting automation.</p>
+      </div>
+      <div class="industry-card">
+        <h4>Operations-Heavy Businesses</h4>
+        <p>Logistics, construction, project management.</p>
+      </div>
+      <div class="industry-card">
+        <h4>Healthcare and Regulated Sectors</h4>
+        <p>Compliant data handling, audit-ready architecture.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INDUSTRIES -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Industries</div>
-        <h2>Industries we serve</h2>
+<!-- TECH STACK -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Technologies</span>
+      <h2>Built on proven platforms</h2>
+      <p class="sub">I work across the full stack. Technology choices are driven by the problem, not preference.</p>
+    </div>
+    <div class="stack-rows">
+      <div class="stack-row">
+        <span class="stack-row-label">Languages and Frameworks</span>
+        <span class="stack-chip">Python</span>
+        <span class="stack-chip">FastAPI</span>
+        <span class="stack-chip">Angular</span>
+        <span class="stack-chip">React</span>
+        <span class="stack-chip">TypeScript</span>
+        <span class="stack-chip">Node.js</span>
+        <span class="stack-chip">SQL</span>
       </div>
-      <div class="industries-grid">
-        <div class="industry-card">
-          <h4>Financial Services</h4>
-          <p>Mortgage broking, equipment finance, investment advisory</p>
-        </div>
-        <div class="industry-card">
-          <h4>Government &amp; Procurement</h4>
-          <p>Federal and state procurement, grant administration, compliance workflows</p>
-        </div>
-        <div class="industry-card">
-          <h4>Professional Services</h4>
-          <p>Legal, accounting, immigration, consulting</p>
-        </div>
-        <div class="industry-card">
-          <h4>Digital Marketing &amp; Agencies</h4>
-          <p>Multi-client campaign management, analytics, reporting automation</p>
-        </div>
-        <div class="industry-card">
-          <h4>Operations-Heavy Businesses</h4>
-          <p>Logistics, construction, project management</p>
-        </div>
-        <div class="industry-card">
-          <h4>Healthcare &amp; Regulated Sectors</h4>
-          <p>Compliant data handling, audit-ready architecture</p>
-        </div>
+      <div class="stack-row">
+        <span class="stack-row-label">Data and Infrastructure</span>
+        <span class="stack-chip">PostgreSQL</span>
+        <span class="stack-chip">Azure</span>
+        <span class="stack-chip">AWS</span>
+        <span class="stack-chip">Docker</span>
+        <span class="stack-chip">Kafka</span>
+        <span class="stack-chip">dbt</span>
+        <span class="stack-chip">GitHub Actions</span>
+      </div>
+      <div class="stack-row">
+        <span class="stack-row-label">Integrations and AI</span>
+        <span class="stack-chip">OpenAI</span>
+        <span class="stack-chip">Anthropic</span>
+        <span class="stack-chip">Pipedrive</span>
+        <span class="stack-chip">HubSpot</span>
+        <span class="stack-chip">Salesforce</span>
+        <span class="stack-chip">Monday.com</span>
+        <span class="stack-chip">WhatsApp Business API</span>
+        <span class="stack-chip">Twilio</span>
+        <span class="stack-chip">Stripe</span>
+        <span class="stack-chip">Annature</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TECH STACK -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Technologies</div>
-        <h2>Built on proven platforms</h2>
-        <p>Technology choices are driven by the problem, not preference.</p>
+<!-- CASE STUDY TEASERS -->
+<section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Client Work</span>
+      <h2>Recent engagements</h2>
+    </div>
+    <div class="teaser-grid">
+      <div class="teaser-card">
+        <span class="teaser-pill">Financial Services</span>
+        <h3>AI-powered mortgage operations platform</h3>
+        <p>Replaced a spreadsheet-and-email workflow with a full-stack AI operations layer. Automated document collection, pipeline intelligence, and compliance audit trails.</p>
+        <a href="case-studies.html" class="teaser-link">Read the full case study &rarr;</a>
       </div>
-      <div class="stack-group">
-        <div class="stack-label">Languages &amp; Frameworks</div>
-        <div class="stack-chips">
-          <span class="stack-chip">Python</span>
-          <span class="stack-chip">FastAPI</span>
-          <span class="stack-chip">Angular</span>
-          <span class="stack-chip">React</span>
-          <span class="stack-chip">TypeScript</span>
-          <span class="stack-chip">Node.js</span>
-          <span class="stack-chip">SQL</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="stack-label">Data &amp; Infrastructure</div>
-        <div class="stack-chips">
-          <span class="stack-chip">PostgreSQL</span>
-          <span class="stack-chip">Azure</span>
-          <span class="stack-chip">AWS</span>
-          <span class="stack-chip">Docker</span>
-          <span class="stack-chip">Kafka</span>
-          <span class="stack-chip">dbt</span>
-          <span class="stack-chip">GitHub Actions</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="stack-label">Integrations &amp; AI</div>
-        <div class="stack-chips">
-          <span class="stack-chip">OpenAI</span>
-          <span class="stack-chip">Anthropic</span>
-          <span class="stack-chip">Pipedrive</span>
-          <span class="stack-chip">HubSpot</span>
-          <span class="stack-chip">Salesforce</span>
-          <span class="stack-chip">Monday.com</span>
-          <span class="stack-chip">WhatsApp Business API</span>
-          <span class="stack-chip">Twilio</span>
-          <span class="stack-chip">Stripe</span>
-          <span class="stack-chip">Annature</span>
-        </div>
+      <div class="teaser-card">
+        <span class="teaser-pill">Government Technology</span>
+        <h3>Government tender intelligence application</h3>
+        <p>Custom system to monitor procurement portals, match opportunities against capability profiles using NLP, and manage the bid lifecycle.</p>
+        <a href="case-studies.html" class="teaser-link">Read the full case study &rarr;</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CASE STUDY TEASERS -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Client Work</div>
-        <h2>Recent engagements</h2>
-        <p>Purpose-built systems that replaced manual processes with intelligent, reliable infrastructure.</p>
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <div class="container">
+    <h2>Every solution we build is yours.</h2>
+    <p class="sub">No vendor lock-in. No subscription. No shared infrastructure. Purpose-built systems that you own outright.</p>
+    <a href="quote.html" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
       </div>
-      <div class="teasers-grid">
-        <div class="card teaser-card">
-          <span class="pill">Financial Services</span>
-          <h3>AI-powered mortgage operations platform</h3>
-          <p>Replaced a spreadsheet-and-email workflow with a full-stack AI operations layer. Automated document collection, pipeline intelligence, and compliance audit trails.</p>
-          <a href="case-studies.html#breathloans" class="teaser-link">Read the case study &rarr;</a>
-        </div>
-        <div class="card teaser-card">
-          <span class="pill pill-green">Government Technology</span>
-          <h3>Government tender intelligence application</h3>
-          <p>Custom system to monitor procurement portals, match opportunities against capability profiles using NLP, and manage the full bid lifecycle end to end.</p>
-          <a href="case-studies.html#trovio" class="teaser-link">Read the case study &rarr;</a>
-        </div>
-      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
     </div>
-  </section>
-
-  <!-- CTA BAR -->
-  <section class="cta-bar">
-    <div class="container">
-      <h2>Every solution we build is yours.</h2>
-      <p>No vendor lock-in. No subscription. No shared infrastructure. Purpose-built systems that you own outright.</p>
-      <a href="quote.html" class="btn btn-primary btn-lg">Start a Conversation</a>
+    <div class="footer-bottom">
+      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo">AUGMEN<span>TRA</span></div>
-          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
-          <p class="nda-note">All work delivered under NDA as standard.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="security.html">Security</a>
-          <a href="quote.html">Get a Quote</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
-        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
-      </div>
-    </div>
-  </footer>
-
+<script src="main.js"></script>
 </body>
 </html>

@@ -4,198 +4,291 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Studies — Augmentra</title>
-  <meta name="description" content="Client work: BreathLoans, Trovio, and Unleash Live. Three purpose-built systems across financial services, government technology, and digital marketing." />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Three detailed case studies: AI mortgage operations platform, government tender intelligence, and digital marketing analytics. Purpose-built systems in production." />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="dot-bg">
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
-      <ul class="nav-links">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-        <li><a href="case-studies.html" class="active">Case Studies</a></li>
-        <li><a href="security.html">Security</a></li>
-      </ul>
-      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile" id="nav-mobile">
       <a href="services.html">Services</a>
       <a href="use-cases.html">Use Cases</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="security.html">Security</a>
-      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="grid-bg"></div>
-    <div class="container page-hero-content">
-      <div class="eyebrow">Client Work</div>
-      <h1>Case Studies</h1>
-      <p>Three engagements. Three industries. Purpose-built systems that replaced manual processes with intelligent, reliable infrastructure.</p>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
     </div>
   </div>
+</nav>
 
-  <section class="section">
-    <div class="container">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Client Work</span>
+    <h1>Case Studies</h1>
+    <p class="sub">Three engagements. Three industries. Purpose-built systems that replaced manual processes with intelligent, reliable infrastructure.</p>
+  </div>
+</section>
 
-      <!-- BreathLoans -->
-      <div class="case-study" id="breathloans">
-        <div class="cs-header">
-          <span class="pill">Financial Services</span>
-          <h2>BreathLoans — AI-Assisted Mortgage Operations Platform</h2>
-          <p>The operations team was managing their entire mortgage pipeline through spreadsheets and manual email follow-ups, with no visibility into deal status, document completeness, or compliance readiness. The system replaced this entirely with an intelligent, automated operations layer.</p>
-        </div>
-        <div class="cs-grid">
-          <div class="cs-col">
-            <h4>What Was Built</h4>
-            <ul class="cs-list">
-              <li>Multi-agent AI orchestration system — automated lead qualification, deal digest extraction, document collection, and customer service responses</li>
-              <li>AI-powered lead scoring engine — each new enquiry scored on urgency, income type, loan size, and contact completeness, with automatic routing based on score</li>
-              <li>Automated document collection with client-facing portal — system tracks required documents per deal scenario, sends personalised follow-up messages for missing items, and updates the pipeline on receipt</li>
-              <li>Real-time pipeline intelligence dashboard — broker-facing view of all active deals, document completeness, and AI-generated health status per case</li>
-              <li>Client communication hub — WhatsApp Business API integration for all client messaging, with voice note ingestion and AI-generated structured deal briefs</li>
-              <li>Compliance audit trail — full event log across all client interactions, document submissions, and broker actions</li>
-              <li>Post-settlement portfolio module — fixed rate expiry alerts, repricing competitor tracking, and valuation history</li>
-              <li>Role-based access control — differentiated broker, admin, and management access levels</li>
-              <li>Integrations: Pipedrive CRM, Monday.com, Annature e-signatures, Azure Blob Storage</li>
-            </ul>
-            <div class="tags" style="margin-top:20px;">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Angular</span><span class="tag">Azure</span>
-              <span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">WhatsApp API</span>
-              <span class="tag">Pipedrive</span><span class="tag">Annature</span><span class="tag">JWT Auth</span>
-            </div>
-          </div>
-          <div class="cs-col">
-            <h4>Outcomes</h4>
-            <div class="cs-outcomes">
-              <div class="cs-outcome-item">Eliminated manual document chasing — automated follow-ups replaced hours of weekly email triage</div>
-              <div class="cs-outcome-item">Real-time pipeline visibility replaced spreadsheets across the brokerage</div>
-              <div class="cs-outcome-item">Compliance-ready audit logging across all client interactions</div>
-              <div class="cs-outcome-item">Brokers able to process more deals without additional headcount</div>
-            </div>
-          </div>
-        </div>
+<!-- CASE STUDIES -->
+<section class="section">
+  <div class="container">
+
+    <!-- CASE STUDY 1: BreathLoans -->
+    <div class="case-study">
+      <div class="cs-header">
+        <span class="teaser-pill">Financial Services</span>
+        <h2>AI-Assisted Mortgage Operations Platform</h2>
+        <p class="cs-summary">The operations team was managing their entire mortgage pipeline through spreadsheets and manual email follow-ups, with no visibility into deal status, document completeness, or compliance readiness. The system replaced this entirely.</p>
       </div>
-
-      <!-- Trovio -->
-      <div class="case-study" id="trovio">
-        <div class="cs-header">
-          <span class="pill pill-green">Government Technology</span>
-          <h2>Trovio — Government Tender Intelligence Application</h2>
-          <p>The team was monitoring Australian government procurement portals manually, matching opportunities against their capability profile by hand, and managing the entire bid response lifecycle through shared documents and email threads. The system automated the majority of this process.</p>
-        </div>
-        <div class="cs-grid">
-          <div class="cs-col">
-            <h4>What Was Built</h4>
-            <ul class="cs-list">
-              <li>Automated tender portal monitoring — continuous ingestion of opportunities from Australian government procurement platforms</li>
-              <li>NLP-based capability matching — each tender scored against the organisation's capability profile, with ranked relevance output and configurable match thresholds</li>
-              <li>Opportunity pipeline management — flagged tenders move into a structured bid lifecycle with stage tracking, deadline visibility, and team assignment</li>
-              <li>Structured draft response generation — AI-assisted drafting of bid responses using the organisation's capability library and prior submissions</li>
-              <li>Version control and approval workflows — document versioning, internal review stages, and sign-off tracking</li>
-              <li>Compliance checklist engine — automated pre-submission verification against government tender requirements</li>
-              <li>Submission history and performance analytics — win/loss tracking and response time analysis</li>
-              <li>Deployed under government-grade security requirements — encrypted data handling, role-based access, full audit logging</li>
-            </ul>
-            <div class="tags" style="margin-top:20px;">
-              <span class="tag">Angular</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
-              <span class="tag">Azure</span><span class="tag">NLP Pipeline</span><span class="tag">Python</span>
-              <span class="tag">JWT Auth</span><span class="tag">Celery</span>
+      <div class="cs-cols">
+        <div class="cs-col">
+          <h3>What Was Built</h3>
+          <div class="cs-built-list">
+            <div class="cs-built-item">
+              <strong>Multi-agent AI orchestration system</strong>
+              Automated lead qualification, deal digest extraction, document collection, and customer service responses.
+            </div>
+            <div class="cs-built-item">
+              <strong>AI-powered lead scoring engine</strong>
+              Each new enquiry scored on urgency, income type, loan size, and contact completeness, with automatic routing based on score.
+            </div>
+            <div class="cs-built-item">
+              <strong>Automated document collection with client-facing portal</strong>
+              System tracks required documents per deal scenario, sends personalised follow-up messages for missing items, and updates the pipeline on receipt.
+            </div>
+            <div class="cs-built-item">
+              <strong>Real-time pipeline intelligence dashboard</strong>
+              Broker-facing view of all active deals, document completeness, and AI-generated health status per case.
+            </div>
+            <div class="cs-built-item">
+              <strong>Client communication hub</strong>
+              WhatsApp Business API integration for all client messaging, with voice note ingestion and AI-generated structured deal briefs.
+            </div>
+            <div class="cs-built-item">
+              <strong>Compliance audit trail</strong>
+              Full event log across all client interactions, document submissions, and broker actions.
+            </div>
+            <div class="cs-built-item">
+              <strong>Post-settlement portfolio module</strong>
+              Fixed rate expiry alerts, repricing competitor tracking, and valuation history.
+            </div>
+            <div class="cs-built-item">
+              <strong>Role-based access control</strong>
+              Differentiated broker, admin, and management access levels.
+            </div>
+            <div class="cs-built-item">
+              <strong>Integrations</strong>
+              Pipedrive CRM, Monday.com task boards, Annature e-signatures, Azure Blob Storage.
             </div>
           </div>
-          <div class="cs-col">
-            <h4>Outcomes</h4>
-            <div class="cs-outcomes">
-              <div class="cs-outcome-item">Tender scanning time reduced by over 80%</div>
-              <div class="cs-outcome-item">Zero missed compliance requirements on submissions</div>
-              <div class="cs-outcome-item">Full bid pipeline visibility replacing fragmented document management</div>
-              <div class="cs-outcome-item">Faster response preparation through structured AI-assisted drafting</div>
-            </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Azure</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">Anthropic</span>
+            <span class="tag">WhatsApp Business API</span>
+            <span class="tag">Pipedrive</span>
+            <span class="tag">Annature</span>
+            <span class="tag">JWT Auth</span>
           </div>
         </div>
-      </div>
-
-      <!-- Unleash Live -->
-      <div class="case-study" id="unleashlive">
-        <div class="cs-header">
-          <span class="pill pill-amber">Digital Marketing</span>
-          <h2>Unleash Live — Digital Marketing Analytics Application</h2>
-          <p>The agency was managing digital marketing performance for multiple clients across fragmented ad platforms and social channels, with no unified reporting layer and no way to detect performance anomalies in real time. Reporting was produced manually each week from multiple exports.</p>
-        </div>
-        <div class="cs-grid">
-          <div class="cs-col">
-            <h4>What Was Built</h4>
-            <ul class="cs-list">
-              <li>Multi-channel data ingestion pipeline — automated collection from all major ad platforms and social APIs (Google Ads, Meta, LinkedIn, TikTok, and others) with scheduled and on-demand refresh</li>
-              <li>Centralised performance data layer — a unified data warehouse normalising channel-specific schemas into a consistent model, enabling cross-channel and cross-client analysis</li>
-              <li>Multi-client dashboard — client-switchable interface with campaign overview, channel breakdowns, trend charts, and period-over-period comparisons</li>
-              <li>Automated client reporting — scheduled report generation and delivery, replacing manual weekly exports</li>
-              <li>Anomaly detection alerts — configurable rules that flag significant drops or spikes in key metrics and notify the account manager</li>
-              <li>Digital asset management module — upload, tag, and link creative assets to campaigns for performance attribution</li>
-            </ul>
-            <div class="tags" style="margin-top:20px;">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
-              <span class="tag">dbt</span><span class="tag">Angular</span><span class="tag">Celery</span>
-              <span class="tag">Google Ads API</span><span class="tag">Meta API</span><span class="tag">LinkedIn API</span>
-            </div>
-          </div>
-          <div class="cs-col">
-            <h4>Outcomes</h4>
-            <div class="cs-outcomes">
-              <div class="cs-outcome-item">Single source of truth across all client accounts and channels</div>
-              <div class="cs-outcome-item">Manual weekly reporting process eliminated</div>
-              <div class="cs-outcome-item">Anomaly detection enabling proactive campaign management</div>
-              <div class="cs-outcome-item">Account managers able to handle larger client portfolios with the same headcount</div>
-            </div>
+        <div class="cs-col">
+          <h3>Outcomes</h3>
+          <div class="cs-outcomes">
+            <div class="cs-outcome">Eliminated manual document chasing — automated follow-ups replaced hours of weekly email triage.</div>
+            <div class="cs-outcome">Real-time pipeline visibility replaced spreadsheets across the brokerage.</div>
+            <div class="cs-outcome">Compliance-ready audit logging across all client interactions.</div>
+            <div class="cs-outcome">Brokers able to process more deals without additional headcount.</div>
           </div>
         </div>
-      </div>
-
-      <p class="cs-nda-note">All work is delivered under NDA. Client data, architecture, and commercial details remain strictly confidential.</p>
-
-      <div style="text-align:center;margin-top:48px;">
-        <a href="quote.html" class="btn btn-primary btn-lg">Start a Project</a>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo">AUGMEN<span>TRA</span></div>
-          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
-          <p class="nda-note">All work delivered under NDA as standard.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="security.html">Security</a>
-          <a href="quote.html">Get a Quote</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
-        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
       </div>
     </div>
-  </footer>
 
+    <!-- CASE STUDY 2: Trovio -->
+    <div class="case-study">
+      <div class="cs-header">
+        <span class="teaser-pill">Government Technology</span>
+        <h2>Government Tender Intelligence Application</h2>
+        <p class="cs-summary">The team was monitoring Australian government procurement portals manually, matching opportunities against their capability profile by hand, and managing the entire bid response lifecycle through shared documents and email threads. The system automated the majority of this process.</p>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col">
+          <h3>What Was Built</h3>
+          <div class="cs-built-list">
+            <div class="cs-built-item">
+              <strong>Automated tender portal monitoring</strong>
+              Continuous ingestion of opportunities from Australian government procurement platforms.
+            </div>
+            <div class="cs-built-item">
+              <strong>NLP-based capability matching</strong>
+              Each tender scored against the organisation's capability profile, with ranked relevance output and configurable match thresholds.
+            </div>
+            <div class="cs-built-item">
+              <strong>Opportunity pipeline management</strong>
+              Flagged tenders move into a structured bid lifecycle with stage tracking, deadline visibility, and assignment to team members.
+            </div>
+            <div class="cs-built-item">
+              <strong>Structured draft response generation</strong>
+              AI-assisted drafting of bid responses using the organisation's capability library and prior submissions.
+            </div>
+            <div class="cs-built-item">
+              <strong>Version control and approval workflows</strong>
+              Document versioning, internal review stages, and sign-off tracking.
+            </div>
+            <div class="cs-built-item">
+              <strong>Compliance checklist engine</strong>
+              Automated pre-submission verification against government tender requirements.
+            </div>
+            <div class="cs-built-item">
+              <strong>Submission history and performance analytics</strong>
+              Win/loss tracking, response time analysis, and improvement recommendations.
+            </div>
+            <div class="cs-built-item">
+              <strong>Government-grade security</strong>
+              Encrypted data handling, role-based access, full audit logging throughout.
+            </div>
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Angular</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Azure</span>
+            <span class="tag">NLP Pipeline</span>
+            <span class="tag">Python</span>
+            <span class="tag">JWT Auth</span>
+            <span class="tag">Celery</span>
+          </div>
+        </div>
+        <div class="cs-col">
+          <h3>Outcomes</h3>
+          <div class="cs-outcomes">
+            <div class="cs-outcome">Tender scanning time reduced by over 80%.</div>
+            <div class="cs-outcome">Zero missed compliance requirements on submissions.</div>
+            <div class="cs-outcome">Full bid pipeline visibility replacing fragmented document management.</div>
+            <div class="cs-outcome">Faster response preparation through structured AI-assisted drafting.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE STUDY 3: Digital Marketing -->
+    <div class="case-study">
+      <div class="cs-header">
+        <span class="teaser-pill">Digital Marketing</span>
+        <h2>Digital Marketing Analytics Application</h2>
+        <p class="cs-summary">The agency was managing digital marketing performance for multiple clients across fragmented ad platforms and social channels, with no unified reporting layer and no way to detect performance anomalies in real time. Reporting was produced manually each week.</p>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col">
+          <h3>What Was Built</h3>
+          <div class="cs-built-list">
+            <div class="cs-built-item">
+              <strong>Multi-channel data ingestion pipeline</strong>
+              Automated collection from all major ad platforms and social APIs (Google Ads, Meta, LinkedIn, TikTok, and others) with scheduled and on-demand refresh.
+            </div>
+            <div class="cs-built-item">
+              <strong>Centralised performance data layer</strong>
+              A unified data warehouse normalising channel-specific schemas into a consistent model, enabling cross-channel and cross-client analysis.
+            </div>
+            <div class="cs-built-item">
+              <strong>Multi-client dashboard</strong>
+              Client-switchable interface with campaign overview, channel breakdowns, trend charts, and period-over-period comparisons.
+            </div>
+            <div class="cs-built-item">
+              <strong>Automated client reporting</strong>
+              Scheduled report generation and delivery, replacing manual weekly exports.
+            </div>
+            <div class="cs-built-item">
+              <strong>Anomaly detection alerts</strong>
+              Configurable rules that flag significant drops or spikes in key metrics and notify the account manager.
+            </div>
+            <div class="cs-built-item">
+              <strong>Digital asset management module</strong>
+              Upload, tag, and link creative assets to campaigns for performance attribution.
+            </div>
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">dbt</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Celery</span>
+            <span class="tag">Google Ads API</span>
+            <span class="tag">Meta API</span>
+            <span class="tag">LinkedIn API</span>
+          </div>
+        </div>
+        <div class="cs-col">
+          <h3>Outcomes</h3>
+          <div class="cs-outcomes">
+            <div class="cs-outcome">Single source of truth across all client accounts and channels.</div>
+            <div class="cs-outcome">Manual weekly reporting process eliminated.</div>
+            <div class="cs-outcome">Anomaly detection enabling proactive campaign management.</div>
+            <div class="cs-outcome">Account managers able to handle larger client portfolios with the same headcount.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="nda-note">All work is delivered under NDA. Client data, architecture, and commercial details remain strictly confidential.</p>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-bar">
+  <div class="container">
+    <h2>Ready to build something that works?</h2>
+    <p class="sub">Start with a description of your problem. We will respond within one business day with an initial assessment.</p>
+    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>

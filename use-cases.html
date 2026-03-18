@@ -4,60 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Use Cases — Augmentra</title>
-  <meta name="description" content="Six detailed use cases of custom-built data systems, AI applications, and integrations." />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Six detailed examples of custom systems built for real business requirements. Problems solved across government procurement, financial services, marketing, and more." />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="dot-bg">
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
-      <ul class="nav-links">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="use-cases.html" class="active">Use Cases</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="security.html">Security</a></li>
-      </ul>
-      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile" id="nav-mobile">
       <a href="services.html">Services</a>
       <a href="use-cases.html">Use Cases</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="security.html">Security</a>
-      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="grid-bg"></div>
-    <div class="container page-hero-content">
-      <div class="eyebrow">Use Cases</div>
-      <h1>Problems we've solved</h1>
-      <p>Six detailed examples of custom systems built for real business requirements. Every prototype shown here was built for a real problem. Yours is next.</p>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
     </div>
   </div>
+</nav>
 
-  <section class="section">
-    <div class="container">
-      <div class="use-cases-grid">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Use Cases</span>
+    <h1>Problems we've solved</h1>
+    <p class="sub">Six detailed examples of custom systems built for real business requirements. Every prototype shown here was built for a real problem. Yours is next.</p>
+  </div>
+</section>
 
-        <!-- UC 1: Tender Intelligence -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="terminal-panel-title" style="margin-bottom:12px;">Tender Opportunities</div>
-            <table class="mock-table" style="width:100%;">
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="use-cases-list">
+
+      <!-- USE CASE 1 — Tender Intelligence Platform -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Tender Pipeline — Live View</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="mock-table">
               <thead>
                 <tr>
                   <th>Tender ID</th>
                   <th>Agency</th>
                   <th>Value</th>
-                  <th>Match</th>
+                  <th>Match Score</th>
                   <th>Deadline</th>
                   <th>Status</th>
                 </tr>
@@ -65,363 +72,473 @@
               <tbody>
                 <tr>
                   <td>TND-2024-1831</td>
-                  <td>Dept. Infrastructure</td>
+                  <td>Dept. of Infrastructure</td>
                   <td>$240k</td>
-                  <td><span class="score-dot g"></span>94</td>
+                  <td><span class="mock-score high">94</span></td>
                   <td>14 Mar</td>
-                  <td style="color:var(--amber)">Draft</td>
+                  <td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td>
                 </tr>
                 <tr>
                   <td>TND-2024-1856</td>
                   <td>ATO</td>
                   <td>$85k</td>
-                  <td><span class="score-dot a"></span>78</td>
+                  <td><span class="mock-score med">78</span></td>
                   <td>21 Mar</td>
-                  <td style="color:var(--accent)">Review</td>
+                  <td style="color:var(--muted);font-size:0.78rem;">Under review</td>
                 </tr>
                 <tr>
                   <td>TND-2024-1902</td>
                   <td>DFAT</td>
                   <td>$1.2m</td>
-                  <td><span class="score-dot a"></span>61</td>
+                  <td><span class="mock-score med">61</span></td>
                   <td>28 Mar</td>
-                  <td style="color:var(--muted)">Flagged</td>
+                  <td style="color:var(--warning);font-size:0.78rem;">Flagged</td>
                 </tr>
                 <tr>
                   <td>TND-2024-1915</td>
                   <td>NDIS</td>
                   <td>$320k</td>
-                  <td><span class="score-dot r"></span>32</td>
+                  <td><span class="mock-score low">32</span></td>
                   <td>04 Apr</td>
-                  <td style="color:var(--muted)">Skipped</td>
+                  <td style="color:var(--muted);font-size:0.78rem;opacity:0.6;">Skipped</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="uc-body">
-            <span class="pill pill-green">Government Procurement</span>
-            <h3>Tender Intelligence Platform</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>A government procurement team needed to monitor Australian public tender portals, match opportunities against their capability profile, and manage the full bid lifecycle — all of which was being done manually, consuming weeks of staff time.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Full application that continuously monitors procurement portals, uses NLP to score tender-capability match, flags high-relevance opportunities, generates structured draft responses, and tracks all submission deadlines in a compliance workflow.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Tender scanning time reduced by over 80%. Zero missed compliance requirements. Full bid pipeline visibility for the first time.
-            </div>
-            <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span><span class="tag">NLP Pipeline</span><span class="tag">Celery</span></div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Government Procurement</span>
+          <h3 style="margin-top:10px;">Tender Intelligence Platform</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>A government procurement team needed to monitor Australian public tender portals, match opportunities against their capability profile, and manage the full bid response lifecycle — all of which was manual.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>Built a full application that continuously monitors procurement portals, uses NLP to score tender-capability match, flags high-relevance opportunities, generates structured draft responses, and tracks all submission deadlines in a compliance workflow.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Reduced tender scanning time by over 80%. Improved submission quality through structured drafting. Full bid pipeline visibility for the first time.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Azure</span>
+            <span class="tag">NLP Pipeline</span>
+            <span class="tag">Celery</span>
           </div>
         </div>
-
-        <!-- UC 2: Mortgage Pipeline -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="mock-kanban">
-              <div class="kanban-col">
-                <div class="kanban-col-title">New Enquiry <span class="kanban-count">4</span></div>
-                <div class="kanban-card">Marcus T. — $720k</div>
-                <div class="kanban-card">Sarah O. — $1.1m</div>
-              </div>
-              <div class="kanban-col">
-                <div class="kanban-col-title">Docs Requested <span class="kanban-count">7</span></div>
-                <div class="kanban-card">Priya K. — $450k</div>
-                <div class="kanban-card">James W. — $890k</div>
-              </div>
-              <div class="kanban-col">
-                <div class="kanban-col-title">Under Review <span class="kanban-count">5</span></div>
-                <div class="kanban-card">Alex M. — $720k</div>
-              </div>
-              <div class="kanban-col">
-                <div class="kanban-col-title">Approved <span class="kanban-count">2</span></div>
-                <div class="kanban-card">Jordan P. — $1.2m</div>
-              </div>
-            </div>
-          </div>
-          <div class="uc-body">
-            <span class="pill">Financial Services</span>
-            <h3>Mortgage Pipeline Copilot</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>A mortgage brokerage was managing their entire pipeline through spreadsheets and email. No visibility into deal status, document completeness, or compliance readiness. Brokers spent hours each week chasing missing paperwork manually.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Full-stack AI operations platform with automated document collection, real-time pipeline intelligence dashboard, AI-powered deal scoring, client communication hub via WhatsApp API, and compliance audit trail with RBAC.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Document collection time reduced by approximately 75%. Real-time pipeline visibility replacing spreadsheets. Compliance-ready audit trail across all client interactions.
-            </div>
-            <div class="tags"><span class="tag">Angular</span><span class="tag">FastAPI</span><span class="tag">Azure</span><span class="tag">PostgreSQL</span><span class="tag">JWT Auth</span><span class="tag">Twilio</span></div>
-          </div>
-        </div>
-
-        <!-- UC 3: Marketing Analytics -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="terminal-panel-title" style="margin-bottom:12px;">Channel Performance — MTD</div>
-            <div class="mock-bars">
-              <div class="bar-row">
-                <div class="bar-label">Google Search</div>
-                <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
-                <div class="bar-val">42.8k</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-label">Meta Ads</div>
-                <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
-                <div class="bar-val">31.2k</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-label">Display</div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--cyan)"></div></div>
-                <div class="bar-val">61.0k</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-label">YouTube</div>
-                <div class="bar-track"><div class="bar-fill" style="width:39%"></div></div>
-                <div class="bar-val">19.6k</div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-label">LinkedIn</div>
-                <div class="bar-track"><div class="bar-fill" style="width:17%"></div></div>
-                <div class="bar-val">8.4k</div>
-              </div>
-            </div>
-          </div>
-          <div class="uc-body">
-            <span class="pill pill-amber">Digital Marketing</span>
-            <h3>Digital Marketing Analytics Engine</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>A marketing agency managing 15+ client accounts had performance data fragmented across ad platforms and social channels. Reporting was manual, slow, and prone to error. No way to detect performance drops in real time.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Custom ingestion pipeline consolidating all channel data into a single source of truth. Automated client reporting, anomaly detection alerts, and a multi-client dashboard with drill-down capability and period-over-period analysis.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Single source of truth across all client accounts. Manual weekly reporting eliminated. Anomaly detection enabling proactive campaign intervention.
-            </div>
-            <div class="tags"><span class="tag">Python</span><span class="tag">Kafka</span><span class="tag">PostgreSQL</span><span class="tag">dbt</span><span class="tag">Angular</span><span class="tag">REST APIs</span></div>
-          </div>
-        </div>
-
-        <!-- UC 4: Client Onboarding -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="terminal-panel-title" style="margin-bottom:10px;">Onboarding Status — Client: Meridian Group</div>
-            <div class="mock-steps">
-              <div class="mock-step-item done">
-                <div class="mock-step-dot">&#10003;</div>
-                <div class="mock-step-label">Enquiry<br>Received</div>
-              </div>
-              <div class="mock-step-item done">
-                <div class="mock-step-dot">&#10003;</div>
-                <div class="mock-step-label">Identity<br>Verified</div>
-              </div>
-              <div class="mock-step-item active">
-                <div class="mock-step-dot">&#9679;</div>
-                <div class="mock-step-label">Docs<br>Submitted</div>
-              </div>
-              <div class="mock-step-item pending">
-                <div class="mock-step-dot"></div>
-                <div class="mock-step-label">Assessment</div>
-              </div>
-              <div class="mock-step-item pending">
-                <div class="mock-step-dot"></div>
-                <div class="mock-step-label">Agreement<br>Signed</div>
-              </div>
-            </div>
-            <div style="margin-top:12px;font-family:var(--mono);font-size:0.65rem;color:var(--muted);display:flex;flex-direction:column;gap:4px;">
-              <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--green);">[x]</span> Photo ID submitted</div>
-              <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--green);">[x]</span> Proof of address submitted</div>
-              <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--amber);">[ ]</span> Completed intake form — awaiting</div>
-              <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--red);">[ ]</span> Signed engagement letter — not yet sent</div>
-            </div>
-          </div>
-          <div class="uc-body">
-            <span class="pill">Professional Services</span>
-            <h3>Client Onboarding Automation</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>A professional services firm was losing prospective clients due to slow, inconsistent onboarding. New client intake was handled manually via email, with no tracking, no automation, and no visibility into where each prospect was in the process.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Intelligent intake and onboarding application with smart form routing, automated document requests, a client-facing status portal, CRM synchronisation, and completion notifications — all without manual intervention.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Onboarding time reduced from days to hours. Zero missed follow-ups. Clients given real-time visibility into their own status.
-            </div>
-            <div class="tags"><span class="tag">Angular</span><span class="tag">FastAPI</span><span class="tag">AWS Lambda</span><span class="tag">S3</span><span class="tag">Webhooks</span><span class="tag">PostgreSQL</span></div>
-          </div>
-        </div>
-
-        <!-- UC 5: Compliance Audit Layer -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="terminal-panel-title" style="margin-bottom:10px;">Audit Log — Last 5 Events</div>
-            <div class="mock-audit">
-              <div class="audit-row" style="font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;padding-bottom:6px;border-bottom:1px solid var(--border);">
-                <span>Time</span><span>User</span><span>Action</span><span>Resource</span><span>Hash</span>
-              </div>
-              <div class="audit-row">
-                <span class="audit-time">09:14:33</span>
-                <span class="audit-user">broker_02</span>
-                <span class="audit-action">READ</span>
-                <span style="font-size:0.63rem;color:var(--muted)">deal_id:4821</span>
-                <span class="audit-hash">a3f9b2</span>
-              </div>
-              <div class="audit-row">
-                <span class="audit-time">09:15:01</span>
-                <span class="audit-user">admin_01</span>
-                <span class="audit-action">UPDATE</span>
-                <span style="font-size:0.63rem;color:var(--muted)">lead_id:9134</span>
-                <span class="audit-hash">c71e44</span>
-              </div>
-              <div class="audit-row">
-                <span class="audit-time">09:15:47</span>
-                <span class="audit-user">broker_01</span>
-                <span class="audit-action">CREATE</span>
-                <span style="font-size:0.63rem;color:var(--muted)">doc_id:7723</span>
-                <span class="audit-hash">f8a201</span>
-              </div>
-              <div class="audit-row">
-                <span class="audit-time">09:16:22</span>
-                <span class="audit-user">system</span>
-                <span class="audit-action">EXPORT</span>
-                <span style="font-size:0.63rem;color:var(--muted)">report:monthly</span>
-                <span class="audit-hash">3bc990</span>
-              </div>
-              <div class="audit-row">
-                <span class="audit-time">09:16:58</span>
-                <span class="audit-user">broker_02</span>
-                <span class="audit-action">READ</span>
-                <span style="font-size:0.63rem;color:var(--muted)">deal_id:5017</span>
-                <span class="audit-hash">91de73</span>
-              </div>
-            </div>
-          </div>
-          <div class="uc-body">
-            <span class="pill">Regulated Financial Services</span>
-            <h3>Compliance &amp; Audit Data Layer</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>A regulated financial business needed a tamper-proof audit trail across all data operations, with role-based access control, field-level encryption, and automated compliance reporting to satisfy both internal governance and external regulatory requirements.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Custom security data layer with field-level encryption via Azure Key Vault, RBAC middleware, immutable audit log streaming, automated compliance report generation, and role-based access dashboards for governance teams.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Full audit trail on all data access and modification events. Compliance reports generated automatically. Zero manual compliance overhead.
-            </div>
-            <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Azure Key Vault</span><span class="tag">RBAC</span><span class="tag">JWT</span><span class="tag">FastAPI</span></div>
-          </div>
-        </div>
-
-        <!-- UC 6: Executive Dashboard -->
-        <div class="card use-case-card">
-          <div class="uc-mock">
-            <div class="terminal-panel-title" style="margin-bottom:12px;">Executive Dashboard — Week 11</div>
-            <div class="mock-kpis">
-              <div class="kpi-cell">
-                <div class="kpi-label">Revenue MTD</div>
-                <div class="kpi-value">$842k</div>
-                <div class="kpi-trend up">+6.4% vs target</div>
-              </div>
-              <div class="kpi-cell">
-                <div class="kpi-label">Open Projects</div>
-                <div class="kpi-value">34</div>
-                <div class="kpi-trend neutral">+3 vs prior month</div>
-              </div>
-              <div class="kpi-cell">
-                <div class="kpi-label">On-Time Delivery</div>
-                <div class="kpi-value">87%</div>
-                <div class="kpi-trend down">-4pp vs target</div>
-              </div>
-              <div class="kpi-cell">
-                <div class="kpi-label">Support Tickets</div>
-                <div class="kpi-value">128</div>
-                <div class="kpi-trend up">-18% vs prior wk</div>
-              </div>
-              <div class="kpi-cell">
-                <div class="kpi-label">Pipeline Value</div>
-                <div class="kpi-value">$2.1m</div>
-                <div class="kpi-trend up">+11% vs prior month</div>
-              </div>
-              <div class="kpi-cell">
-                <div class="kpi-label">Staff Utilisation</div>
-                <div class="kpi-value">79%</div>
-                <div class="kpi-trend neutral">-1pp vs target</div>
-              </div>
-            </div>
-          </div>
-          <div class="uc-body">
-            <span class="pill">Operations</span>
-            <h3>Executive Intelligence Dashboard</h3>
-            <div class="uc-section problem">
-              <div class="uc-section-label">Problem</div>
-              <p>An operations business had data across six systems — CRM, finance, project management, logistics, HR, and support — with no unified view. Leadership decisions were made on delayed, manually compiled reports produced weekly.</p>
-            </div>
-            <div class="uc-section solution">
-              <div class="uc-section-label">Solution</div>
-              <p>Custom data warehouse with automated ETL pipelines from all six source systems and an executive dashboard providing unified KPIs, trend analysis, variance alerts, and drill-down capability updated in near real-time.</p>
-            </div>
-            <div class="uc-outcome">
-              <strong>Outcome</strong>
-              Single source of truth updated continuously. Leadership reporting time reduced from half a day per week to zero. Anomaly alerts surfaced proactively.
-            </div>
-            <div class="tags"><span class="tag">Python</span><span class="tag">dbt</span><span class="tag">PostgreSQL</span><span class="tag">Angular</span><span class="tag">Celery</span><span class="tag">REST APIs</span></div>
-          </div>
-        </div>
-
       </div>
 
-      <div style="text-align:center;margin-top:64px;padding:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;font-style:italic;">Every prototype shown here was built for a real business problem.</p>
-        <h2 style="font-size:1.6rem;margin-bottom:12px;">Yours is next.</h2>
-        <p style="max-width:440px;margin:0 auto 24px;">If you have a problem that looks like one of these — or nothing like any of them — get in touch.</p>
-        <a href="quote.html" class="btn btn-primary btn-lg">Get a Quote</a>
+      <!-- USE CASE 2 — Mortgage Pipeline Copilot -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Mortgage Pipeline — Overview</span>
+          </div>
+          <div class="kanban-flow">
+            <div class="kanban-col">
+              <span class="kanban-label">New Enquiry</span>
+              <span class="kanban-count">4</span>
+            </div>
+            <div class="kanban-col">
+              <span class="kanban-label">Docs Requested</span>
+              <span class="kanban-count">7</span>
+            </div>
+            <div class="kanban-col">
+              <span class="kanban-label">Under Assessment</span>
+              <span class="kanban-count">5</span>
+            </div>
+            <div class="kanban-col">
+              <span class="kanban-label">Submitted</span>
+              <span class="kanban-count">3</span>
+            </div>
+            <div class="kanban-col">
+              <span class="kanban-label">Approved</span>
+              <span class="kanban-count">2</span>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="mock-table">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Loan</th>
+                  <th>Score</th>
+                  <th>Docs</th>
+                  <th>Action Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alex M.</td>
+                  <td>$720k PAYG</td>
+                  <td><span class="mock-score high">91</span></td>
+                  <td style="color:var(--warning);font-family:var(--font-mono);font-size:0.78rem;">4 / 5</td>
+                  <td style="color:var(--text);font-size:0.78rem;">Chase payslip</td>
+                </tr>
+                <tr>
+                  <td>Jordan P.</td>
+                  <td>$1.2m Self-Employed</td>
+                  <td><span class="mock-score med">62</span></td>
+                  <td style="color:var(--danger);font-family:var(--font-mono);font-size:0.78rem;">2 / 7</td>
+                  <td style="color:var(--text);font-size:0.78rem;">Send checklist</td>
+                </tr>
+                <tr>
+                  <td>Sam K.</td>
+                  <td>$450k PAYG</td>
+                  <td><span class="mock-score high">84</span></td>
+                  <td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;">5 / 5</td>
+                  <td style="color:var(--success);font-size:0.78rem;">Submit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Financial Services</span>
+          <h3 style="margin-top:10px;">Mortgage Pipeline Copilot</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>A mortgage brokerage was managing their entire pipeline through spreadsheets and email. No visibility into deal status, document completeness, or compliance readiness. Brokers spent hours each week chasing missing paperwork.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>A full-stack AI operations platform with automated document collection, real-time pipeline intelligence, AI-powered deal scoring, client communication hub, compliance audit trail, and role-based access control.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Document collection time reduced by approximately 75%. Real-time pipeline visibility replacing spreadsheets. Compliance-ready audit trail across all client interactions.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Angular</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Azure</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">JWT Auth</span>
+            <span class="tag">Twilio</span>
+          </div>
+        </div>
       </div>
+
+      <!-- USE CASE 3 — Digital Marketing Analytics Engine -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:14px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Channel Performance — 30 Day Impressions</span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Display</span>
+              <div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div>
+              <span class="bar-value">61,000</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Google Search</span>
+              <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+              <span class="bar-value">42,800</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Meta Ads</span>
+              <div class="bar-track"><div class="bar-fill" style="width:51%;"></div></div>
+              <span class="bar-value">31,200</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">YouTube</span>
+              <div class="bar-track"><div class="bar-fill" style="width:32%;"></div></div>
+              <span class="bar-value">19,600</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">LinkedIn</span>
+              <div class="bar-track"><div class="bar-fill" style="width:14%;"></div></div>
+              <span class="bar-value">8,400</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Digital Marketing</span>
+          <h3 style="margin-top:10px;">Digital Marketing Analytics Engine</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>A marketing agency managing 15+ client accounts had performance data fragmented across ad platforms, social channels, and analytics tools. Reporting was manual, slow, and prone to error.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>Custom data ingestion pipeline consolidating all channel data into a single source of truth, with automated client reporting, anomaly detection alerts, and a multi-client dashboard with drill-down capability.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Single source of truth across all client accounts. Manual reporting eliminated. Proactive anomaly alerts enabling faster campaign intervention.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">dbt</span>
+            <span class="tag">Angular</span>
+            <span class="tag">REST Integrations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- USE CASE 4 — Client Onboarding Automation -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:14px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Onboarding Status — Active Client</span>
+          </div>
+          <div class="progress-flow">
+            <div class="pf-step">
+              <span class="pf-label complete">Enquiry Received</span>
+              <span class="pf-arrow">&gt;</span>
+            </div>
+            <div class="pf-step">
+              <span class="pf-label complete">Identity Verified</span>
+              <span class="pf-arrow">&gt;</span>
+            </div>
+            <div class="pf-step">
+              <span class="pf-label active">Documents Submitted</span>
+              <span class="pf-arrow">&gt;</span>
+            </div>
+            <div class="pf-step">
+              <span class="pf-label">Assessment</span>
+              <span class="pf-arrow">&gt;</span>
+            </div>
+            <div class="pf-step">
+              <span class="pf-label">Agreement Signed</span>
+              <span class="pf-arrow">&gt;</span>
+            </div>
+            <div class="pf-step">
+              <span class="pf-label">Active Client</span>
+            </div>
+          </div>
+          <div class="doc-checklist">
+            <div class="doc-item">
+              <span class="doc-check">x</span>
+              <span class="doc-text">Photo ID submitted</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-check">x</span>
+              <span class="doc-text">Proof of address submitted</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-check empty"></span>
+              <span class="doc-text pending">Completed intake form — awaiting</span>
+            </div>
+            <div class="doc-item">
+              <span class="doc-check empty"></span>
+              <span class="doc-text pending">Signed engagement letter — not yet sent</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Professional Services</span>
+          <h3 style="margin-top:10px;">Client Onboarding Automation</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>A professional services firm was losing prospective clients due to slow, inconsistent onboarding. New client intake was handled manually via email, with no tracking, no automation, and no visibility.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>An intelligent intake and onboarding application with smart form routing, automated document requests, a client-facing status portal, CRM synchronisation, and completion notifications.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Onboarding time reduced from days to hours. Zero missed follow-ups. Clients given real-time visibility into their own status.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Angular</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">S3</span>
+            <span class="tag">Webhook Integrations</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- USE CASE 5 — Compliance and Audit Data Layer -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Audit Log — Live Stream</span>
+          </div>
+          <div class="audit-log">
+            <div class="audit-header">
+              <span>Timestamp</span>
+              <span>User</span>
+              <span>Action</span>
+              <span>Resource</span>
+              <span>Hash</span>
+            </div>
+            <div class="audit-row">
+              <span class="col-time">09:14:33</span>
+              <span class="col-user">broker_02</span>
+              <span class="col-action">READ</span>
+              <span class="col-resource">deal_id:4821</span>
+              <span class="col-hash">a3f9b2</span>
+            </div>
+            <div class="audit-row">
+              <span class="col-time">09:15:01</span>
+              <span class="col-user">admin_01</span>
+              <span class="col-action">UPDATE</span>
+              <span class="col-resource">lead_id:9134</span>
+              <span class="col-hash">c71e44</span>
+            </div>
+            <div class="audit-row">
+              <span class="col-time">09:15:47</span>
+              <span class="col-user">broker_01</span>
+              <span class="col-action">CREATE</span>
+              <span class="col-resource">doc_id:7723</span>
+              <span class="col-hash">f8a201</span>
+            </div>
+            <div class="audit-row">
+              <span class="col-time">09:16:22</span>
+              <span class="col-user">system</span>
+              <span class="col-action">EXPORT</span>
+              <span class="col-resource">report:monthly</span>
+              <span class="col-hash">3bc990</span>
+            </div>
+            <div class="audit-row">
+              <span class="col-time">09:16:58</span>
+              <span class="col-user">broker_02</span>
+              <span class="col-action">READ</span>
+              <span class="col-resource">deal_id:5017</span>
+              <span class="col-hash">91de73</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Regulated Financial Services</span>
+          <h3 style="margin-top:10px;">Compliance and Audit Data Layer</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>A regulated financial business needed a tamper-proof audit trail across all data operations, with role-based access control, field-level encryption, and automated compliance reporting.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>A custom security data layer with field-level encryption via Azure Key Vault, RBAC middleware, immutable audit log streaming, automated compliance report generation, and role-based access dashboards.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Full audit trail on all data access and modification events. Compliance reports generated automatically. Zero manual compliance overhead.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Azure Key Vault</span>
+            <span class="tag">RBAC Middleware</span>
+            <span class="tag">JWT</span>
+            <span class="tag">FastAPI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- USE CASE 6 — Executive Intelligence Dashboard -->
+      <div class="use-case-card">
+        <div class="uc-mock">
+          <div style="margin-bottom:12px;">
+            <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Executive KPI Dashboard — MTD</span>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi-cell">
+              <div class="kpi-name">Revenue MTD</div>
+              <div class="kpi-value">$842k</div>
+              <div class="kpi-delta green">+6.4% vs target</div>
+            </div>
+            <div class="kpi-cell">
+              <div class="kpi-name">Open Projects</div>
+              <div class="kpi-value">34</div>
+              <div class="kpi-delta neutral">+3 vs prior month</div>
+            </div>
+            <div class="kpi-cell">
+              <div class="kpi-name">On-Time Delivery</div>
+              <div class="kpi-value">87%</div>
+              <div class="kpi-delta amber">-4pp vs target</div>
+            </div>
+            <div class="kpi-cell">
+              <div class="kpi-name">Support Tickets</div>
+              <div class="kpi-value">128</div>
+              <div class="kpi-delta green">-18% vs prior week</div>
+            </div>
+            <div class="kpi-cell">
+              <div class="kpi-name">Pipeline Value</div>
+              <div class="kpi-value">$2.1m</div>
+              <div class="kpi-delta green">+11% vs prior month</div>
+            </div>
+            <div class="kpi-cell">
+              <div class="kpi-name">Staff Utilisation</div>
+              <div class="kpi-value">79%</div>
+              <div class="kpi-delta neutral">-1pp vs target</div>
+            </div>
+          </div>
+        </div>
+        <div class="uc-content">
+          <span class="teaser-pill">Operations</span>
+          <h3 style="margin-top:10px;">Executive Intelligence Dashboard</h3>
+          <div class="uc-block uc-problem">
+            <div class="uc-block-label">Problem</div>
+            <p>An operations business had data across six systems with no unified view. Leadership decisions were made on delayed, manually compiled reports.</p>
+          </div>
+          <div class="uc-block uc-solution">
+            <div class="uc-block-label">Solution</div>
+            <p>A custom data warehouse with automated ETL pipelines from all six source systems and an executive dashboard providing unified KPIs, trend analysis, variance alerts, and drill-down capability.</p>
+          </div>
+          <div class="uc-outcome">
+            <strong>Outcome</strong>
+            Single source of truth updated in near real-time. Leadership reporting time reduced from half a day per week to zero. Anomaly alerts surfaced proactively.
+          </div>
+          <div class="tags" style="margin-top:16px;">
+            <span class="tag">Python</span>
+            <span class="tag">dbt</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Celery</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo">AUGMEN<span>TRA</span></div>
-          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
-          <p class="nda-note">All work delivered under NDA as standard.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="security.html">Security</a>
-          <a href="quote.html">Get a Quote</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
-        </div>
+<!-- BOTTOM CTA -->
+<section class="cta-bar">
+  <div class="container">
+    <h2>Every prototype shown here was built for a real business problem.</h2>
+    <p class="sub">Yours is next. Start with a brief description of what needs to happen — no technical detail required.</p>
+    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
-        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
-      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+    </div>
+  </div>
+</footer>
 
+<script src="main.js"></script>
 </body>
 </html>

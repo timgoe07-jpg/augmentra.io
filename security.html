@@ -3,183 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Security &amp; Privacy — Augmentra</title>
-  <meta name="description" content="Security-first architecture, encryption, RBAC, audit logging, and privacy-compliant design on every engagement." />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Security — Augmentra</title>
+  <meta name="description" content="Security and privacy built into every system from day one. Encryption, RBAC, audit logging, and NDA-standard delivery as baseline on all engagements." />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="dot-bg">
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
-      <ul class="nav-links">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="security.html" class="active">Security</a></li>
-      </ul>
-      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile" id="nav-mobile">
       <a href="services.html">Services</a>
       <a href="use-cases.html">Use Cases</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="security.html">Security</a>
-      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="grid-bg"></div>
-    <div class="container page-hero-content">
-      <div class="eyebrow">Security &amp; Privacy</div>
-      <h1>Security by design,<br>not by default.</h1>
-      <p>Every system built here treats security and data privacy as first-order requirements, not afterthoughts. This applies regardless of industry, scale, or budget.</p>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
     </div>
   </div>
+</nav>
 
-  <!-- Security Principles -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Architecture Principles</div>
-        <h2>How security is applied</h2>
-        <p>These are not optional add-ons. They are the baseline on every engagement.</p>
-      </div>
-      <div class="security-grid">
-        <div class="card security-card">
-          <h3>Encryption in Transit and at Rest</h3>
-          <p>All data is encrypted in transit using TLS 1.2 or higher. Sensitive data at rest is encrypted at the field or column level where appropriate, using keys managed separately from the data store. This means that a breach of the database alone does not expose readable client data.</p>
-        </div>
-        <div class="card security-card">
-          <h3>Role-Based Access Control</h3>
-          <p>Access to data and functionality is governed by role — not by convention. Every system is built with a defined access model from the start: who can read what, who can write what, and what requires an audit event. Least-privilege principles are applied throughout.</p>
-        </div>
-        <div class="card security-card">
-          <h3>Audit Logging and Event Trails</h3>
-          <p>All significant system events — data reads, writes, modifications, exports, and access attempts — are logged in a tamper-resistant audit trail. Logs are structured, timestamped, attributed to a user or system actor, and retained according to your compliance requirements.</p>
-        </div>
-        <div class="card security-card">
-          <h3>Secrets Management</h3>
-          <p>Application secrets, API keys, database credentials, and encryption keys are never hardcoded or stored in source code. Dedicated secrets management services (Azure Key Vault, AWS Secrets Manager, or equivalent) are used with environment-scoped access and rotation policies.</p>
-        </div>
-        <div class="card security-card">
-          <h3>Privacy-Compliant Architecture</h3>
-          <p>Systems are designed with awareness of applicable privacy frameworks: the Australian Privacy Act, GDPR where relevant, and sector-specific regulations. Data minimisation, purpose limitation, and retention controls are built in — not added later as compliance theatre.</p>
-        </div>
-        <div class="card security-card">
-          <h3>No Third-Party Data Sharing</h3>
-          <p>Client data is not shared with third-party systems unless explicitly required by the engagement and approved in writing. AI models used in your system do not train on your data. No aggregation, no telemetry, no usage analytics that you have not authorised.</p>
-        </div>
-      </div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Security and Privacy</span>
+    <h1>Security by design,<br>not by default</h1>
+    <p class="sub">Every system I build treats security and data privacy as first-order requirements, not afterthoughts. This applies regardless of industry, scale, or budget.</p>
+  </div>
+</section>
+
+<!-- SECURITY PRINCIPLES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Architecture</span>
+      <h2>Security principles</h2>
+      <p class="sub">Six principles applied to every system, by default.</p>
     </div>
-  </section>
+    <div class="principles-grid">
 
-  <!-- Ownership and Assurances -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">What you can expect</div>
-        <h2>Ownership and assurances, by default.</h2>
-        <p>These commitments apply to every engagement, without needing to be negotiated individually.</p>
+      <div class="principle-card">
+        <span class="principle-num">01</span>
+        <h3>Encryption in Transit and at Rest</h3>
+        <p>All data is encrypted in transit using TLS 1.2 or higher. Sensitive data at rest is encrypted at the field or column level where appropriate, using keys managed separately from the data store. This means that a breach of the database alone does not expose readable client data.</p>
       </div>
-      <div class="assurances-list">
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>Full code ownership</h4>
-            <p>All source code is yours. There is no proprietary framework, no licence dependency, no lock-in. You can deploy it, modify it, or hand it to another engineer at any time.</p>
-          </div>
-        </div>
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>Infrastructure in your accounts</h4>
-            <p>Systems are deployed to your cloud accounts, not shared infrastructure. You control access. You pay the cloud provider directly. There is no intermediary holding your environment.</p>
-          </div>
-        </div>
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>NDAs as standard</h4>
-            <p>A mutual NDA is offered on all engagements as a baseline, before any scoping conversation takes place. No questions asked.</p>
-          </div>
-        </div>
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>No data retention after engagement</h4>
-            <p>Post-engagement, copies of your data, schemas, or production credentials are not retained unless you explicitly request ongoing support with a defined access scope.</p>
-          </div>
-        </div>
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>Transparent dependencies</h4>
-            <p>Every third-party service, library, or API used in your system is documented. You know exactly what your system depends on, what data those dependencies receive, and how to replace them if needed.</p>
-          </div>
-        </div>
-        <div class="assurance-item">
-          <div class="assurance-check">&#10003;</div>
-          <div>
-            <h4>Penetration testing support</h4>
-            <p>For regulated environments, documentation and test access required for third-party security assessment can be provided. Architecture documentation suitable for legal and IT review is available on request.</p>
-          </div>
-        </div>
+
+      <div class="principle-card">
+        <span class="principle-num">02</span>
+        <h3>Role-Based Access Control</h3>
+        <p>Access to data and functionality is governed by role — not by convention. Every system is built with a defined access model from the start: who can read what, who can write what, and what no one should access without an audit event. We use least-privilege principles throughout.</p>
       </div>
+
+      <div class="principle-card">
+        <span class="principle-num">03</span>
+        <h3>Audit Logging and Event Trails</h3>
+        <p>All significant system events — data reads, writes, modifications, exports, and access attempts — are logged in a tamper-resistant audit trail. Logs are structured, timestamped, attributed to a user or system actor, and retained according to your compliance requirements.</p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-num">04</span>
+        <h3>Secrets Management</h3>
+        <p>Application secrets, API keys, database credentials, and encryption keys are never hardcoded or stored in source code. We use dedicated secrets management services (Azure Key Vault, AWS Secrets Manager, or equivalent) with environment-scoped access and rotation policies.</p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-num">05</span>
+        <h3>Privacy-Compliant Architecture</h3>
+        <p>Systems are designed with awareness of applicable privacy frameworks: the Australian Privacy Act, GDPR where relevant, and sector-specific regulations. Data minimisation, purpose limitation, and retention controls are built in — not added later.</p>
+      </div>
+
+      <div class="principle-card">
+        <span class="principle-num">06</span>
+        <h3>No Third-Party Data Sharing</h3>
+        <p>Client data is not shared with third-party systems unless explicitly required by the engagement and approved by you. AI models used in your system do not train on your data. No aggregation, no telemetry, no usage analytics that you have not explicitly authorised.</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Note for procurement teams -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">For procurement and legal teams</div>
-        <h2>A note on formal evaluation</h2>
-      </div>
-      <div class="security-note">
-        <p>If you are evaluating this engagement as part of a formal procurement process, vendor security questionnaires and technical architecture documentation for legal and IT review can be provided. If there are specific compliance frameworks your organisation must satisfy — ISO 27001, SOC 2, Australian Government security classifications, IRAP, or sector-specific standards — include these requirements in your enquiry and applicability will be assessed during scoping.</p>
-        <p style="margin-top:16px;">Engagements with regulated financial services clients, government contractors, and organisations subject to mandatory data breach notification obligations have been completed. The relevant obligations and design implications are understood.</p>
-      </div>
-      <div style="margin-top:32px;">
-        <a href="quote.html" class="btn btn-primary btn-lg">Submit a Security Enquiry</a>
-      </div>
+<!-- OWNERSHIP AND ASSURANCES -->
+<section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Commitments</span>
+      <h2>What you can expect, by default.</h2>
     </div>
-  </section>
+    <div class="assurance-list">
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo">AUGMEN<span>TRA</span></div>
-          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
-          <p class="nda-note">All work delivered under NDA as standard.</p>
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="security.html">Security</a>
-          <a href="quote.html">Get a Quote</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+        <div class="assurance-content">
+          <h4>Full code ownership</h4>
+          <p>All source code is yours. There is no proprietary framework, no licence dependency, no lock-in. You can deploy it, modify it, or hand it to another engineer at any time.</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
-        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
+
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="assurance-content">
+          <h4>Infrastructure in your accounts</h4>
+          <p>Systems are deployed to your cloud accounts, not shared infrastructure. You control access. You pay the cloud provider directly.</p>
+        </div>
       </div>
+
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="assurance-content">
+          <h4>NDAs as standard</h4>
+          <p>A mutual NDA is offered on all engagements as a baseline. No questions asked.</p>
+        </div>
+      </div>
+
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="assurance-content">
+          <h4>No data retention after engagement</h4>
+          <p>Post-engagement, I do not retain copies of your data, schemas, or production credentials unless you explicitly request ongoing support.</p>
+        </div>
+      </div>
+
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="assurance-content">
+          <h4>Transparent dependencies</h4>
+          <p>Every third-party service, library, or API used in your system is documented. You know exactly what your system depends on.</p>
+        </div>
+      </div>
+
+      <div class="assurance-item">
+        <div class="assurance-check">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8.5L6.5 12L13 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="assurance-content">
+          <h4>Penetration testing support</h4>
+          <p>For regulated environments, I support the provision of documentation and test access required for third-party security assessment.</p>
+        </div>
+      </div>
+
     </div>
-  </footer>
+  </div>
+</section>
 
+<!-- PROCUREMENT NOTE -->
+<section class="section">
+  <div class="container">
+    <div class="procurement-note">
+      <span class="eyebrow">Procurement</span>
+      <h2>A note for procurement and legal teams</h2>
+      <p>If you are evaluating this engagement as part of a formal procurement process, I am accustomed to completing vendor security questionnaires and providing technical architecture documentation for legal and IT review. If there are specific compliance frameworks your organisation must satisfy — ISO 27001, SOC 2, government security classifications — please include these requirements in your enquiry and I will assess applicability during scoping.</p>
+      <a href="quote.html" class="btn btn-primary">Submit a security enquiry</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>

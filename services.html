@@ -4,264 +4,262 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Augmentra</title>
-  <meta name="description" content="Custom AI systems, data pipelines, application development, integrations, and security architecture." />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Custom software across the full stack — AI models, data pipelines, full-stack applications, and system integrations. Every engagement scoped precisely." />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
-<body>
+<body class="dot-bg">
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
-      <ul class="nav-links">
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="use-cases.html">Use Cases</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="security.html">Security</a></li>
-      </ul>
-      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile" id="nav-mobile">
       <a href="services.html">Services</a>
       <a href="use-cases.html">Use Cases</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="security.html">Security</a>
-      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="grid-bg"></div>
-    <div class="container page-hero-content">
-      <div class="eyebrow">Services</div>
-      <h1>What we build</h1>
-      <p>Custom software across the full stack — from AI models and data pipelines to client-facing applications and system integrations. Every engagement is scoped precisely to your requirements.</p>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
     </div>
   </div>
+</nav>
 
-  <section class="section">
-    <div class="container">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Services</span>
+    <h1>What we build</h1>
+    <p class="sub">Custom software across the full stack — from AI models and data pipelines to client-facing applications and system integrations. Every engagement is scoped precisely.</p>
+  </div>
+</section>
 
-      <div style="display:flex;flex-direction:column;gap:48px;">
+<!-- SERVICES GRID -->
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
 
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">01</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Custom AI &amp; Machine Learning Applications</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Intelligent systems built into your existing workflows — not bolted on. Lead scoring, document classification, prediction models, and recommendation engines trained on your data and deployed where they create value.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Scoring and classification model development</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>RAG knowledge base and retrieval systems</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Voice and document intelligence pipelines</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>AI orchestration and multi-agent systems</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A mortgage brokerage needed every inbound lead scored on urgency, income type, loan size, and contact completeness before reaching a broker. We built a multi-agent AI scoring system that routes each enquiry to the right workflow within seconds.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">FastAPI</span><span class="tag">Azure</span></div>
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <h3>Custom AI and Machine Learning</h3>
+        <p>Intelligent systems built into your existing workflows — not bolted on. Lead scoring, document classification, prediction models, and recommendation engines trained on your data.</p>
+        <div class="service-deliverables">
+          <p>Scoring and classification models</p>
+          <p>RAG knowledge base systems</p>
+          <p>Voice and document intelligence pipelines</p>
         </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">02</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Data Engineering &amp; Pipelines</h2>
-          <p style="max-width:700px;margin-bottom:20px;">End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery — built to your throughput requirements, not a vendor's assumptions.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>ETL/ELT pipeline design and implementation</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Real-time event streaming architectures</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Data warehouse and schema design</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Scheduled batch processing and orchestration</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A marketing agency managing 15 client accounts needed a unified performance data layer across fragmented ad platforms. We built an automated ingestion pipeline with scheduled transformation and a reporting layer that replaced weekly manual exports.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">dbt</span><span class="tag">Azure</span></div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">Anthropic</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Azure</span>
         </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">03</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Business Intelligence &amp; Dashboards</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Custom reporting and visibility tools built on your actual data — not generic templates. Operational dashboards, executive KPI views, and drill-down analytics that reflect how your business actually runs.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Operational and executive dashboards</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Automated scheduled reporting</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Anomaly detection and alerting</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Multi-source data consolidation</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">An operations business had financial data across six systems with no single view. We built a custom data warehouse with ETL from all sources and an executive dashboard updated in near real-time.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Angular</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">dbt</span></div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A mortgage brokerage needed every inbound lead scored on urgency, income type, loan size, and contact completeness before reaching a broker. We built a multi-agent AI scoring system that routes each enquiry to the right workflow within seconds.</p>
         </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">04</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Application Development</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up — on whatever stack fits your environment.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Full-stack web and internal applications</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Client-facing portals and intake systems</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Mobile-responsive interfaces</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Authentication, RBAC, and session management</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A government procurement team needed a structured application to manage the full tender lifecycle — from opportunity identification through submission — with version control and audit logging built in.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
-        </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">05</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">System Integrations &amp; APIs</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases. Bidirectional sync, webhook handling, and real-time data exchange built to production standards.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>REST and GraphQL API development</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>CRM and ERP deep integrations</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Legacy system connectivity</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Webhook event processing and routing</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A financial services firm needed their CRM, document storage, e-signature platform, and client portal to share state in real time. We built the integration layer that keeps all four systems in sync without manual data entry.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">REST</span><span class="tag">GraphQL</span><span class="tag">Webhooks</span><span class="tag">Pipedrive</span><span class="tag">HubSpot</span><span class="tag">Salesforce</span></div>
-        </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">06</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Automation &amp; Workflow Orchestration</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Intelligent process automation that eliminates manual steps, reduces error, and accelerates throughput. Document handling, approval flows, notifications, and event-driven triggers built on durable, observable infrastructure.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Automated document collection and routing</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Multi-step approval workflows</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Event-driven notification systems</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Scheduled batch job orchestration</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A professional services firm was losing 6-8 hours per week manually chasing document submissions from clients. We automated the entire collection flow — detection, personalised outreach, follow-ups, and confirmation.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Celery</span><span class="tag">Azure Functions</span></div>
-        </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">07</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Security-First Data Architecture</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Security and privacy built into the architecture from day one — not retrofitted. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments and high-assurance data.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Field-level encryption and key management</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Role-based access control (RBAC)</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Tamper-proof audit logging</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Privacy-compliant architecture design</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A regulated financial business required field-level encryption, RBAC, and a tamper-proof audit log across all data operations to meet compliance requirements. We built the full security data layer from the ground up.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Azure Key Vault</span><span class="tag">RBAC</span><span class="tag">JWT</span><span class="tag">Python</span></div>
-        </div>
-
-        <div class="card" style="padding:40px;">
-          <div class="card-num" style="font-size:0.75rem;font-family:var(--mono);color:var(--accent);margin-bottom:14px;">08</div>
-          <h2 style="font-size:1.5rem;margin-bottom:12px;">Government &amp; Regulated Industry Solutions</h2>
-          <p style="max-width:700px;margin-bottom:20px;">Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments. Experience building and deploying under government-grade security requirements.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:20px;">
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Deliverables</h4>
-              <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;">
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Compliance workflow and checklist systems</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Structured submission and audit trail management</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Government API integrations</li>
-                <li style="font-size:0.875rem;color:var(--muted);padding-left:14px;position:relative;"><span style="position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);"></span>Role-based access and approval workflows</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;">Example Use Case</h4>
-              <p style="font-size:0.875rem;color:var(--muted);">A government contractor needed to monitor Australian procurement portals continuously, match tenders to their capability profile, and track submission deadlines — all within a compliance-ready, auditable workflow.</p>
-            </div>
-          </div>
-          <div class="tags"><span class="tag">Government APIs</span><span class="tag">Compliance</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span></div>
-        </div>
-
       </div>
 
-      <div style="text-align:center;margin-top:64px;padding:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
-        <h2 style="font-size:1.6rem;margin-bottom:12px;">Have a specific requirement in mind?</h2>
-        <p style="max-width:480px;margin:0 auto 24px;">Every engagement is scoped individually. If your project doesn't fit neatly into one of these categories, that's fine — it usually doesn't.</p>
-        <a href="quote.html" class="btn btn-primary btn-lg">Get a Quote</a>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <h3>Data Engineering and Pipelines</h3>
+        <p>End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery, built to your throughput requirements.</p>
+        <div class="service-deliverables">
+          <p>ETL/ELT pipeline design and implementation</p>
+          <p>Real-time event streaming architectures</p>
+          <p>Data warehouse and schema design</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Azure</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A marketing agency managing 15 client accounts needed a unified performance data layer across fragmented ad platforms. We built an automated ingestion pipeline with scheduled transformation and a reporting layer that replaced weekly manual exports.</p>
+        </div>
       </div>
+
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <h3>Business Intelligence and Dashboards</h3>
+        <p>Custom reporting and visibility tools built on your actual data — not generic templates. Operational dashboards, executive KPI views, and drill-down analytics.</p>
+        <div class="service-deliverables">
+          <p>Operational and executive dashboards</p>
+          <p>Automated scheduled reporting</p>
+          <p>Anomaly detection and alerting</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">dbt</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>An operations business had financial data across six systems with no single view. We built a custom data warehouse with ETL from all sources and an executive dashboard updated in near real-time.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <h3>Application Development</h3>
+        <p>Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up.</p>
+        <div class="service-deliverables">
+          <p>Full-stack web and internal applications</p>
+          <p>Client-facing portals and intake systems</p>
+          <p>Mobile-responsive interfaces</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">React</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">TypeScript</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A government procurement team needed a structured application to manage the full tender lifecycle, from opportunity identification through submission, with version control and audit logging.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <h3>System Integrations and APIs</h3>
+        <p>Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases. Bidirectional sync, webhook handling, and real-time data exchange.</p>
+        <div class="service-deliverables">
+          <p>REST and GraphQL API development</p>
+          <p>CRM and ERP deep integrations</p>
+          <p>Legacy system connectivity</p>
+        </div>
+        <div class="tags">
+          <span class="tag">REST</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">Pipedrive</span>
+          <span class="tag">HubSpot</span>
+          <span class="tag">Salesforce</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A financial services firm needed their CRM, document storage, e-signature platform, and client portal to share state in real time. We built the integration layer that keeps all four systems in sync.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <h3>Automation and Workflow Orchestration</h3>
+        <p>Intelligent process automation that eliminates manual steps, reduces error, and accelerates throughput. Document handling, approval flows, notifications, and event-driven triggers.</p>
+        <div class="service-deliverables">
+          <p>Automated document collection and routing</p>
+          <p>Multi-step approval workflows</p>
+          <p>Event-driven notification systems</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Celery</span>
+          <span class="tag">Azure Functions</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A professional services firm was losing 6-8 hours per week manually chasing document submissions from clients. We automated the entire collection flow — detection, personalised outreach, follow-ups, and confirmation.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">07</span>
+        <h3>Security-First Data Architecture</h3>
+        <p>Security and privacy built into the architecture from day one. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments.</p>
+        <div class="service-deliverables">
+          <p>Field-level encryption and key management</p>
+          <p>Role-based access control (RBAC)</p>
+          <p>Tamper-proof audit logging</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Azure Key Vault</span>
+          <span class="tag">RBAC</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Python</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A regulated financial business required field-level encryption, RBAC, and a tamper-proof audit log across all data operations to meet compliance requirements. We built the full security data layer.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">08</span>
+        <h3>Government and Regulated Industry</h3>
+        <p>Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments.</p>
+        <div class="service-deliverables">
+          <p>Compliance workflow and checklist systems</p>
+          <p>Structured submission and audit trail management</p>
+          <p>Government API integrations</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Government APIs</span>
+          <span class="tag">Compliance</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Azure</span>
+        </div>
+        <div class="example-block">
+          <span class="example-label">Example</span>
+          <p>A government contractor needed to monitor Australian procurement portals continuously, match tenders to their capability profile, and track submission deadlines — all within a compliance-ready workflow.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo">AUGMEN<span>TRA</span></div>
-          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
-          <p class="nda-note">All work delivered under NDA as standard.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="security.html">Security</a>
-          <a href="quote.html">Get a Quote</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
-        </div>
+<!-- BOTTOM CTA -->
+<section class="cta-bar">
+  <div class="container">
+    <h2>Have a specific requirement in mind?</h2>
+    <p class="sub">Every engagement is scoped to your exact problem. Start with a conversation — no commitment required.</p>
+    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
-        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
-      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>(c) 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+    </div>
+  </div>
+</footer>
 
+<script src="main.js"></script>
 </body>
 </html>

@@ -5,164 +5,242 @@
 (function () {
   'use strict';
 
-  // ── Sticky Nav ──────────────────────────────────────────────
-  const nav = document.getElementById('nav');
+  /* ----------------------------------------------------------
+     1. STICKY NAV — add "scrolled" class after 20px scroll
+     ---------------------------------------------------------- */
+  var nav = document.getElementById('nav');
   if (nav) {
-    window.addEventListener('scroll', function () {
+    var onScroll = function () {
       if (window.scrollY > 20) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
-    }, { passive: true });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
-  // ── Mobile Hamburger ─────────────────────────────────────────
-  const hamburger = document.getElementById('navHamburger');
-  const navMobile = document.getElementById('navMobile');
+  /* ----------------------------------------------------------
+     2. MOBILE HAMBURGER — toggle .nav-mobile.open
+     ---------------------------------------------------------- */
+  var hamburger = document.getElementById('hamburger');
+  var navMobile = document.getElementById('nav-mobile');
   if (hamburger && navMobile) {
     hamburger.addEventListener('click', function () {
-      navMobile.classList.toggle('open');
+      var isOpen = navMobile.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
     // Close on link click
     navMobile.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navMobile.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // ── Smooth Scroll ────────────────────────────────────────────
+  /* ----------------------------------------------------------
+     3. SMOOTH SCROLL for anchor links
+     ---------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        var offset = 80;
-        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 
-  // ── Counter Animation (index.html only) ──────────────────────
-  var statNums = document.querySelectorAll('.stat-num[data-target]');
-  if (statNums.length) {
-    var animated = false;
-    function animateCounters() {
-      if (animated) return;
-      statNums.forEach(function (el) {
-        var target = parseInt(el.getAttribute('data-target'), 10);
-        var suffix = el.getAttribute('data-suffix') || '';
-        var prefix = el.getAttribute('data-prefix') || '';
-        var duration = 1400;
-        var start = null;
-        function step(timestamp) {
-          if (!start) start = timestamp;
-          var progress = Math.min((timestamp - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          var current = Math.floor(eased * target);
-          el.textContent = prefix + current + suffix;
-          if (progress < 1) {
-            requestAnimationFrame(step);
-          } else {
-            el.textContent = prefix + target + suffix;
-          }
-        }
-        requestAnimationFrame(step);
-      });
-      animated = true;
-    }
+  /* ----------------------------------------------------------
+     4. COUNTER ANIMATION — .stat-num elements
+        Animates numeric values up from 0 on viewport entry.
+        Handles "12+", "3", "Zero" — only animates numeric ones.
+     ---------------------------------------------------------- */
+  var statNums = document.querySelectorAll('.stat-num');
+  if (statNums.length && 'IntersectionObserver' in window) {
+    var animateStat = function (el) {
+      var raw = el.getAttribute('data-target') || el.textContent.trim();
+      // Extract numeric portion and suffix
+      var match = raw.match(/^(\d+)(.*)/);
+      if (!match) {
+        // Non-numeric like "Zero" — no animation
+        return;
+      }
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || '';
+      var duration = 1200;
+      var startTime = null;
 
-    var statsSection = document.querySelector('.hero-stats');
-    if (statsSection && 'IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateCounters();
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.3 });
-      observer.observe(statsSection);
-    } else {
-      animateCounters();
-    }
+      var easeOut = function (t) {
+        return 1 - Math.pow(1 - t, 3);
+      };
+
+      var step = function (timestamp) {
+        if (!startTime) startTime = timestamp;
+        var elapsed = timestamp - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var current = Math.round(easeOut(progress) * target);
+        el.textContent = current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = raw;
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateStat(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNums.forEach(function (el) {
+      observer.observe(el);
+    });
   }
 
-  // ── Quote Form Validation ─────────────────────────────────────
-  var quoteForm = document.getElementById('quoteForm');
-  var quoteSuccess = document.getElementById('quoteSuccess');
-  if (quoteForm && quoteSuccess) {
-    function showError(id, show) {
-      var el = document.getElementById(id);
-      if (el) {
-        el.classList.toggle('visible', show);
+  /* ----------------------------------------------------------
+     5. QUOTE FORM VALIDATION
+     ---------------------------------------------------------- */
+  var quoteForm = document.getElementById('quote-form');
+  var formSuccess = document.querySelector('.form-success');
+
+  if (quoteForm) {
+    var showError = function (input, message) {
+      input.classList.add('error');
+      var errEl = input.nextElementSibling;
+      if (errEl && errEl.classList.contains('form-error')) {
+        errEl.textContent = message;
+        errEl.classList.add('visible');
       }
-    }
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+    };
+
+    var clearError = function (input) {
+      input.classList.remove('error');
+      var errEl = input.nextElementSibling;
+      if (errEl && errEl.classList.contains('form-error')) {
+        errEl.classList.remove('visible');
+      }
+    };
+
+    var validateEmail = function (val) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    };
+
+    // Clear errors on input
+    quoteForm.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(function (el) {
+      el.addEventListener('input', function () { clearError(this); });
+      el.addEventListener('change', function () { clearError(this); });
+    });
+
     quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
 
-      var name = document.getElementById('qName');
-      var company = document.getElementById('qCompany');
-      var email = document.getElementById('qEmail');
-      var industry = document.getElementById('qIndustry');
-      var type = document.getElementById('qType');
-      var desc = document.getElementById('qDesc');
-      var timeline = document.getElementById('qTimeline');
-      var budget = document.getElementById('qBudget');
+      // Full name
+      var name = document.getElementById('f-name');
+      if (!name.value.trim()) {
+        showError(name, 'Please enter your full name.');
+        valid = false;
+      }
 
-      showError('errName', !name.value.trim());
-      if (!name.value.trim()) valid = false;
+      // Company
+      var company = document.getElementById('f-company');
+      if (!company.value.trim()) {
+        showError(company, 'Please enter your company or organisation.');
+        valid = false;
+      }
 
-      showError('errCompany', !company.value.trim());
-      if (!company.value.trim()) valid = false;
+      // Email
+      var email = document.getElementById('f-email');
+      if (!email.value.trim()) {
+        showError(email, 'Please enter your email address.');
+        valid = false;
+      } else if (!validateEmail(email.value.trim())) {
+        showError(email, 'Please enter a valid email address.');
+        valid = false;
+      }
 
-      showError('errEmail', !isValidEmail(email.value.trim()));
-      if (!isValidEmail(email.value.trim())) valid = false;
+      // Industry
+      var industry = document.getElementById('f-industry');
+      if (!industry.value.trim()) {
+        showError(industry, 'Please enter your industry.');
+        valid = false;
+      }
 
-      showError('errIndustry', !industry.value.trim());
-      if (!industry.value.trim()) valid = false;
+      // Project type
+      var projectType = document.getElementById('f-project-type');
+      if (!projectType.value) {
+        showError(projectType, 'Please select a project type.');
+        valid = false;
+      }
 
-      showError('errType', !type.value);
-      if (!type.value) valid = false;
+      // Description
+      var description = document.getElementById('f-description');
+      if (!description.value.trim()) {
+        showError(description, 'Please describe what you need.');
+        valid = false;
+      }
 
-      showError('errDesc', !desc.value.trim());
-      if (!desc.value.trim()) valid = false;
+      // Timeline
+      var timeline = document.getElementById('f-timeline');
+      if (!timeline.value) {
+        showError(timeline, 'Please select a preferred timeline.');
+        valid = false;
+      }
 
-      showError('errTimeline', !timeline.value);
-      if (!timeline.value) valid = false;
-
-      showError('errBudget', !budget.value);
-      if (!budget.value) valid = false;
+      // Budget
+      var budget = document.getElementById('f-budget');
+      if (!budget.value) {
+        showError(budget, 'Please select a budget range.');
+        valid = false;
+      }
 
       if (valid) {
+        // Hide form, show success
         quoteForm.style.display = 'none';
-        quoteSuccess.classList.add('visible');
-        window.scrollTo({ top: quoteSuccess.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
+        if (formSuccess) {
+          formSuccess.classList.add('visible');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        // Scroll to first error
+        var firstError = quoteForm.querySelector('.form-input.error, .form-select.error, .form-textarea.error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstError.focus();
+        }
       }
-    });
-
-    // Clear errors on input
-    quoteForm.querySelectorAll('.form-control').forEach(function (el) {
-      el.addEventListener('input', function () {
-        var errId = 'err' + el.id.replace('q', '').replace(/^./, function (c) { return c.toUpperCase(); });
-        showError(errId, false);
-      });
     });
   }
 
-  // ── Active Nav Link ───────────────────────────────────────────
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (link) {
+  /* ----------------------------------------------------------
+     6. ACTIVE NAV LINK — highlight current page
+     ---------------------------------------------------------- */
+  var path = window.location.pathname;
+  var filename = path.split('/').pop() || 'index.html';
+  if (filename === '') filename = 'index.html';
+
+  var allNavLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
+  allNavLinks.forEach(function (link) {
     var href = link.getAttribute('href');
-    if (href && href === currentPage) {
+    if (!href) return;
+    var linkFile = href.split('/').pop();
+    if (linkFile === filename) {
+      link.classList.add('active');
+    }
+    // Also handle index.html / root
+    if ((filename === 'index.html' || filename === '') && (href === 'index.html' || href === './' || href === '/')) {
       link.classList.add('active');
     }
   });
 
-})();
+}());
