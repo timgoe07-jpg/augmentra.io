@@ -1,166 +1,168 @@
-/* ─────────────────────────────────────────────────────────
-   Augmentra · main.js
-───────────────────────────────────────────────────────── */
+/* ============================================================
+   AUGMENTRA — main.js
+   ============================================================ */
 
-// ── Sticky nav on scroll ──
 (function () {
+  'use strict';
+
+  // ── Sticky Nav ──────────────────────────────────────────────
   const nav = document.getElementById('nav');
-  if (!nav) return;
-  function updateNav() {
-    if (window.scrollY > 20) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-})();
 
-// ── Mobile nav hamburger ──
-(function () {
-  const btn = document.getElementById('navHamburger');
-  const menu = document.getElementById('navMobile');
-  if (!btn || !menu) return;
-  btn.addEventListener('click', function () {
-    const open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  });
-  // Close on link click
-  menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      menu.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+  // ── Mobile Hamburger ─────────────────────────────────────────
+  const hamburger = document.getElementById('navHamburger');
+  const navMobile = document.getElementById('navMobile');
+  if (hamburger && navMobile) {
+    hamburger.addEventListener('click', function () {
+      navMobile.classList.toggle('open');
     });
-  });
-})();
+    // Close on link click
+    navMobile.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMobile.classList.remove('open');
+      });
+    });
+  }
 
-// ── Smooth scroll for anchor links ──
-(function () {
+  // ── Smooth Scroll ────────────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = 80;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Counter Animation (index.html only) ──────────────────────
+  var statNums = document.querySelectorAll('.stat-num[data-target]');
+  if (statNums.length) {
+    var animated = false;
+    function animateCounters() {
+      if (animated) return;
+      statNums.forEach(function (el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var prefix = el.getAttribute('data-prefix') || '';
+        var duration = 1400;
+        var start = null;
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          var progress = Math.min((timestamp - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.floor(eased * target);
+          el.textContent = prefix + current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = prefix + target + suffix;
+          }
+        }
+        requestAnimationFrame(step);
+      });
+      animated = true;
+    }
+
+    var statsSection = document.querySelector('.hero-stats');
+    if (statsSection && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+    } else {
+      animateCounters();
+    }
+  }
+
+  // ── Quote Form Validation ─────────────────────────────────────
+  var quoteForm = document.getElementById('quoteForm');
+  var quoteSuccess = document.getElementById('quoteSuccess');
+  if (quoteForm && quoteSuccess) {
+    function showError(id, show) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('visible', show);
+      }
+    }
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      const navHeight = document.getElementById('nav').offsetHeight;
-      const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    });
-  });
-})();
+      var valid = true;
 
-// ── Counter animation ──
-(function () {
-  const counters = document.querySelectorAll('.stat-number[data-target]');
-  if (!counters.length) return;
+      var name = document.getElementById('qName');
+      var company = document.getElementById('qCompany');
+      var email = document.getElementById('qEmail');
+      var industry = document.getElementById('qIndustry');
+      var type = document.getElementById('qType');
+      var desc = document.getElementById('qDesc');
+      var timeline = document.getElementById('qTimeline');
+      var budget = document.getElementById('qBudget');
 
-  function formatNumber(n, suffix) {
-    if (n >= 1000) {
-      return (n / 1000).toFixed(0) + 'k' + suffix;
-    }
-    return n + suffix;
-  }
+      showError('errName', !name.value.trim());
+      if (!name.value.trim()) valid = false;
 
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1800;
-    const startTime = performance.now();
+      showError('errCompany', !company.value.trim());
+      if (!company.value.trim()) valid = false;
 
-    function tick(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const ease = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(ease * target);
-      el.textContent = formatNumber(current, suffix);
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        el.textContent = formatNumber(target, suffix);
-      }
-    }
+      showError('errEmail', !isValidEmail(email.value.trim()));
+      if (!isValidEmail(email.value.trim())) valid = false;
 
-    requestAnimationFrame(tick);
-  }
+      showError('errIndustry', !industry.value.trim());
+      if (!industry.value.trim()) valid = false;
 
-  // Trigger when section enters viewport
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        counters.forEach(animateCounter);
-        observer.disconnect();
+      showError('errType', !type.value);
+      if (!type.value) valid = false;
+
+      showError('errDesc', !desc.value.trim());
+      if (!desc.value.trim()) valid = false;
+
+      showError('errTimeline', !timeline.value);
+      if (!timeline.value) valid = false;
+
+      showError('errBudget', !budget.value);
+      if (!budget.value) valid = false;
+
+      if (valid) {
+        quoteForm.style.display = 'none';
+        quoteSuccess.classList.add('visible');
+        window.scrollTo({ top: quoteSuccess.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
       }
     });
-  }, { threshold: 0.3 });
 
-  const statsSection = document.querySelector('.hero-stats');
-  if (statsSection) observer.observe(statsSection);
-})();
-
-// ── Waitlist form ──
-(function () {
-  const form = document.getElementById('waitlistForm');
-  const success = document.getElementById('waitlistSuccess');
-  if (!form) return;
-
-  function getVal(id) {
-    return document.getElementById(id).value.trim();
-  }
-
-  function setError(id, msg) {
-    const el = document.getElementById(id);
-    const input = document.getElementById(id.replace('err', 'wl').toLowerCase());
-    if (!el) return false;
-    el.textContent = msg;
-    if (input) input.classList.toggle('error', !!msg);
-    return !!msg;
-  }
-
-  function clearErrors() {
-    ['errName', 'errEmail', 'errIndustry'].forEach(function (id) {
-      setError(id, '');
+    // Clear errors on input
+    quoteForm.querySelectorAll('.form-control').forEach(function (el) {
+      el.addEventListener('input', function () {
+        var errId = 'err' + el.id.replace('q', '').replace(/^./, function (c) { return c.toUpperCase(); });
+        showError(errId, false);
+      });
     });
   }
 
-  function isValidEmail(v) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    clearErrors();
-
-    const name     = getVal('wlName');
-    const email    = getVal('wlEmail');
-    const industry = getVal('wlIndustry');
-
-    let hasError = false;
-    if (!name)                    hasError = setError('errName', 'Please enter your name.');
-    if (!email)                   hasError = setError('errEmail', 'Please enter your email.') || hasError;
-    else if (!isValidEmail(email)) hasError = setError('errEmail', 'Please enter a valid email address.') || hasError;
-    if (!industry)                hasError = setError('errIndustry', 'Please enter your industry or role.') || hasError;
-
-    if (hasError) return;
-
-    // Simulate brief async submission
-    const btn = document.getElementById('wlSubmit');
-    btn.disabled = true;
-    btn.querySelector('.btn-label').textContent = 'Submitting…';
-
-    setTimeout(function () {
-      form.hidden = true;
-      success.hidden = false;
-    }, 800);
+  // ── Active Nav Link ───────────────────────────────────────────
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (href && href === currentPage) {
+      link.classList.add('active');
+    }
   });
 
-  // Live validation — clear error once user types
-  ['wlName', 'wlEmail', 'wlIndustry'].forEach(function (id) {
-    const input = document.getElementById(id);
-    if (!input) return;
-    const errId = 'err' + id.replace('wl', '');
-    input.addEventListener('input', function () {
-      setError(errId, '');
-    });
-  });
 })();

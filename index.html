@@ -3,414 +3,450 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Augmentra — AI Operations for Complex Client Workflows</title>
-  <meta name="description" content="Augmentra automates complex client workflows — intake, qualification, document collection, communications, pipeline tracking, and post-completion retention." />
+  <title>Augmentra — Custom-Built Intelligence for Your Business</title>
+  <meta name="description" content="Independent technology contractor building custom AI systems, data pipelines, integrations, and applications for businesses of any size." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-hex">⬡</span>
-        <span class="logo-text">Augmentra</span>
-      </a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#who">Who it's for</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="security.html">Security</a></li>
       </ul>
-      <a href="#waitlist" class="btn btn-primary nav-cta">Join waitlist</a>
+      <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#who">Who it's for</a></li>
-        <li><a href="#waitlist" class="btn btn-primary">Join waitlist</a></li>
-      </ul>
+      <a href="services.html">Services</a>
+      <a href="use-cases.html">Use Cases</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="security.html">Security</a>
+      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg-dots"></div>
-    <div class="container hero-container">
+  <section class="hero">
+    <div class="grid-bg"></div>
+    <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">Now in early access</div>
-        <h1 class="hero-headline">Stop running your business<br />on spreadsheets and email.</h1>
-        <p class="hero-sub">Augmentra automates the entire client journey — intake, documents, pipeline, comms, and retention — so your team can focus on the work that actually pays.</p>
+        <div class="hero-badge">Independent Technology Contractor</div>
+        <h1>Custom-built intelligence<br>for your business.</h1>
+        <p class="hero-sub">From AI pipelines to full-stack applications — every system delivered is engineered precisely for your problem, your data, and your workflow. No off-the-shelf compromises.</p>
         <div class="hero-ctas">
-          <a href="#waitlist" class="btn btn-primary btn-lg">Join the waitlist</a>
-          <a href="#how-it-works" class="btn btn-ghost btn-lg">See how it works</a>
+          <a href="quote.html" class="btn btn-primary btn-lg">Get a Quote</a>
+          <a href="case-studies.html" class="btn btn-outline btn-lg">See Our Work</a>
         </div>
         <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number" data-target="12000" data-suffix="+">0</span>
-            <span class="stat-label">Applications processed</span>
+          <div class="stat-item">
+            <span class="stat-num" data-target="12" data-suffix="+">0</span>
+            <span class="stat-label">Systems delivered</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-number" data-target="73" data-suffix="%">0</span>
-            <span class="stat-label">Faster approvals</span>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Government-grade projects</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-number" data-target="4" data-suffix="x">0</span>
-            <span class="stat-label">More client touchpoints</span>
+          <div class="stat-item">
+            <span class="stat-num" data-target="0">0</span>
+            <span class="stat-label">Off-the-shelf solutions</span>
           </div>
         </div>
       </div>
 
-      <!-- MOCK DASHBOARD -->
-      <div class="dashboard-wrapper">
-        <div class="dashboard">
-          <div class="dashboard-header">
-            <div class="dashboard-title">
-              <span class="dashboard-dot green"></span>
-              Client Pipeline — Live View
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="t-dot r"></span>
+          <span class="t-dot y"></span>
+          <span class="t-dot g"></span>
+          <span class="terminal-label">augmentra / pipeline-monitor</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-panel">
+            <div class="terminal-panel-title">Pipeline Nodes</div>
+            <div class="pipeline-node">
+              <span class="node-dot green"></span>
+              <span class="node-name">CRM Ingest</span>
+              <span class="node-badge badge-running">Running</span>
             </div>
-            <div class="dashboard-actions">
-              <span class="dash-tag">AI Active</span>
+            <div class="pipeline-node">
+              <span class="node-dot green"></span>
+              <span class="node-name">AI Classifier</span>
+              <span class="node-badge badge-running">Running</span>
+            </div>
+            <div class="pipeline-node">
+              <span class="node-dot amber"></span>
+              <span class="node-name">Document Parser</span>
+              <span class="node-badge badge-processing">Processing</span>
+            </div>
+            <div class="pipeline-node">
+              <span class="node-dot green"></span>
+              <span class="node-name">Webhook Output</span>
+              <span class="node-badge badge-running">Running</span>
+            </div>
+            <div class="pipeline-node">
+              <span class="node-dot green"></span>
+              <span class="node-name">Audit Logger</span>
+              <span class="node-badge badge-running">Running</span>
             </div>
           </div>
-          <div class="pipeline-cols">
-            <div class="pipeline-col">
-              <div class="col-label">New <span class="col-count">2</span></div>
-              <div class="pipeline-card" data-stage="new">
-                <div class="card-name">Sarah O.</div>
-                <div class="card-meta">Finance Broker referral</div>
-                <div class="card-ai"><span class="ai-badge high">AI Score 94</span></div>
+          <div class="terminal-panel">
+            <div class="terminal-panel-title">Live Events</div>
+            <div class="event-log">
+              <div class="event-line">
+                <span class="ev-time">09:42:01</span>
+                <span class="ev-event">lead.qualified</span>
+                <span class="ev-detail">score=91 action=route_crm</span>
               </div>
-              <div class="pipeline-card" data-stage="new">
-                <div class="card-name">Marcus T.</div>
-                <div class="card-meta">Web enquiry</div>
-                <div class="card-ai"><span class="ai-badge med">AI Score 71</span></div>
+              <div class="event-line">
+                <span class="ev-time">09:42:03</span>
+                <span class="ev-event">doc.uploaded</span>
+                <span class="ev-detail">type=payslip parser=triggered</span>
               </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="col-label">Docs Requested <span class="col-count">2</span></div>
-              <div class="pipeline-card" data-stage="docs">
-                <div class="card-name">Priya K.</div>
-                <div class="card-meta">3 of 5 docs received</div>
-                <div class="card-progress">
-                  <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
-                </div>
-                <div class="card-ai"><span class="ai-badge high">AI Score 88</span></div>
+              <div class="event-line">
+                <span class="ev-time">09:42:05</span>
+                <span class="ev-event">webhook.sent</span>
+                <span class="ev-detail">target=pipedrive deal=4821</span>
               </div>
-              <div class="pipeline-card" data-stage="docs">
-                <div class="card-name">James W.</div>
-                <div class="card-meta">Auto-chase sent 2x</div>
-                <div class="card-progress">
-                  <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
-                </div>
-                <div class="card-ai"><span class="ai-badge low">AI Score 52</span></div>
+              <div class="event-line">
+                <span class="ev-time">09:42:09</span>
+                <span class="ev-event">ai.classify</span>
+                <span class="ev-detail">input=voice_note tasks=4</span>
               </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="col-label">Under Review <span class="col-count">1</span></div>
-              <div class="pipeline-card" data-stage="review">
-                <div class="card-name">Elena B.</div>
-                <div class="card-meta">Day 3 — no blockers</div>
-                <div class="card-ai"><span class="ai-badge high">AI Score 91</span></div>
+              <div class="event-line">
+                <span class="ev-time">09:42:14</span>
+                <span class="ev-event">audit.event</span>
+                <span class="ev-detail">user=broker_01 hash=a3f9</span>
               </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="col-label">Approved <span class="col-count">1</span></div>
-              <div class="pipeline-card" data-stage="approved">
-                <div class="card-name">Tom R.</div>
-                <div class="card-meta">Completed today</div>
-                <div class="card-ai"><span class="ai-badge approved">&#10003; Done</span></div>
+              <div class="event-line">
+                <span class="ev-time">09:42:17</span>
+                <span class="ev-event">compliance.check</span>
+                <span class="ev-detail">result=pass flags=0</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section id="problem">
-    <div class="container">
-      <div class="section-label">Sound familiar?</div>
-      <h2 class="section-title">If this sounds familiar,<br />you need Augmentra.</h2>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">📋</div>
-          <h3>Applications slip through the cracks</h3>
-          <p>Manual triaging means hot leads wait hours. No consistent follow-up means promising clients quietly walk to a competitor.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">📁</div>
-          <h3>Document collection is a nightmare</h3>
-          <p>You're chasing the same client for the same files. The same email gets sent five times. Nothing's in one place. Your team hates it.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔮</div>
-          <h3>No visibility across your pipeline</h3>
-          <p>Deal status lives in someone's head — or a colour-coded spreadsheet that's already out of date. There's no single source of truth.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section id="features">
+  <!-- WHAT WE BUILD -->
+  <section class="section" id="services">
     <div class="container">
-      <div class="section-label">Platform</div>
-      <h2 class="section-title">Everything your operations need.<br />Nothing you don't.</h2>
-      <p class="section-sub">Six capabilities, one platform. Built to work together so nothing slips through the cracks.</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">&#9889;</div>
-          <h3>Smart Intake</h3>
-          <p>AI scores every enquiry the moment it arrives — web form, email, or WhatsApp — and routes it to the right workflow automatically. Urgent cases flagged instantly.</p>
+      <div class="section-header">
+        <div class="eyebrow">Services</div>
+        <h2>What we build</h2>
+        <p>Every engagement is scoped to your exact requirements. These are the disciplines we work across.</p>
+      </div>
+      <div class="services-grid">
+        <div class="card service-card">
+          <div class="card-num">01</div>
+          <h3>Custom AI &amp; Machine Learning</h3>
+          <p>Intelligent systems built into your existing workflows. Scoring, classification, prediction, and recommendation engines trained on your data.</p>
+          <ul>
+            <li>Scoring and classification models</li>
+            <li>RAG knowledge base systems</li>
+            <li>Voice and document intelligence pipelines</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">FastAPI</span></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📎</div>
-          <h3>Document Collector</h3>
-          <p>Knows exactly what documents each case requires. Sends personalised checklists to clients and automatically follows up until every file is received.</p>
+        <div class="card service-card">
+          <div class="card-num">02</div>
+          <h3>Data Engineering &amp; Pipelines</h3>
+          <p>End-to-end data movement designed for reliability and scale. From ingestion and transformation to warehousing and delivery.</p>
+          <ul>
+            <li>ETL/ELT pipeline design and build</li>
+            <li>Real-time event streaming architectures</li>
+            <li>Data warehouse and schema design</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">dbt</span></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Pipeline Intelligence</h3>
-          <p>Real-time deal health across your entire book. AI generates a plain-English status update for every active case, surfacing blockers before they become problems.</p>
+        <div class="card service-card">
+          <div class="card-num">03</div>
+          <h3>Business Intelligence &amp; Dashboards</h3>
+          <p>Custom reporting and visibility tools built on your actual data. Operational dashboards, executive KPI views, and drill-down analytics.</p>
+          <ul>
+            <li>Operational and executive dashboards</li>
+            <li>Automated scheduled reporting</li>
+            <li>Anomaly detection and alerting</li>
+          </ul>
+          <div class="tags"><span class="tag">Angular</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">dbt</span></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">💬</div>
-          <h3>Client Comms</h3>
-          <p>WhatsApp, email, and voice notes — all centralised, searchable, and automated. Every client conversation in one thread, no matter which channel they use.</p>
+        <div class="card service-card">
+          <div class="card-num">04</div>
+          <h3>Application Development</h3>
+          <p>Full-stack web applications and internal tools built precisely for your workflow. Client portals, staff-facing systems, and process-specific applications from the ground up.</p>
+          <ul>
+            <li>Full-stack web and internal applications</li>
+            <li>Client-facing portals and intake systems</li>
+            <li>Mobile-responsive interfaces</li>
+          </ul>
+          <div class="tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">TypeScript</span></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚙️</div>
-          <h3>Workflow Automator</h3>
-          <p>Trigger actions on stage changes, document receipts, time elapsed, or any combination. Build complex automations without writing a single line of code.</p>
+        <div class="card service-card">
+          <div class="card-num">05</div>
+          <h3>System Integrations &amp; APIs</h3>
+          <p>Custom middleware and API layers that connect your CRMs, ERPs, SaaS tools, government systems, and legacy databases.</p>
+          <ul>
+            <li>REST and GraphQL API development</li>
+            <li>CRM and ERP deep integrations</li>
+            <li>Legacy system connectivity</li>
+          </ul>
+          <div class="tags"><span class="tag">REST</span><span class="tag">Webhooks</span><span class="tag">Pipedrive</span><span class="tag">HubSpot</span></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h3>Post-Completion Portal</h3>
-          <p>The deal is done, but the relationship isn't. Retention alerts, renewal reminders, and upsell flags ensure nothing falls through after close.</p>
+        <div class="card service-card">
+          <div class="card-num">06</div>
+          <h3>Automation &amp; Workflow Orchestration</h3>
+          <p>Intelligent process automation that eliminates manual steps and accelerates throughput. Document handling, approval flows, and event-driven triggers.</p>
+          <ul>
+            <li>Automated document collection and routing</li>
+            <li>Multi-step approval workflows</li>
+            <li>Event-driven notification systems</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Celery</span><span class="tag">Azure Functions</span></div>
         </div>
+        <div class="card service-card">
+          <div class="card-num">07</div>
+          <h3>Security-First Data Architecture</h3>
+          <p>Security and privacy built into the architecture from day one. Encrypted data flows, access control, audit logging, and compliance-ready design for regulated environments.</p>
+          <ul>
+            <li>Field-level encryption and key management</li>
+            <li>Role-based access control (RBAC)</li>
+            <li>Tamper-proof audit logging</li>
+          </ul>
+          <div class="tags"><span class="tag">Azure Key Vault</span><span class="tag">RBAC</span><span class="tag">JWT</span></div>
+        </div>
+        <div class="card service-card">
+          <div class="card-num">08</div>
+          <h3>Government &amp; Regulated Industry</h3>
+          <p>Systems built to meet the compliance and documentation requirements of government procurement, regulated financial services, and high-assurance data environments.</p>
+          <ul>
+            <li>Compliance workflow and checklist systems</li>
+            <li>Structured submission management</li>
+            <li>Government API integrations</li>
+          </ul>
+          <div class="tags"><span class="tag">Compliance</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="services.html" class="btn btn-outline">View all services</a>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works">
+  <!-- HOW WE WORK -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="section-label">Process</div>
-      <h2 class="section-title">From first enquiry to<br />long-term client. Automated.</h2>
+      <div class="section-header center">
+        <div class="eyebrow">Process</div>
+        <h2>How an engagement works</h2>
+        <p>A structured approach from first conversation to deployed system.</p>
+      </div>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Client enquiry arrives</h3>
-            <p>Via web form, email, WhatsApp, or referral link — Augmentra captures it all in one place from the first moment of contact.</p>
-          </div>
+          <h3>Discovery</h3>
+          <p>You explain the problem. I ask the hard questions. We define scope, technical constraints, integrations required, and what success looks like.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>AI scores and routes</h3>
-            <p>Every enquiry gets an instant AI quality score. Urgent cases are flagged for immediate attention; routine cases move through automated workflows without manual input.</p>
-          </div>
+          <h3>Architecture</h3>
+          <p>I design the full system: data model, integration points, AI components, security posture, and deployment strategy. Reviewed and agreed before build begins.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Documents requested automatically</h3>
-            <p>A personalised document checklist is sent to the client. Follow-up reminders are handled by Augmentra — not your team — until everything is received.</p>
-          </div>
+          <h3>Build</h3>
+          <p>Iterative delivery with working software fast. Continuous refinement based on feedback. You see progress throughout, not just at the end.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Case moves through pipeline</h3>
-            <p>AI continuously updates case status, surfaces blockers, and keeps your team informed. Everyone knows exactly where every client stands, in real time.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">05</div>
-          <div class="step-content">
-            <h3>Completed and beyond</h3>
-            <p>Post-completion, Augmentra monitors for retention opportunities. Renewal dates, upsell signals, and re-engagement triggers — nothing gets forgotten after close.</p>
-          </div>
+          <h3>Deploy &amp; Support</h3>
+          <p>Production deployment, full handover documentation, and optional ongoing support. You own everything: code, data, infrastructure.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
-  <section id="who">
+  <!-- WHY CUSTOM -->
+  <section class="section">
     <div class="container">
-      <div class="section-label">Industries</div>
-      <h2 class="section-title">Built for any team that runs<br />complex client workflows.</h2>
-      <p class="section-sub">If your business involves clients, documents, and decisions — Augmentra was built for you.</p>
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-icon">💼</div>
-          <h3>Finance Brokers</h3>
-          <p>Qualify more leads without more headcount</p>
+      <div class="section-header">
+        <div class="eyebrow">The case for bespoke</div>
+        <h2>Why off-the-shelf falls short</h2>
+      </div>
+      <div class="why-grid">
+        <div class="card why-card">
+          <h3>Configured, not engineered</h3>
+          <p>Off-the-shelf tools are built for the average use case. Your business is not average. Every workaround, every missing feature, every forced process change is a cost — in time, accuracy, and competitive advantage.</p>
         </div>
-        <div class="who-card">
-          <div class="who-icon">🏠</div>
-          <h3>Mortgage Brokers</h3>
-          <p>Automate doc collection, focus on the deal</p>
+        <div class="card why-card">
+          <h3>Security and data ownership</h3>
+          <p>SaaS platforms own your data. They train on it, aggregate it, and govern it under their terms. Custom-built solutions mean your data stays in your infrastructure, under your control, with access rules you define.</p>
         </div>
-        <div class="who-card">
-          <div class="who-icon">📒</div>
-          <h3>Accountants</h3>
-          <p>Onboard clients faster, chase less paperwork</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">🛂</div>
-          <h3>Immigration Agents</h3>
-          <p>Never lose track of a visa application again</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">🛡️</div>
-          <h3>Insurance Brokers</h3>
-          <p>Proposals, renewals, and claims in one place</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">🤝</div>
-          <h3>Recruiters</h3>
-          <p>Candidate pipelines that run themselves</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">⚖️</div>
-          <h3>Legal Firms</h3>
-          <p>Matter intake and doc collection on autopilot</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">📝</div>
-          <h3>Grant Writers</h3>
-          <p>Manage complex applications without the chaos</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon">🏗️</div>
-          <h3>Equipment Financiers</h3>
-          <p>Approvals pipeline, automated end to end</p>
+        <div class="card why-card">
+          <h3>One engineer. Full accountability.</h3>
+          <p>You work directly with the person building your system. No account managers. No hand-offs. No offshore teams interpreting requirements through three layers of indirection. If something breaks, I fix it.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
+  <!-- INDUSTRIES -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="section-label">Early feedback</div>
-      <h2 class="section-title">What early users are saying.</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">"I used to spend half my day chasing clients for documents. Augmentra handles all of that automatically. I haven't sent a 'just following up' email in three weeks."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SR</div>
-            <div class="author-info">
-              <div class="author-name">Sarah R.</div>
-              <div class="author-title">Finance Broker, Sydney</div>
-            </div>
-          </div>
+      <div class="section-header">
+        <div class="eyebrow">Industries</div>
+        <h2>Industries we serve</h2>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <h4>Financial Services</h4>
+          <p>Mortgage broking, equipment finance, investment advisory</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">"With 40+ active visa applications at any time, things used to fall through the cracks constantly. Now every case has a real-time status and I know exactly what needs attention."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">DM</div>
-            <div class="author-info">
-              <div class="author-name">Daniel M.</div>
-              <div class="author-title">Immigration Agent, Melbourne</div>
-            </div>
-          </div>
+        <div class="industry-card">
+          <h4>Government &amp; Procurement</h4>
+          <p>Federal and state procurement, grant administration, compliance workflows</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">"Our whole recruitment pipeline used to live in a shared spreadsheet that was always wrong. Augmentra gave us visibility we've never had — and our team actually uses it."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">PK</div>
-            <div class="author-info">
-              <div class="author-name">Priya K.</div>
-              <div class="author-title">Recruitment Manager, Brisbane</div>
-            </div>
-          </div>
+        <div class="industry-card">
+          <h4>Professional Services</h4>
+          <p>Legal, accounting, immigration, consulting</p>
+        </div>
+        <div class="industry-card">
+          <h4>Digital Marketing &amp; Agencies</h4>
+          <p>Multi-client campaign management, analytics, reporting automation</p>
+        </div>
+        <div class="industry-card">
+          <h4>Operations-Heavy Businesses</h4>
+          <p>Logistics, construction, project management</p>
+        </div>
+        <div class="industry-card">
+          <h4>Healthcare &amp; Regulated Sectors</h4>
+          <p>Compliant data handling, audit-ready architecture</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WAITLIST CTA -->
-  <section id="waitlist">
+  <!-- TECH STACK -->
+  <section class="section">
     <div class="container">
-      <div class="waitlist-inner">
-        <div class="waitlist-content">
-          <div class="section-label">Early access</div>
-          <h2 class="waitlist-headline">Be first in line.</h2>
-          <p class="waitlist-sub">We're rolling out gradually. Drop your details and we'll reach out when your spot is ready.</p>
+      <div class="section-header">
+        <div class="eyebrow">Technologies</div>
+        <h2>Built on proven platforms</h2>
+        <p>Technology choices are driven by the problem, not preference.</p>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Languages &amp; Frameworks</div>
+        <div class="stack-chips">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">FastAPI</span>
+          <span class="stack-chip">Angular</span>
+          <span class="stack-chip">React</span>
+          <span class="stack-chip">TypeScript</span>
+          <span class="stack-chip">Node.js</span>
+          <span class="stack-chip">SQL</span>
         </div>
-        <div class="waitlist-form-wrap">
-          <form id="waitlistForm" class="waitlist-form" novalidate>
-            <div class="form-group">
-              <label for="wlName">Full name</label>
-              <input type="text" id="wlName" name="name" placeholder="Your name" autocomplete="name" />
-              <span class="form-error" id="errName"></span>
-            </div>
-            <div class="form-group">
-              <label for="wlEmail">Work email</label>
-              <input type="email" id="wlEmail" name="email" placeholder="you@company.com" autocomplete="email" />
-              <span class="form-error" id="errEmail"></span>
-            </div>
-            <div class="form-group">
-              <label for="wlIndustry">Industry / role</label>
-              <input type="text" id="wlIndustry" name="industry" placeholder="e.g. Finance Broker, Accountant…" />
-              <span class="form-error" id="errIndustry"></span>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-full" id="wlSubmit">
-              <span class="btn-label">Request early access</span>
-            </button>
-          </form>
-          <div class="waitlist-success" id="waitlistSuccess" hidden>
-            <div class="success-icon">&#10003;</div>
-            <h3>You're on the list.</h3>
-            <p>We'll be in touch when your spot is ready. Keep an eye on your inbox.</p>
-          </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Data &amp; Infrastructure</div>
+        <div class="stack-chips">
+          <span class="stack-chip">PostgreSQL</span>
+          <span class="stack-chip">Azure</span>
+          <span class="stack-chip">AWS</span>
+          <span class="stack-chip">Docker</span>
+          <span class="stack-chip">Kafka</span>
+          <span class="stack-chip">dbt</span>
+          <span class="stack-chip">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-label">Integrations &amp; AI</div>
+        <div class="stack-chips">
+          <span class="stack-chip">OpenAI</span>
+          <span class="stack-chip">Anthropic</span>
+          <span class="stack-chip">Pipedrive</span>
+          <span class="stack-chip">HubSpot</span>
+          <span class="stack-chip">Salesforce</span>
+          <span class="stack-chip">Monday.com</span>
+          <span class="stack-chip">WhatsApp Business API</span>
+          <span class="stack-chip">Twilio</span>
+          <span class="stack-chip">Stripe</span>
+          <span class="stack-chip">Annature</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
+  <!-- CASE STUDY TEASERS -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="footer-inner">
+      <div class="section-header">
+        <div class="eyebrow">Client Work</div>
+        <h2>Recent engagements</h2>
+        <p>Purpose-built systems that replaced manual processes with intelligent, reliable infrastructure.</p>
+      </div>
+      <div class="teasers-grid">
+        <div class="card teaser-card">
+          <span class="pill">Financial Services</span>
+          <h3>AI-powered mortgage operations platform</h3>
+          <p>Replaced a spreadsheet-and-email workflow with a full-stack AI operations layer. Automated document collection, pipeline intelligence, and compliance audit trails.</p>
+          <a href="case-studies.html#breathloans" class="teaser-link">Read the case study &rarr;</a>
+        </div>
+        <div class="card teaser-card">
+          <span class="pill pill-green">Government Technology</span>
+          <h3>Government tender intelligence application</h3>
+          <p>Custom system to monitor procurement portals, match opportunities against capability profiles using NLP, and manage the full bid lifecycle end to end.</p>
+          <a href="case-studies.html#trovio" class="teaser-link">Read the case study &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAR -->
+  <section class="cta-bar">
+    <div class="container">
+      <h2>Every solution we build is yours.</h2>
+      <p>No vendor lock-in. No subscription. No shared infrastructure. Purpose-built systems that you own outright.</p>
+      <a href="quote.html" class="btn btn-primary btn-lg">Start a Conversation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
-            <span class="logo-hex">⬡</span>
-            <span class="logo-text">Augmentra</span>
-          </a>
-          <p class="footer-tagline">AI operations for teams with complex client workflows.</p>
+          <div class="nav-logo">AUGMEN<span>TRA</span></div>
+          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
+          <p class="nda-note">All work delivered under NDA as standard.</p>
         </div>
-        <div class="footer-links">
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#who">Who it's for</a>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="security.html">Security</a>
+          <a href="quote.html">Get a Quote</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
           <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Augmentra. All rights reserved.</span>
+        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
+        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
 </body>
 </html>

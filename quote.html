@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote — Augmentra</title>
+  <meta name="description" content="Tell us what you need. We'll respond within one business day with a preliminary scope assessment." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">AUGMEN<span>TRA</span></a>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="security.html">Security</a></li>
+      </ul>
+      <a href="quote.html" class="btn btn-primary nav-cta active">Get a Quote</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="services.html">Services</a>
+      <a href="use-cases.html">Use Cases</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="security.html">Security</a>
+      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="grid-bg"></div>
+    <div class="container page-hero-content">
+      <div class="eyebrow">Get a Quote</div>
+      <h1>Tell us what you need.<br>We'll tell you what's possible.</h1>
+      <p>Every engagement starts with a conversation. Fill in the form below and we'll respond within one business day with a preliminary scope assessment — no obligation.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="quote-layout">
+
+        <!-- Form -->
+        <div>
+          <form id="quoteForm" novalidate>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="qName">Full name</label>
+                <input type="text" id="qName" name="name" class="form-control" placeholder="Your full name" autocomplete="name" />
+                <div class="form-error" id="errName">Please enter your name.</div>
+              </div>
+              <div class="form-group">
+                <label for="qCompany">Company / Organisation</label>
+                <input type="text" id="qCompany" name="company" class="form-control" placeholder="Company name" autocomplete="organization" />
+                <div class="form-error" id="errCompany">Please enter your company name.</div>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="qEmail">Email address</label>
+                <input type="email" id="qEmail" name="email" class="form-control" placeholder="you@company.com" autocomplete="email" />
+                <div class="form-error" id="errEmail">Please enter a valid email address.</div>
+              </div>
+              <div class="form-group">
+                <label for="qPhone">Phone <span class="optional">(optional)</span></label>
+                <input type="tel" id="qPhone" name="phone" class="form-control" placeholder="+61 4xx xxx xxx" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qIndustry">Industry</label>
+              <input type="text" id="qIndustry" name="industry" class="form-control" placeholder="e.g. Financial Services, Government, Digital Marketing" />
+              <div class="form-error" id="errIndustry">Please describe your industry.</div>
+            </div>
+            <div class="form-group">
+              <label for="qType">Project type</label>
+              <select id="qType" name="project_type" class="form-control">
+                <option value="" disabled selected>Select a project type</option>
+                <option>AI / Machine Learning</option>
+                <option>Data Engineering</option>
+                <option>Application Development</option>
+                <option>System Integration</option>
+                <option>Business Intelligence</option>
+                <option>Automation and Workflow</option>
+                <option>Security and Compliance</option>
+                <option>Not sure — I need advice</option>
+              </select>
+              <div class="form-error" id="errType">Please select a project type.</div>
+            </div>
+            <div class="form-group">
+              <label for="qDesc">What do you need built?</label>
+              <textarea id="qDesc" name="description" class="form-control" rows="5" placeholder="Describe the problem you are trying to solve. No need for technical detail — explain what needs to happen and what currently happens instead."></textarea>
+              <div class="form-error" id="errDesc">Please describe your project.</div>
+            </div>
+            <div class="form-group">
+              <label for="qInteg">Existing systems to integrate <span class="optional">(optional)</span></label>
+              <textarea id="qInteg" name="integrations" class="form-control" rows="3" placeholder="e.g. Salesforce, a custom database, a government portal, an existing web application..."></textarea>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="qTimeline">Preferred timeline</label>
+                <select id="qTimeline" name="timeline" class="form-control">
+                  <option value="" disabled selected>Select timeline</option>
+                  <option>As soon as possible</option>
+                  <option>Within 1 month</option>
+                  <option>1 to 3 months</option>
+                  <option>3 to 6 months</option>
+                  <option>Exploring options — no fixed timeline</option>
+                </select>
+                <div class="form-error" id="errTimeline">Please select a timeline.</div>
+              </div>
+              <div class="form-group">
+                <label for="qBudget">Budget range</label>
+                <select id="qBudget" name="budget" class="form-control">
+                  <option value="" disabled selected>Select a range</option>
+                  <option>Under $10,000</option>
+                  <option>$10,000 to $30,000</option>
+                  <option>$30,000 to $100,000</option>
+                  <option>$100,000 and above</option>
+                  <option>Prefer to discuss</option>
+                </select>
+                <div class="form-error" id="errBudget">Please select a budget range.</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Send Enquiry</button>
+            <p class="form-note">All enquiries are treated with strict confidentiality.</p>
+          </form>
+
+          <div class="quote-success" id="quoteSuccess">
+            <h3>Enquiry received.</h3>
+            <p>We will review your submission and respond within one business day with an initial assessment. In the meantime, you can review our <a href="case-studies.html" style="color:var(--accent)">case studies</a> or explore our <a href="services.html" style="color:var(--accent)">service offering</a>.</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="quote-sidebar">
+          <div class="card sidebar-card">
+            <h4>Straight answers</h4>
+            <p>If something is not worth building, you will hear that. If there is a simpler approach, it will be raised before the complex one is scoped.</p>
+          </div>
+          <div class="card sidebar-card">
+            <h4>No surprises</h4>
+            <p>Scope, timeline, and cost are agreed in writing before any development begins. Changes go through a formal change request — not verbal agreements.</p>
+          </div>
+          <div class="card sidebar-card">
+            <h4>Direct line</h4>
+            <p>You work directly with the engineer building your system. One point of contact from first conversation through to deployment and handover.</p>
+          </div>
+          <div class="sidebar-direct">
+            Prefer to reach out directly?<br>
+            <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">AUGMEN<span>TRA</span></div>
+          <p>Custom-built intelligence for your business. Independent technology contractor.</p>
+          <p class="nda-note">All work delivered under NDA as standard.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="security.html">Security</a>
+          <a href="quote.html">Get a Quote</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Augmentra. Independent technology contractor.</p>
+        <p><a href="mailto:hello@augmentra.io">hello@augmentra.io</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
