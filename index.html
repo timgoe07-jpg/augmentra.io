@@ -60,107 +60,252 @@
       </div>
     </div>
 
-    <!-- Hero Dashboard — universal client ops view -->
+    <!-- Hero Dashboard — Augmentra Analytics Platform -->
     <div class="hero-dashboard reveal-up reveal-delay-4">
       <div class="hd-bar">
         <div class="hd-bar-left">
           <div class="hd-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div>
-          <span class="hd-title">augmentra / client-operations-platform</span>
+          <span class="hd-title">augmentra / analytics-operations-platform</span>
+          <span class="hd-env-badge">Production</span>
         </div>
         <div class="hd-bar-right">
           <span class="hd-live-dot"></span>
           <span class="hd-live-label">Live</span>
         </div>
       </div>
-      <div class="hd-body">
-        <!-- Left: KPI strip + activity feed -->
-        <div class="hd-col hd-col-left">
-          <div class="hd-kpi-strip">
-            <div class="hd-kpi">
-              <div class="hd-kpi-val" id="hd-kpi-1">47</div>
-              <div class="hd-kpi-label">Active clients</div>
-              <div class="hd-kpi-delta up">+3 this week</div>
+      <div class="hd-tabs">
+        <button class="hd-tab active" data-hd-tab="analytics">Analytics</button>
+        <button class="hd-tab" data-hd-tab="automation">Automation</button>
+        <button class="hd-tab" data-hd-tab="insights">AI Insights</button>
+      </div>
+      <div class="hd-panels">
+
+        <!-- ANALYTICS TAB -->
+        <div class="hd-panel active" data-hd-panel="analytics">
+          <div class="hd-body">
+            <div class="hd-col hd-col-left">
+              <div class="hd-kpi-strip">
+                <div class="hd-kpi">
+                  <div class="hd-kpi-val">$2.4M</div>
+                  <div class="hd-kpi-label">Revenue tracked MTD</div>
+                  <div class="hd-kpi-delta up">+18% vs last month</div>
+                </div>
+                <div class="hd-kpi">
+                  <div class="hd-kpi-val">47</div>
+                  <div class="hd-kpi-label">Active client files</div>
+                  <div class="hd-kpi-delta up">+3 this week</div>
+                </div>
+                <div class="hd-kpi">
+                  <div class="hd-kpi-val">98.4%</div>
+                  <div class="hd-kpi-label">Data pipeline uptime</div>
+                  <div class="hd-kpi-delta up">SLA: 99%</div>
+                </div>
+              </div>
+              <div class="hd-section-label">Pipeline performance — last 7 days</div>
+              <div class="hd-sparklines">
+                <div class="hd-spark-row">
+                  <span class="hd-spark-label">Client intake</span>
+                  <div class="hd-spark"><span style="height:40%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:80%"></span><span style="height:65%"></span><span style="height:90%"></span><span style="height:100%"></span></div>
+                  <span class="hd-spark-val green">+24%</span>
+                </div>
+                <div class="hd-spark-row">
+                  <span class="hd-spark-label">Docs processed</span>
+                  <div class="hd-spark"><span style="height:55%"></span><span style="height:70%"></span><span style="height:60%"></span><span style="height:85%"></span><span style="height:75%"></span><span style="height:92%"></span><span style="height:100%"></span></div>
+                  <span class="hd-spark-val green">+31%</span>
+                </div>
+                <div class="hd-spark-row">
+                  <span class="hd-spark-label">AI decisions</span>
+                  <div class="hd-spark"><span style="height:30%"></span><span style="height:45%"></span><span style="height:55%"></span><span style="height:70%"></span><span style="height:80%"></span><span style="height:88%"></span><span style="height:100%"></span></div>
+                  <span class="hd-spark-val green">+47%</span>
+                </div>
+                <div class="hd-spark-row">
+                  <span class="hd-spark-label">Manual tasks</span>
+                  <div class="hd-spark red"><span style="height:100%"></span><span style="height:80%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:35%"></span><span style="height:20%"></span><span style="height:8%"></span></div>
+                  <span class="hd-spark-val green">-92%</span>
+                </div>
+              </div>
             </div>
-            <div class="hd-kpi">
-              <div class="hd-kpi-val" id="hd-kpi-2">94%</div>
-              <div class="hd-kpi-label">Tasks automated</div>
-              <div class="hd-kpi-delta up">vs 12% before</div>
-            </div>
-            <div class="hd-kpi">
-              <div class="hd-kpi-val" id="hd-kpi-3">8 min</div>
-              <div class="hd-kpi-label">Avg. processing time</div>
-              <div class="hd-kpi-delta up">was 4+ hours</div>
-            </div>
-          </div>
-          <div class="hd-section-label">Recent activity</div>
-          <div class="hd-feed" id="hd-feed">
-            <div class="hd-feed-item hd-feed-green">
-              <span class="hd-feed-dot green"></span>
-              <div class="hd-feed-text"><strong>New client onboarded</strong> — documents collected automatically</div>
-              <span class="hd-feed-time">2m ago</span>
-            </div>
-            <div class="hd-feed-item hd-feed-blue">
-              <span class="hd-feed-dot blue"></span>
-              <div class="hd-feed-text"><strong>Report generated</strong> — sent to 12 clients, zero manual work</div>
-              <span class="hd-feed-time">6m ago</span>
-            </div>
-            <div class="hd-feed-item hd-feed-amber">
-              <span class="hd-feed-dot amber"></span>
-              <div class="hd-feed-text"><strong>Action required</strong> — Jordan P. missing 2 documents</div>
-              <span class="hd-feed-time">11m ago</span>
-            </div>
-            <div class="hd-feed-item hd-feed-green">
-              <span class="hd-feed-dot green"></span>
-              <div class="hd-feed-text"><strong>Deal approved</strong> — compliance check passed automatically</div>
-              <span class="hd-feed-time">18m ago</span>
-            </div>
-            <div class="hd-feed-item hd-feed-blue">
-              <span class="hd-feed-dot blue"></span>
-              <div class="hd-feed-text"><strong>CRM synced</strong> — 6 records updated from pipeline data</div>
-              <span class="hd-feed-time">24m ago</span>
+            <div class="hd-col hd-col-right">
+              <div class="hd-section-label">System health</div>
+              <div class="hd-health-grid">
+                <div class="hd-health-item ok"><span class="hd-health-dot"></span><span class="hd-health-name">Data ingestion</span><span class="hd-health-status">Nominal</span></div>
+                <div class="hd-health-item ok"><span class="hd-health-dot"></span><span class="hd-health-name">AI classification</span><span class="hd-health-status">94.1% acc.</span></div>
+                <div class="hd-health-item ok"><span class="hd-health-dot"></span><span class="hd-health-name">CRM sync</span><span class="hd-health-status">28s lag</span></div>
+                <div class="hd-health-item ok"><span class="hd-health-dot"></span><span class="hd-health-name">Report delivery</span><span class="hd-health-status">0 failures</span></div>
+                <div class="hd-health-item ok"><span class="hd-health-dot"></span><span class="hd-health-name">Audit logging</span><span class="hd-health-status">100% coverage</span></div>
+                <div class="hd-health-item warn"><span class="hd-health-dot warn"></span><span class="hd-health-name">Doc queue</span><span class="hd-health-status warn">3 pending</span></div>
+              </div>
+              <div class="hd-time-saved">
+                <div>
+                  <div class="hd-time-val" id="hd-time-saved">31.4</div>
+                  <div class="hd-time-label">hours saved this week</div>
+                </div>
+                <div class="hd-time-right">
+                  <div class="hd-time-sub">Team capacity freed</div>
+                  <div class="hd-time-freed">+4 days equivalent</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Right: pipeline status + throughput -->
-        <div class="hd-col hd-col-right">
-          <div class="hd-section-label">Automation pipeline</div>
-          <div class="hd-pipeline">
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">Client intake</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
-              <div class="hd-pipe-stat green">Auto</div>
+
+        <!-- AUTOMATION TAB -->
+        <div class="hd-panel" data-hd-panel="automation">
+          <div class="hd-body">
+            <div class="hd-col hd-col-left">
+              <div class="hd-section-label">Workflow automation — current coverage</div>
+              <div class="hd-pipeline">
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">Client intake &amp; routing</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+                  <div class="hd-pipe-stat green">100%</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">Document collection</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:94%"></div></div>
+                  <div class="hd-pipe-stat green">94%</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">AI classification</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:97%"></div></div>
+                  <div class="hd-pipe-stat green">97%</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">Compliance validation</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+                  <div class="hd-pipe-stat green">100%</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">CRM &amp; reporting sync</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+                  <div class="hd-pipe-stat green">Live</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">Client notifications</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:88%"></div></div>
+                  <div class="hd-pipe-stat green">88%</div>
+                </div>
+                <div class="hd-pipe-row">
+                  <div class="hd-pipe-name">Manual data entry</div>
+                  <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar red" style="width:4%"></div></div>
+                  <div class="hd-pipe-stat red">4%</div>
+                </div>
+              </div>
             </div>
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">Document collection</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:94%"></div></div>
-              <div class="hd-pipe-stat green">94%</div>
+            <div class="hd-col hd-col-right">
+              <div class="hd-section-label">Live activity feed</div>
+              <div class="hd-feed" id="hd-feed">
+                <div class="hd-feed-item">
+                  <span class="hd-feed-dot green"></span>
+                  <div class="hd-feed-text"><strong>Client onboarded</strong> — intake form routed, docs requested automatically</div>
+                  <span class="hd-feed-time">2m ago</span>
+                </div>
+                <div class="hd-feed-item">
+                  <span class="hd-feed-dot blue"></span>
+                  <div class="hd-feed-text"><strong>12 reports delivered</strong> — scheduled batch, zero manual effort</div>
+                  <span class="hd-feed-time">8m ago</span>
+                </div>
+                <div class="hd-feed-item">
+                  <span class="hd-feed-dot amber"></span>
+                  <div class="hd-feed-text"><strong>Chase sent</strong> — 2 missing documents, auto-reminder triggered</div>
+                  <span class="hd-feed-time">14m ago</span>
+                </div>
+                <div class="hd-feed-item">
+                  <span class="hd-feed-dot green"></span>
+                  <div class="hd-feed-text"><strong>Compliance: PASS</strong> — 0 flags, deal advanced to next stage</div>
+                  <span class="hd-feed-time">21m ago</span>
+                </div>
+                <div class="hd-feed-item">
+                  <span class="hd-feed-dot blue"></span>
+                  <div class="hd-feed-text"><strong>CRM synced</strong> — 8 pipeline records updated from data layer</div>
+                  <span class="hd-feed-time">29m ago</span>
+                </div>
+              </div>
             </div>
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">AI classification</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:97%"></div></div>
-              <div class="hd-pipe-stat green">97%</div>
-            </div>
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">Compliance checks</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
-              <div class="hd-pipe-stat green">Auto</div>
-            </div>
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">CRM / reporting sync</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
-              <div class="hd-pipe-stat green">Live</div>
-            </div>
-            <div class="hd-pipe-row">
-              <div class="hd-pipe-name">Manual data entry</div>
-              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar red" style="width:4%"></div></div>
-              <div class="hd-pipe-stat red">4%</div>
-            </div>
-          </div>
-          <div class="hd-time-saved">
-            <span class="hd-time-val" id="hd-time-saved">31.4</span>
-            <span class="hd-time-label">hours saved this week</span>
           </div>
         </div>
+
+        <!-- AI INSIGHTS TAB -->
+        <div class="hd-panel" data-hd-panel="insights">
+          <div class="hd-body">
+            <div class="hd-col hd-col-left">
+              <div class="hd-section-label">AI model performance</div>
+              <div class="hd-model-list">
+                <div class="hd-model-row">
+                  <div class="hd-model-info">
+                    <div class="hd-model-name">Document Classifier</div>
+                    <div class="hd-model-detail">TensorFlow &middot; 15 categories &middot; retrained weekly</div>
+                  </div>
+                  <div class="hd-model-acc">
+                    <div class="hd-model-acc-val">94.1%</div>
+                    <div class="hd-model-acc-bar"><div style="width:94.1%"></div></div>
+                  </div>
+                </div>
+                <div class="hd-model-row">
+                  <div class="hd-model-info">
+                    <div class="hd-model-name">Risk Scoring Engine</div>
+                    <div class="hd-model-detail">scikit-learn &middot; income + behaviour signals</div>
+                  </div>
+                  <div class="hd-model-acc">
+                    <div class="hd-model-acc-val">91.7%</div>
+                    <div class="hd-model-acc-bar"><div style="width:91.7%"></div></div>
+                  </div>
+                </div>
+                <div class="hd-model-row">
+                  <div class="hd-model-info">
+                    <div class="hd-model-name">RAG Knowledge Base</div>
+                    <div class="hd-model-detail">Azure OpenAI &middot; 8,400 policy chunks indexed</div>
+                  </div>
+                  <div class="hd-model-acc">
+                    <div class="hd-model-acc-val">0.87</div>
+                    <div class="hd-model-acc-bar"><div style="width:87%"></div></div>
+                  </div>
+                </div>
+                <div class="hd-model-row">
+                  <div class="hd-model-info">
+                    <div class="hd-model-name">NLP Intent Classifier</div>
+                    <div class="hd-model-detail">spaCy &middot; email + message routing</div>
+                  </div>
+                  <div class="hd-model-acc">
+                    <div class="hd-model-acc-val">96.2%</div>
+                    <div class="hd-model-acc-bar"><div style="width:96.2%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hd-col hd-col-right">
+              <div class="hd-section-label">Recent AI decisions</div>
+              <div class="hd-ai-decisions" id="hd-ai-decisions">
+                <div class="hd-ai-row approve">
+                  <span class="hd-ai-badge approve">APPROVE</span>
+                  <div class="hd-ai-detail">File #8821 &middot; risk=LOW &middot; conf=0.94 &middot; 8s</div>
+                </div>
+                <div class="hd-ai-row approve">
+                  <span class="hd-ai-badge approve">APPROVE</span>
+                  <div class="hd-ai-detail">File #8819 &middot; risk=LOW &middot; conf=0.91 &middot; 11s</div>
+                </div>
+                <div class="hd-ai-row review">
+                  <span class="hd-ai-badge review">REVIEW</span>
+                  <div class="hd-ai-detail">File #8817 &middot; risk=MED &middot; conf=0.62 &middot; broker notified</div>
+                </div>
+                <div class="hd-ai-row approve">
+                  <span class="hd-ai-badge approve">APPROVE</span>
+                  <div class="hd-ai-detail">File #8815 &middot; risk=LOW &middot; conf=0.97 &middot; 7s</div>
+                </div>
+                <div class="hd-ai-row approve">
+                  <span class="hd-ai-badge approve">APPROVE</span>
+                  <div class="hd-ai-detail">File #8812 &middot; risk=LOW &middot; conf=0.89 &middot; 14s</div>
+                </div>
+              </div>
+              <div class="hd-ai-summary">
+                <span>Today: <strong>42 decisions</strong></span>
+                <span class="green">38 auto-approved</span>
+                <span class="amber">4 routed to review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

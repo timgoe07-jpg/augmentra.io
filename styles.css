@@ -3495,3 +3495,242 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
   .hd-kpi-strip { grid-template-columns: 1fr 1fr; }
   .hd-kpi:last-child { grid-column: span 2; }
 }
+
+/* ============================================================
+   SUBTLE PAGE BACKGROUND — every page
+   ============================================================ */
+
+/* Animated mesh gradient behind everything */
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59,130,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(6,182,212,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+  background-attachment: fixed;
+}
+
+/* Section backgrounds get a very subtle variation */
+.section-dark,
+section[style*="background: var(--surface)"],
+section.section[style*="background"] {
+  background-image: none !important;
+}
+
+/* ============================================================
+   HERO DASHBOARD — env badge + tabs
+   ============================================================ */
+.hd-env-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--success);
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.hd-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.015);
+}
+.hd-tab {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+.hd-tab:hover { color: var(--text); }
+.hd-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.hd-panels { position: relative; }
+.hd-panel { display: none; }
+.hd-panel.active { display: block; animation: fade-in 0.25s ease; }
+
+/* ============================================================
+   SPARKLINES
+   ============================================================ */
+.hd-sparklines { display: flex; flex-direction: column; gap: 8px; }
+.hd-spark-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 44px;
+  align-items: center;
+  gap: 12px;
+}
+.hd-spark-label { font-size: 0.73rem; color: var(--muted); font-family: var(--font-mono); white-space: nowrap; }
+.hd-spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+}
+.hd-spark span {
+  flex: 1;
+  background: linear-gradient(180deg, var(--accent), rgba(59,130,246,0.3));
+  border-radius: 2px 2px 0 0;
+  min-width: 6px;
+  transition: height 0.3s ease;
+}
+.hd-spark.red span {
+  background: linear-gradient(180deg, var(--danger), rgba(239,68,68,0.3));
+}
+.hd-spark-val { font-family: var(--font-mono); font-size: 0.73rem; font-weight: 700; text-align: right; }
+.hd-spark-val.green { color: var(--success); }
+
+/* ============================================================
+   SYSTEM HEALTH GRID
+   ============================================================ */
+.hd-health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.hd-health-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(34,197,94,0.04);
+  border: 1px solid rgba(34,197,94,0.12);
+  border-radius: var(--radius-sm);
+}
+.hd-health-item.warn {
+  background: rgba(245,158,11,0.04);
+  border-color: rgba(245,158,11,0.15);
+}
+.hd-health-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  background: var(--success);
+  box-shadow: 0 0 5px rgba(34,197,94,0.5);
+}
+.hd-health-dot.warn {
+  background: var(--warning);
+  box-shadow: 0 0 5px rgba(245,158,11,0.5);
+}
+.hd-health-name { font-size: 0.73rem; color: var(--muted); flex: 1; }
+.hd-health-status { font-family: var(--font-mono); font-size: 0.67rem; color: var(--success); font-weight: 600; }
+.hd-health-status.warn { color: var(--warning); }
+
+/* Wider time-saved row */
+.hd-time-saved {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(34,197,94,0.05);
+  border: 1px solid rgba(34,197,94,0.15);
+  border-radius: var(--radius-sm);
+}
+.hd-time-right { text-align: right; }
+.hd-time-sub { font-size: 0.68rem; color: var(--muted); margin-bottom: 2px; letter-spacing: 0.04em; }
+.hd-time-freed { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--success); }
+
+/* ============================================================
+   AI MODEL LIST
+   ============================================================ */
+.hd-model-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 0; }
+.hd-model-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+.hd-model-row:hover { border-color: rgba(59,130,246,0.3); }
+.hd-model-info { flex: 1; min-width: 0; }
+.hd-model-name { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.hd-model-detail { font-size: 0.68rem; color: var(--muted); font-family: var(--font-mono); }
+.hd-model-acc { flex-shrink: 0; text-align: right; min-width: 80px; }
+.hd-model-acc-val { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--cyan); margin-bottom: 5px; }
+.hd-model-acc-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; width: 80px; }
+.hd-model-acc-bar div { height: 100%; background: linear-gradient(90deg, var(--accent), var(--cyan)); border-radius: 2px; }
+
+/* ============================================================
+   AI DECISIONS LIST
+   ============================================================ */
+.hd-ai-decisions { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.hd-ai-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  border: 1px solid transparent;
+}
+.hd-ai-row.approve { background: rgba(34,197,94,0.04); border-color: rgba(34,197,94,0.12); }
+.hd-ai-row.review { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.15); }
+.hd-ai-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.hd-ai-badge.approve { background: rgba(34,197,94,0.12); color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
+.hd-ai-badge.review { background: rgba(245,158,11,0.12); color: var(--warning); border: 1px solid rgba(245,158,11,0.25); }
+.hd-ai-detail { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+.hd-ai-summary {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-sm);
+}
+.hd-ai-summary .green { color: var(--success); font-family: var(--font-mono); }
+.hd-ai-summary .amber { color: var(--warning); font-family: var(--font-mono); }
+.hd-ai-summary strong { color: var(--text); }
+
+/* ============================================================
+   FEED ITEMS — cleaner (no background class on item)
+   ============================================================ */
+.hd-feed-item {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: border-color 0.2s;
+}
+.hd-feed-item:hover { border-color: rgba(59,130,246,0.2); }
+
+/* ============================================================
+   MOBILE — hero dashboard additions
+   ============================================================ */
+@media (max-width: 768px) {
+  .hd-tabs { overflow-x: auto; }
+  .hd-health-grid { grid-template-columns: 1fr; }
+  .hd-spark-row { grid-template-columns: 100px 1fr 38px; }
+  .hd-model-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hd-model-acc { text-align: left; }
+  .hd-model-acc-bar { width: 120px; }
+  .hd-time-saved { flex-direction: column; align-items: flex-start; }
+  .hd-time-right { text-align: left; }
+  .hd-ai-summary { flex-wrap: wrap; gap: 8px; }
+}

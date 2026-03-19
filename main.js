@@ -597,3 +597,49 @@
       }, 6000);
     }
   }());
+
+  /* ----------------------------------------------------------
+     HERO DASHBOARD TABS
+     ---------------------------------------------------------- */
+  (function () {
+    var tabs = document.querySelectorAll('.hd-tab');
+    var panels = document.querySelectorAll('.hd-panel');
+    if (!tabs.length) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = this.getAttribute('data-hd-tab');
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        panels.forEach(function (p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        var p = document.querySelector('.hd-panel[data-hd-panel="' + target + '"]');
+        if (p) p.classList.add('active');
+      }.bind(tab));
+    });
+  }());
+
+  /* ----------------------------------------------------------
+     AI DECISIONS — cycle new decisions every 4s
+     ---------------------------------------------------------- */
+  (function () {
+    var list = document.getElementById('hd-ai-decisions');
+    if (!list) return;
+    var fileNum = 8822;
+    var decisions = ['approve','approve','approve','approve','review','approve','approve'];
+    var idx = 0;
+    var risks = { approve: 'LOW', review: 'MED' };
+    var confs = [0.94, 0.97, 0.89, 0.91, 0.62, 0.96, 0.88];
+    setInterval(function () {
+      var type = decisions[idx % decisions.length];
+      var conf = confs[idx % confs.length];
+      var time = Math.floor(Math.random() * 12) + 5;
+      idx++;
+      var row = document.createElement('div');
+      row.className = 'hd-ai-row ' + type;
+      row.innerHTML = '<span class="hd-ai-badge ' + type + '">' + type.toUpperCase() + '</span>' +
+        '<div class="hd-ai-detail">File #' + fileNum + ' &middot; risk=' + risks[type] + ' &middot; conf=' + conf + ' &middot; ' + time + 's</div>';
+      fileNum++;
+      list.insertBefore(row, list.firstChild);
+      var rows = list.querySelectorAll('.hd-ai-row');
+      if (rows.length > 5) list.removeChild(rows[rows.length - 1]);
+    }, 4000);
+  }());
