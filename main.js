@@ -551,3 +551,49 @@
       observer.observe(el);
     });
   }());
+
+  /* ----------------------------------------------------------
+     HERO DASHBOARD — activity feed cycling + time counter
+     ---------------------------------------------------------- */
+  (function () {
+    var feed = document.getElementById('hd-feed');
+    var timeSaved = document.getElementById('hd-time-saved');
+    if (!feed) return;
+
+    var feedItems = [
+      { cls: 'hd-feed-green', dot: 'green', text: '<strong>New client onboarded</strong> — documents collected automatically', time: '2m ago' },
+      { cls: 'hd-feed-blue',  dot: 'blue',  text: '<strong>Report generated</strong> — sent to 12 clients, zero manual work', time: '6m ago' },
+      { cls: 'hd-feed-amber', dot: 'amber', text: '<strong>Action required</strong> — Jordan P. missing 2 documents', time: '11m ago' },
+      { cls: 'hd-feed-green', dot: 'green', text: '<strong>Deal approved</strong> — compliance check passed automatically', time: '18m ago' },
+      { cls: 'hd-feed-blue',  dot: 'blue',  text: '<strong>CRM synced</strong> — 6 records updated from pipeline data', time: '24m ago' },
+      { cls: 'hd-feed-green', dot: 'green', text: '<strong>Document AI</strong> — payslip classified in 0.8s, income extracted', time: '29m ago' },
+      { cls: 'hd-feed-blue',  dot: 'blue',  text: '<strong>Compliance check</strong> — PASS &middot; 0 flags &middot; deal progressed', time: '33m ago' },
+      { cls: 'hd-feed-amber', dot: 'amber', text: '<strong>Reminder sent</strong> — auto-chase for missing tax return', time: '41m ago' },
+      { cls: 'hd-feed-green', dot: 'green', text: '<strong>Pipeline updated</strong> — Sam K. moved to assessment stage', time: '47m ago' }
+    ];
+    var feedIdx = 5;
+    var timeVal = 31.4;
+
+    setInterval(function () {
+      var item = feedItems[feedIdx % feedItems.length]; feedIdx++;
+      // Age all existing times
+      feed.querySelectorAll('.hd-feed-time').forEach(function (el) {
+        var t = el.textContent;
+        var m = t.match(/(\d+)m/);
+        if (m) el.textContent = (parseInt(m[1]) + 4) + 'm ago';
+      });
+      var row = document.createElement('div');
+      row.className = 'hd-feed-item ' + item.cls;
+      row.innerHTML = '<span class="hd-feed-dot ' + item.dot + '"></span><div class="hd-feed-text">' + item.text + '</div><span class="hd-feed-time">just now</span>';
+      feed.insertBefore(row, feed.firstChild);
+      var rows = feed.querySelectorAll('.hd-feed-item');
+      if (rows.length > 5) feed.removeChild(rows[rows.length - 1]);
+    }, 5000);
+
+    if (timeSaved) {
+      setInterval(function () {
+        timeVal += 0.1;
+        timeSaved.textContent = timeVal.toFixed(1);
+      }, 6000);
+    }
+  }());

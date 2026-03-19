@@ -60,98 +60,105 @@
       </div>
     </div>
 
-    <!-- Pipeline Monitor Mock UI -->
-    <div class="pipeline-monitor reveal-up reveal-delay-4">
-      <div class="pm-titlebar">
-        <div class="pm-dot" style="background:#ff5f57;"></div>
-        <div class="pm-dot" style="background:#febc2e;"></div>
-        <div class="pm-dot" style="background:#28c840;"></div>
-        <span class="pm-label">augmentra / loan-intelligence-pipeline</span>
-        <span class="pm-subtitle">Balaton Financial &middot; Production &middot; v2.4.1</span>
+    <!-- Hero Dashboard — universal client ops view -->
+    <div class="hero-dashboard reveal-up reveal-delay-4">
+      <div class="hd-bar">
+        <div class="hd-bar-left">
+          <div class="hd-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div>
+          <span class="hd-title">augmentra / client-operations-platform</span>
+        </div>
+        <div class="hd-bar-right">
+          <span class="hd-live-dot"></span>
+          <span class="hd-live-label">Live</span>
+        </div>
       </div>
-      <div class="pm-body">
-        <div class="pm-panel">
-          <div class="pm-panel-title">Pipeline Nodes</div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            Document Ingestion
-            <span class="pm-node-sub">payslips, bank statements</span>
-            <span class="pm-badge running">Running</span>
+      <div class="hd-body">
+        <!-- Left: KPI strip + activity feed -->
+        <div class="hd-col hd-col-left">
+          <div class="hd-kpi-strip">
+            <div class="hd-kpi">
+              <div class="hd-kpi-val" id="hd-kpi-1">47</div>
+              <div class="hd-kpi-label">Active clients</div>
+              <div class="hd-kpi-delta up">+3 this week</div>
+            </div>
+            <div class="hd-kpi">
+              <div class="hd-kpi-val" id="hd-kpi-2">94%</div>
+              <div class="hd-kpi-label">Tasks automated</div>
+              <div class="hd-kpi-delta up">vs 12% before</div>
+            </div>
+            <div class="hd-kpi">
+              <div class="hd-kpi-val" id="hd-kpi-3">8 min</div>
+              <div class="hd-kpi-label">Avg. processing time</div>
+              <div class="hd-kpi-delta up">was 4+ hours</div>
+            </div>
           </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            ML Classifier
-            <span class="pm-node-sub">TensorFlow &middot; scikit-learn</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            RAG Knowledge Base
-            <span class="pm-node-sub">Azure OpenAI &middot; LangChain</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            PostgreSQL Writer
-            <span class="pm-node-sub">SQLAlchemy &middot; 14ms avg</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            Compliance Validator
-            <span class="pm-node-sub">rules engine &middot; 0 flags</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            Webhook Dispatcher
-            <span class="pm-node-sub">Pipedrive CRM &middot; REST</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-node">
-            <span class="pm-dot-status green"></span>
-            Audit Logger
-            <span class="pm-node-sub">tamper-proof &middot; SHA-256</span>
-            <span class="pm-badge running">Running</span>
-          </div>
-          <div class="pm-throughput">
-            <span class="pm-throughput-label">Records processed this session:</span>
-            <span class="pm-throughput-count" id="pm-throughput">1,847</span>
+          <div class="hd-section-label">Recent activity</div>
+          <div class="hd-feed" id="hd-feed">
+            <div class="hd-feed-item hd-feed-green">
+              <span class="hd-feed-dot green"></span>
+              <div class="hd-feed-text"><strong>New client onboarded</strong> — documents collected automatically</div>
+              <span class="hd-feed-time">2m ago</span>
+            </div>
+            <div class="hd-feed-item hd-feed-blue">
+              <span class="hd-feed-dot blue"></span>
+              <div class="hd-feed-text"><strong>Report generated</strong> — sent to 12 clients, zero manual work</div>
+              <span class="hd-feed-time">6m ago</span>
+            </div>
+            <div class="hd-feed-item hd-feed-amber">
+              <span class="hd-feed-dot amber"></span>
+              <div class="hd-feed-text"><strong>Action required</strong> — Jordan P. missing 2 documents</div>
+              <span class="hd-feed-time">11m ago</span>
+            </div>
+            <div class="hd-feed-item hd-feed-green">
+              <span class="hd-feed-dot green"></span>
+              <div class="hd-feed-text"><strong>Deal approved</strong> — compliance check passed automatically</div>
+              <span class="hd-feed-time">18m ago</span>
+            </div>
+            <div class="hd-feed-item hd-feed-blue">
+              <span class="hd-feed-dot blue"></span>
+              <div class="hd-feed-text"><strong>CRM synced</strong> — 6 records updated from pipeline data</div>
+              <span class="hd-feed-time">24m ago</span>
+            </div>
           </div>
         </div>
-        <div class="pm-panel">
-          <div class="pm-panel-title">Live Events</div>
-          <div class="pm-events-scroll" id="pm-events">
-            <div class="pm-event">
-              <span class="pm-time">09:42:01</span>
-              <span class="pm-event-name" style="color:#06b6d4;">ml.classifier</span>
-              <span class="pm-event-data">income_doc scored 0.94 &#x2192; APPROVE</span>
+        <!-- Right: pipeline status + throughput -->
+        <div class="hd-col hd-col-right">
+          <div class="hd-section-label">Automation pipeline</div>
+          <div class="hd-pipeline">
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">Client intake</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+              <div class="hd-pipe-stat green">Auto</div>
             </div>
-            <div class="pm-event">
-              <span class="pm-time">09:42:04</span>
-              <span class="pm-event-name" style="color:#2dd4bf;">rag.retrieval</span>
-              <span class="pm-event-data">query matched 3 policy chunks (0.87 sim)</span>
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">Document collection</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:94%"></div></div>
+              <div class="hd-pipe-stat green">94%</div>
             </div>
-            <div class="pm-event">
-              <span class="pm-time">09:42:07</span>
-              <span class="pm-event-name" style="color:#818cf8;">pg.write</span>
-              <span class="pm-event-data">applicant_id=8821 committed in 11ms</span>
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">AI classification</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:97%"></div></div>
+              <div class="hd-pipe-stat green">97%</div>
             </div>
-            <div class="pm-event">
-              <span class="pm-time">09:42:10</span>
-              <span class="pm-event-name" style="color:#22c55e;">compliance.check</span>
-              <span class="pm-event-data">result=PASS flags=[] threshold=0.90</span>
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">Compliance checks</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+              <div class="hd-pipe-stat green">Auto</div>
             </div>
-            <div class="pm-event">
-              <span class="pm-time">09:42:13</span>
-              <span class="pm-event-name" style="color:#a78bfa;">webhook.dispatch</span>
-              <span class="pm-event-data">target=pipedrive status=201 deal=9043</span>
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">CRM / reporting sync</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar" style="width:100%"></div></div>
+              <div class="hd-pipe-stat green">Live</div>
             </div>
-            <div class="pm-event">
-              <span class="pm-time">09:42:16</span>
-              <span class="pm-event-name" style="color:#f59e0b;">audit.log</span>
-              <span class="pm-event-data">hash=3f9a2c user=broker_07 action=approve</span>
+            <div class="hd-pipe-row">
+              <div class="hd-pipe-name">Manual data entry</div>
+              <div class="hd-pipe-bar-wrap"><div class="hd-pipe-bar red" style="width:4%"></div></div>
+              <div class="hd-pipe-stat red">4%</div>
             </div>
+          </div>
+          <div class="hd-time-saved">
+            <span class="hd-time-val" id="hd-time-saved">31.4</span>
+            <span class="hd-time-label">hours saved this week</span>
           </div>
         </div>
       </div>
@@ -286,41 +293,60 @@
       <h2>How an engagement works</h2>
       <p class="sub">A structured approach from first conversation to deployed system.</p>
     </div>
-    <div class="engagement-flow" id="engagement-flow">
-      <div class="ef-node reveal-up" tabindex="0">
-        <div class="ef-num">01</div>
-        <div class="ef-label">Brief</div>
-        <div class="ef-tooltip">You explain the problem. I ask the right questions.</div>
+    <div class="process-steps">
+      <div class="ps-step reveal-up">
+        <div class="ps-connector"></div>
+        <div class="ps-num">01</div>
+        <div class="ps-content">
+          <h3>Brief</h3>
+          <p>You explain the problem in plain language. I ask the right questions — about your workflow, your data, your constraints, and what success looks like in practice.</p>
+          <div class="ps-tag">No technical knowledge required</div>
+        </div>
       </div>
-      <div class="ef-arrow" aria-hidden="true"></div>
-      <div class="ef-node reveal-up reveal-delay-1" tabindex="0">
-        <div class="ef-num">02</div>
-        <div class="ef-label">Scope</div>
-        <div class="ef-tooltip">Fixed price or time-and-materials. Defined deliverables.</div>
+      <div class="ps-step reveal-up reveal-delay-1">
+        <div class="ps-connector"></div>
+        <div class="ps-num">02</div>
+        <div class="ps-content">
+          <h3>Scope &amp; Price</h3>
+          <p>I return a clear scope document: what gets built, what it integrates with, what you'll own at the end. Fixed price or time-and-materials — your choice. No surprises.</p>
+          <div class="ps-tag">Written proposal within 48 hours</div>
+        </div>
       </div>
-      <div class="ef-arrow" aria-hidden="true"></div>
-      <div class="ef-node reveal-up reveal-delay-2" tabindex="0">
-        <div class="ef-num">03</div>
-        <div class="ef-label">Architect</div>
-        <div class="ef-tooltip">System design, data model, security posture — agreed before build.</div>
+      <div class="ps-step reveal-up reveal-delay-2">
+        <div class="ps-connector"></div>
+        <div class="ps-num">03</div>
+        <div class="ps-content">
+          <h3>Architecture</h3>
+          <p>Full system design — data model, integrations, security posture, infrastructure choices — reviewed and approved before a single line of production code is written.</p>
+          <div class="ps-tag">Agreed before build begins</div>
+        </div>
       </div>
-      <div class="ef-arrow" aria-hidden="true"></div>
-      <div class="ef-node reveal-up reveal-delay-3" tabindex="0">
-        <div class="ef-num">04</div>
-        <div class="ef-label">Build</div>
-        <div class="ef-tooltip">Working software delivered in iterations. You see progress weekly.</div>
+      <div class="ps-step reveal-up reveal-delay-3">
+        <div class="ps-connector"></div>
+        <div class="ps-num">04</div>
+        <div class="ps-content">
+          <h3>Build</h3>
+          <p>Iterative delivery with working software fast. You see real progress every week — not a demo six months in. Continuous refinement based on your feedback.</p>
+          <div class="ps-tag">Weekly progress demos</div>
+        </div>
       </div>
-      <div class="ef-arrow" aria-hidden="true"></div>
-      <div class="ef-node reveal-up reveal-delay-4" tabindex="0">
-        <div class="ef-num">05</div>
-        <div class="ef-label">Deploy</div>
-        <div class="ef-tooltip">Production deployment on your infrastructure.</div>
+      <div class="ps-step reveal-up reveal-delay-4">
+        <div class="ps-connector"></div>
+        <div class="ps-num">05</div>
+        <div class="ps-content">
+          <h3>Deploy</h3>
+          <p>Production deployment into your infrastructure — your cloud account, your servers, your domain. Zero dependency on Augmentra infrastructure post-launch.</p>
+          <div class="ps-tag">Your infrastructure, your control</div>
+        </div>
       </div>
-      <div class="ef-arrow" aria-hidden="true"></div>
-      <div class="ef-node reveal-up reveal-delay-4" tabindex="0">
-        <div class="ef-num">06</div>
-        <div class="ef-label">Handover</div>
-        <div class="ef-tooltip">Full code ownership. Documentation. Optional retainer.</div>
+      <div class="ps-step reveal-up reveal-delay-4">
+        <div class="ps-connector last"></div>
+        <div class="ps-num">06</div>
+        <div class="ps-content">
+          <h3>Handover</h3>
+          <p>Full source code, documentation, and deployment guides — all yours. Optional retainer for ongoing improvements. You're never locked in.</p>
+          <div class="ps-tag">Full ownership. No lock-in.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -531,7 +557,7 @@
           <span class="stack-pill" data-tooltip="Used in production">Webhooks</span>
         </div>
       </div>
-      <div class="stack-on-request">Additional tools and platforms available on request — stack is always chosen to fit your environment, not the other way around.</div>
+      <div class="stack-on-request"><a href="quote.html" class="btn btn-outline btn-sm">Need a different stack? Let's talk &#x2192;</a></div>
     </div>
   </div>
 </section>

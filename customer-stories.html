@@ -59,179 +59,83 @@
         <!-- Interactive prototype: live mortgage pipeline -->
         <div class="cs-prototype">
           <div class="cs-proto-header">
-            <span class="cs-proto-label">Live System Prototype</span>
-            <span class="cs-proto-sub">Interact with the actual interface design</span>
+            <span class="cs-proto-label">Live System Demo</span>
+            <span class="cs-proto-sub">Balaton Financial &mdash; Mortgage Operations Platform</span>
           </div>
-          <!-- Pipeline kanban -->
           <div class="cs-proto-tabs">
-            <button class="cs-proto-tab active" data-proto-tab="pipeline">Pipeline View</button>
-            <button class="cs-proto-tab" data-proto-tab="docs">Document Intelligence</button>
-            <button class="cs-proto-tab" data-proto-tab="audit">Audit Log</button>
+            <button class="cs-proto-tab active" data-proto-tab="pipeline">Client Pipeline</button>
+            <button class="cs-proto-tab" data-proto-tab="docs">Document AI</button>
+            <button class="cs-proto-tab" data-proto-tab="time">Before vs. After</button>
           </div>
           <div class="cs-proto-panels">
-            <!-- Pipeline tab -->
             <div class="cs-proto-panel active" data-proto-panel="pipeline">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Mortgage Pipeline &mdash; Live View</span>
-                <div class="proto-toolbar-actions">
-                  <span class="proto-badge green">12 Active</span>
-                  <span class="proto-badge amber">3 Blocked</span>
-                </div>
+                <span class="proto-toolbar-label">Active mortgage pipeline &mdash; <strong style="color:var(--text)">21 files</strong></span>
+                <div class="proto-toolbar-actions"><span class="proto-badge green">18 On track</span><span class="proto-badge amber">3 Attention</span></div>
               </div>
               <div class="proto-kanban">
                 <div class="proto-kanban-col">
                   <div class="proto-col-header">New Enquiry <span class="proto-col-count">4</span></div>
-                  <div class="proto-card">
-                    <div class="proto-card-name">Alex M.</div>
-                    <div class="proto-card-detail">$720k · PAYG</div>
-                    <div class="proto-card-score high">Score 91</div>
-                  </div>
-                  <div class="proto-card">
-                    <div class="proto-card-name">Jordan P.</div>
-                    <div class="proto-card-detail">$1.2m · Self-Employed</div>
-                    <div class="proto-card-score med">Score 62</div>
-                  </div>
+                  <div class="proto-card"><div class="proto-card-name">Alex M.</div><div class="proto-card-detail">$720k &middot; PAYG &middot; First home</div><div class="proto-card-score high">AI Score 91 &mdash; Strong</div></div>
+                  <div class="proto-card"><div class="proto-card-name">Jordan P.</div><div class="proto-card-detail">$1.2m &middot; Self-Employed</div><div class="proto-card-score med">AI Score 62 &mdash; Review</div></div>
                 </div>
                 <div class="proto-kanban-col">
-                  <div class="proto-col-header">Docs Requested <span class="proto-col-count">7</span></div>
-                  <div class="proto-card">
-                    <div class="proto-card-name">Sam K.</div>
-                    <div class="proto-card-detail">$450k · PAYG</div>
-                    <div class="proto-card-docs">4 / 5 <span class="proto-docs-bar"><span style="width:80%"></span></span></div>
-                  </div>
-                  <div class="proto-card proto-card-alert">
-                    <div class="proto-card-name">Maya R.</div>
-                    <div class="proto-card-detail">$890k · Self-Employed</div>
-                    <div class="proto-card-docs warn">2 / 7 <span class="proto-docs-bar"><span style="width:28%"></span></span></div>
-                  </div>
+                  <div class="proto-col-header">Docs Collecting <span class="proto-col-count">8</span></div>
+                  <div class="proto-card"><div class="proto-card-name">Sam K.</div><div class="proto-card-detail">$450k &middot; PAYG</div><div class="proto-card-docs">4/5 docs <span class="proto-docs-bar"><span style="width:80%"></span></span></div><div style="font-size:0.65rem;color:var(--muted);margin-top:3px;font-family:var(--font-mono);">Auto-chase sent 09:40</div></div>
+                  <div class="proto-card proto-card-alert"><div class="proto-card-name">Maya R.</div><div class="proto-card-detail">$890k &middot; Self-Employed</div><div class="proto-card-docs warn">2/7 docs <span class="proto-docs-bar"><span style="width:28%"></span></span></div><div style="font-size:0.65rem;color:var(--warning);margin-top:3px;font-family:var(--font-mono);">3rd auto-chase sent</div></div>
                 </div>
                 <div class="proto-kanban-col">
-                  <div class="proto-col-header">Under Assessment <span class="proto-col-count">3</span></div>
-                  <div class="proto-card">
-                    <div class="proto-card-name">Chris L.</div>
-                    <div class="proto-card-detail">$580k · PAYG</div>
-                    <div class="proto-card-status ok">ML: APPROVE</div>
-                  </div>
+                  <div class="proto-col-header">AI Assessment <span class="proto-col-count">5</span></div>
+                  <div class="proto-card"><div class="proto-card-name">Chris L.</div><div class="proto-card-detail">$580k &middot; PAYG</div><div class="proto-card-status ok">AI: APPROVE &mdash; 8 min total</div><div style="font-size:0.65rem;color:var(--muted);margin-top:3px;font-family:var(--font-mono);">was 4hr manual review</div></div>
+                  <div class="proto-card"><div class="proto-card-name">Priya S.</div><div class="proto-card-detail">$620k &middot; PAYG</div><div class="proto-card-status ok">Compliance: PASS</div></div>
                 </div>
                 <div class="proto-kanban-col">
-                  <div class="proto-col-header">Submitted <span class="proto-col-count">2</span></div>
-                  <div class="proto-card">
-                    <div class="proto-card-name">Taylor B.</div>
-                    <div class="proto-card-detail">$650k · PAYG</div>
-                    <div class="proto-card-status pending">Awaiting lender</div>
-                  </div>
+                  <div class="proto-col-header">Submitted <span class="proto-col-count">4</span></div>
+                  <div class="proto-card"><div class="proto-card-name">Taylor B.</div><div class="proto-card-detail">$650k &middot; PAYG</div><div class="proto-card-status pending">Awaiting lender</div><div style="font-size:0.65rem;color:var(--muted);margin-top:3px;font-family:var(--font-mono);">CRM auto-updated</div></div>
                 </div>
               </div>
             </div>
-            <!-- Doc Intelligence tab -->
             <div class="cs-proto-panel" data-proto-panel="docs">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Document Intelligence &mdash; ML Classifier Output</span>
-                <span class="proto-badge green">Model v2.4 · 94.1% accuracy</span>
+                <span class="proto-toolbar-label">Document AI &mdash; Sam K. file &mdash; all docs classified automatically in under 2 seconds</span>
+                <span class="proto-badge green">Model accuracy: 94.1%</span>
               </div>
               <div class="proto-doc-list">
-                <div class="proto-doc-row">
-                  <div class="proto-doc-icon">PDF</div>
-                  <div class="proto-doc-info">
-                    <div class="proto-doc-name">payslip_march_2026.pdf</div>
-                    <div class="proto-doc-meta">Uploaded 09:42:01 · 847 KB</div>
-                  </div>
-                  <div class="proto-doc-result">
-                    <span class="proto-doc-type">PAYSLIP</span>
-                    <span class="proto-doc-conf high">0.97</span>
-                  </div>
-                  <div class="proto-doc-action ok">Verified</div>
-                </div>
-                <div class="proto-doc-row">
-                  <div class="proto-doc-icon">PDF</div>
-                  <div class="proto-doc-info">
-                    <div class="proto-doc-name">bank_statement_cba_q1.pdf</div>
-                    <div class="proto-doc-meta">Uploaded 09:42:34 · 1.2 MB</div>
-                  </div>
-                  <div class="proto-doc-result">
-                    <span class="proto-doc-type">BANK STMT</span>
-                    <span class="proto-doc-conf high">0.94</span>
-                  </div>
-                  <div class="proto-doc-action ok">Verified</div>
-                </div>
-                <div class="proto-doc-row">
-                  <div class="proto-doc-icon">JPG</div>
-                  <div class="proto-doc-info">
-                    <div class="proto-doc-name">drivers_licence_front.jpg</div>
-                    <div class="proto-doc-meta">Uploaded 09:43:12 · 312 KB</div>
-                  </div>
-                  <div class="proto-doc-result">
-                    <span class="proto-doc-type">ID DOC</span>
-                    <span class="proto-doc-conf high">0.99</span>
-                  </div>
-                  <div class="proto-doc-action ok">Verified</div>
-                </div>
-                <div class="proto-doc-row proto-doc-pending">
-                  <div class="proto-doc-icon muted">PDF</div>
-                  <div class="proto-doc-info">
-                    <div class="proto-doc-name">tax_return_2025.pdf</div>
-                    <div class="proto-doc-meta">Requested 09:40:00 · Auto-chased 10:10:00</div>
-                  </div>
-                  <div class="proto-doc-result">
-                    <span class="proto-doc-type muted">AWAITING</span>
-                    <span class="proto-doc-conf muted">—</span>
-                  </div>
-                  <div class="proto-doc-action warn">Pending</div>
-                </div>
+                <div class="proto-doc-row"><div class="proto-doc-icon">PDF</div><div class="proto-doc-info"><div class="proto-doc-name">payslip_march_2026.pdf</div><div class="proto-doc-meta">Auto-classified 0.8s &middot; Income $142,000 p.a. extracted</div></div><div class="proto-doc-result"><span class="proto-doc-type">PAYSLIP</span><span class="proto-doc-conf high">0.97</span></div><div class="proto-doc-action ok">Verified</div></div>
+                <div class="proto-doc-row"><div class="proto-doc-icon">PDF</div><div class="proto-doc-info"><div class="proto-doc-name">bank_statement_cba_q1.pdf</div><div class="proto-doc-meta">3 months &middot; Avg monthly expenses $3,640 extracted</div></div><div class="proto-doc-result"><span class="proto-doc-type">BANK STMT</span><span class="proto-doc-conf high">0.94</span></div><div class="proto-doc-action ok">Verified</div></div>
+                <div class="proto-doc-row"><div class="proto-doc-icon">JPG</div><div class="proto-doc-info"><div class="proto-doc-name">drivers_licence_front.jpg</div><div class="proto-doc-meta">Identity confirmed &middot; Expiry valid &middot; OCR complete</div></div><div class="proto-doc-result"><span class="proto-doc-type">PHOTO ID</span><span class="proto-doc-conf high">0.99</span></div><div class="proto-doc-action ok">Verified</div></div>
+                <div class="proto-doc-row proto-doc-pending"><div class="proto-doc-icon muted">PDF</div><div class="proto-doc-info"><div class="proto-doc-name">tax_return_2025.pdf</div><div class="proto-doc-meta">Requested auto &middot; 2nd chase sent 45 min later &middot; no broker action needed</div></div><div class="proto-doc-result"><span class="proto-doc-type muted">AWAITING</span><span class="proto-doc-conf muted">&mdash;</span></div><div class="proto-doc-action warn">Pending</div></div>
               </div>
               <div class="proto-ml-summary">
-                <div class="proto-ml-cell">
-                  <div class="proto-ml-label">Income verified</div>
-                  <div class="proto-ml-val green">$142,000 p.a.</div>
-                </div>
-                <div class="proto-ml-cell">
-                  <div class="proto-ml-label">Expense ratio</div>
-                  <div class="proto-ml-val green">0.31</div>
-                </div>
-                <div class="proto-ml-cell">
-                  <div class="proto-ml-label">Risk band</div>
-                  <div class="proto-ml-val green">LOW</div>
-                </div>
-                <div class="proto-ml-cell">
-                  <div class="proto-ml-label">Compliance result</div>
-                  <div class="proto-ml-val green">PASS</div>
-                </div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Verified income</div><div class="proto-ml-val green">$142k p.a.</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Expense ratio</div><div class="proto-ml-val green">0.31 &mdash; LOW</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">AI recommendation</div><div class="proto-ml-val green">APPROVE</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Total processing time</div><div class="proto-ml-val green">8 minutes</div></div>
               </div>
             </div>
-            <!-- Audit tab -->
-            <div class="cs-proto-panel" data-proto-panel="audit">
+            <div class="cs-proto-panel" data-proto-panel="time">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Audit Log &mdash; Tamper-Evident Stream</span>
-                <span class="proto-badge green">SHA-256 chain intact</span>
+                <span class="proto-toolbar-label">Before vs. After &mdash; measurable impact for the brokerage</span>
+                <span class="proto-badge green">31 hours saved this week</span>
               </div>
-              <div class="audit-log" id="cs1-audit">
-                <div class="audit-header">
-                  <span>Timestamp</span><span>User</span><span>Action</span><span>Resource</span><span>Hash</span>
+              <div class="proto-impact-grid">
+                <div class="proto-impact-card before">
+                  <div class="proto-impact-label">Before</div>
+                  <div class="proto-impact-row"><span>Time per application</span><span class="red">4+ hours</span></div>
+                  <div class="proto-impact-row"><span>Document chasing</span><span class="red">Manual emails</span></div>
+                  <div class="proto-impact-row"><span>Compliance checks</span><span class="red">Manual review</span></div>
+                  <div class="proto-impact-row"><span>CRM updates</span><span class="red">Manual entry</span></div>
+                  <div class="proto-impact-row"><span>Audit trail</span><span class="red">None</span></div>
+                  <div class="proto-impact-row"><span>Files per broker/week</span><span class="red">~6</span></div>
                 </div>
-                <div class="audit-row">
-                  <span class="col-time">09:42:01</span><span class="col-user">ml.system</span>
-                  <span class="col-action">CLASSIFY</span><span class="col-resource">doc_id:3821</span>
-                  <span class="col-hash">3f9a2c</span>
-                </div>
-                <div class="audit-row">
-                  <span class="col-time">09:42:07</span><span class="col-user">system</span>
-                  <span class="col-action">WRITE</span><span class="col-resource">applicant_id:8821</span>
-                  <span class="col-hash">c71e44</span>
-                </div>
-                <div class="audit-row">
-                  <span class="col-time">09:42:10</span><span class="col-user">compliance.engine</span>
-                  <span class="col-action">VALIDATE</span><span class="col-resource">deal_id:9043</span>
-                  <span class="col-hash">a2d891</span>
-                </div>
-                <div class="audit-row">
-                  <span class="col-time">09:42:13</span><span class="col-user">webhook.service</span>
-                  <span class="col-action">DISPATCH</span><span class="col-resource">pipedrive:deal:9043</span>
-                  <span class="col-hash">f8a201</span>
-                </div>
-                <div class="audit-row">
-                  <span class="col-time">09:42:16</span><span class="col-user">broker_07</span>
-                  <span class="col-action">APPROVE</span><span class="col-resource">deal_id:9043</span>
-                  <span class="col-hash">9de731</span>
+                <div class="proto-impact-card after">
+                  <div class="proto-impact-label">After</div>
+                  <div class="proto-impact-row"><span>Time per application</span><span class="green">8 minutes</span></div>
+                  <div class="proto-impact-row"><span>Document chasing</span><span class="green">Fully automated</span></div>
+                  <div class="proto-impact-row"><span>Compliance checks</span><span class="green">AI &mdash; instant</span></div>
+                  <div class="proto-impact-row"><span>CRM updates</span><span class="green">Real-time sync</span></div>
+                  <div class="proto-impact-row"><span>Audit trail</span><span class="green">100% coverage</span></div>
+                  <div class="proto-impact-row"><span>Files per broker/week</span><span class="green">~30 (5x)</span></div>
                 </div>
               </div>
             </div>
@@ -290,67 +194,46 @@
         <!-- Interactive prototype: tender intelligence -->
         <div class="cs-prototype">
           <div class="cs-proto-header">
-            <span class="cs-proto-label">Live System Prototype</span>
-            <span class="cs-proto-sub">Interact with the actual interface design</span>
+            <span class="cs-proto-label">Live System Demo</span>
+            <span class="cs-proto-sub">Trovio &mdash; Government Tender Intelligence Platform</span>
           </div>
           <div class="cs-proto-tabs">
-            <button class="cs-proto-tab active" data-proto-tab="tenders">Tender Pipeline</button>
-            <button class="cs-proto-tab" data-proto-tab="nlp">NLP Analysis</button>
+            <button class="cs-proto-tab active" data-proto-tab="tenders">Opportunity Pipeline</button>
+            <button class="cs-proto-tab" data-proto-tab="nlp">AI Analysis</button>
             <button class="cs-proto-tab" data-proto-tab="deadlines">Deadline Tracker</button>
           </div>
           <div class="cs-proto-panels">
-            <!-- Tender pipeline tab -->
             <div class="cs-proto-panel active" data-proto-panel="tenders">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Tender Pipeline &mdash; 8 Portals Monitored</span>
-                <div class="proto-toolbar-actions">
-                  <span class="proto-badge green">4 High match</span>
-                  <span class="proto-badge amber">2 Review</span>
-                </div>
+                <span class="proto-toolbar-label">8 portals monitored &mdash; <strong style="color:var(--text)">14 new opportunities this week</strong></span>
+                <div class="proto-toolbar-actions"><span class="proto-badge green">4 High match</span><span class="proto-badge amber">6 Review</span></div>
               </div>
               <div style="overflow-x:auto;">
                 <table class="mock-table">
-                  <thead>
-                    <tr><th>Tender ID</th><th>Agency</th><th>Value</th><th>Match Score</th><th>Deadline</th><th>Status</th><th>Action</th></tr>
-                  </thead>
+                  <thead><tr><th>Tender</th><th>Agency</th><th>Value</th><th>AI Match</th><th>Deadline</th><th>Status</th><th></th></tr></thead>
                   <tbody>
-                    <tr>
-                      <td>TND-2024-1831</td><td>Dept. of Infrastructure</td><td>$240k</td>
-                      <td><span class="mock-score high">94</span></td><td>14 Mar</td>
-                      <td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td>
-                      <td><button class="proto-action-btn">View Draft</button></td>
-                    </tr>
-                    <tr>
-                      <td>TND-2024-1856</td><td>ATO</td><td>$85k</td>
-                      <td><span class="mock-score high">88</span></td><td>21 Mar</td>
-                      <td style="color:var(--success);font-size:0.78rem;">Ready to submit</td>
-                      <td><button class="proto-action-btn">Submit</button></td>
-                    </tr>
-                    <tr>
-                      <td>TND-2024-1902</td><td>DFAT</td><td>$1.2m</td>
-                      <td><span class="mock-score med">61</span></td><td>28 Mar</td>
-                      <td style="color:var(--warning);font-size:0.78rem;">Under review</td>
-                      <td><button class="proto-action-btn">Review</button></td>
-                    </tr>
-                    <tr>
-                      <td>TND-2024-1915</td><td>NDIS</td><td>$320k</td>
-                      <td><span class="mock-score low">32</span></td><td>04 Apr</td>
-                      <td style="color:var(--muted);font-size:0.78rem;opacity:0.6;">Low match — skip</td>
-                      <td><span style="font-size:0.75rem;color:var(--muted);">—</span></td>
-                    </tr>
+                    <tr><td style="font-family:var(--font-mono);font-size:0.75rem;">TND-1831</td><td>Dept. of Infrastructure</td><td>$240k</td><td><span class="mock-score high">94</span></td><td style="color:var(--danger);font-size:0.78rem;font-weight:600;">3 days</td><td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td><td><button class="proto-action-btn">View</button></td></tr>
+                    <tr><td style="font-family:var(--font-mono);font-size:0.75rem;">TND-1856</td><td>ATO</td><td>$85k</td><td><span class="mock-score high">88</span></td><td style="color:var(--warning);font-size:0.78rem;">10 days</td><td style="color:var(--success);font-size:0.78rem;">Ready</td><td><button class="proto-action-btn">Submit</button></td></tr>
+                    <tr><td style="font-family:var(--font-mono);font-size:0.75rem;">TND-1902</td><td>DFAT</td><td>$1.2m</td><td><span class="mock-score med">61</span></td><td style="color:var(--muted);font-size:0.78rem;">17 days</td><td style="color:var(--warning);font-size:0.78rem;">Review</td><td><button class="proto-action-btn">Review</button></td></tr>
+                    <tr><td style="font-family:var(--font-mono);font-size:0.75rem;">TND-1915</td><td>NDIS</td><td>$320k</td><td><span class="mock-score low">32</span></td><td style="color:var(--muted);font-size:0.78rem;">24 days</td><td style="color:var(--muted);font-size:0.78rem;opacity:0.5;">Low match — skip</td><td></td></tr>
                   </tbody>
                 </table>
               </div>
+              <div class="proto-ml-summary" style="margin-top:14px;">
+                <div class="proto-ml-cell"><div class="proto-ml-label">Portals monitored</div><div class="proto-ml-val green">8 continuous</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Time to identify</div><div class="proto-ml-val green">Automated</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Was: daily manual check</div><div class="proto-ml-val" style="color:var(--danger);">2–3 hours/day</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Win rate improvement</div><div class="proto-ml-val green">+40%</div></div>
+              </div>
             </div>
-            <!-- NLP tab -->
             <div class="cs-proto-panel" data-proto-panel="nlp">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">NLP Analysis &mdash; TND-2024-1831</span>
-                <span class="proto-badge green">GPT-4 Summary Generated</span>
+                <span class="proto-toolbar-label">AI Analysis &mdash; TND-1831 &mdash; Dept. of Infrastructure</span>
+                <span class="proto-badge green">GPT-4 summary ready</span>
               </div>
               <div class="proto-nlp-layout">
                 <div class="proto-nlp-col">
-                  <div class="proto-nlp-section-label">Extracted entities</div>
+                  <div class="proto-nlp-section-label">Extracted requirements</div>
                   <div class="proto-nlp-tags">
                     <span class="proto-nlp-tag entity">Data Engineering</span>
                     <span class="proto-nlp-tag entity">Python</span>
@@ -358,74 +241,52 @@
                     <span class="proto-nlp-tag entity">PostgreSQL</span>
                     <span class="proto-nlp-tag entity">GovERP integration</span>
                     <span class="proto-nlp-tag entity">Privacy Act compliance</span>
-                    <span class="proto-nlp-tag entity">12-month term</span>
+                    <span class="proto-nlp-tag entity">12-month contract</span>
+                    <span class="proto-nlp-tag entity">Security clearance req.</span>
                   </div>
-                  <div class="proto-nlp-section-label" style="margin-top:14px;">Capability match</div>
+                  <div class="proto-nlp-section-label" style="margin-top:14px;">Capability match score</div>
                   <div class="proto-nlp-bars">
-                    <div class="proto-nlp-bar-row">
-                      <span>Data Engineering</span>
-                      <div class="bar-track"><div class="bar-fill" style="width:95%;"></div></div>
-                      <span>95%</span>
-                    </div>
-                    <div class="proto-nlp-bar-row">
-                      <span>Azure Cloud</span>
-                      <div class="bar-track"><div class="bar-fill" style="width:90%;"></div></div>
-                      <span>90%</span>
-                    </div>
-                    <div class="proto-nlp-bar-row">
-                      <span>Govt compliance</span>
-                      <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
-                      <span>85%</span>
-                    </div>
+                    <div class="proto-nlp-bar-row"><span>Data Engineering</span><div class="bar-track"><div class="bar-fill" style="width:95%;"></div></div><span>95%</span></div>
+                    <div class="proto-nlp-bar-row"><span>Azure Cloud</span><div class="bar-track"><div class="bar-fill" style="width:90%;"></div></div><span>90%</span></div>
+                    <div class="proto-nlp-bar-row"><span>Govt compliance</span><div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div><span>85%</span></div>
+                    <div class="proto-nlp-bar-row"><span>Overall match</span><div class="bar-track"><div class="bar-fill" style="width:94%;"></div></div><span style="color:var(--success);font-weight:700;">94%</span></div>
                   </div>
                 </div>
                 <div class="proto-nlp-col">
-                  <div class="proto-nlp-section-label">GPT-4 summary</div>
+                  <div class="proto-nlp-section-label">GPT-4 generated summary</div>
                   <div class="proto-nlp-summary">
-                    <p>The Department of Infrastructure seeks a contractor to design and implement a data integration pipeline connecting legacy procurement databases to a new Azure-based analytics platform. Key requirements include Python-based ETL, PostgreSQL schema design, and compliance with the Privacy Act 1988.</p>
-                    <p style="margin-top:8px;color:var(--success);font-size:0.8rem;">High match — recommend pursuing. Deadline in 14 days.</p>
+                    <p>The Department of Infrastructure requires a contractor to design and implement a data integration pipeline connecting legacy procurement databases to a new Azure analytics platform. Python ETL, PostgreSQL schema design, and Privacy Act 1988 compliance are mandatory.</p>
+                    <p style="margin-top:8px;color:var(--success);font-size:0.82rem;font-weight:600;">High match &mdash; recommend pursuing. Deadline 3 days.</p>
+                    <p style="margin-top:8px;font-size:0.78rem;color:var(--muted);">Draft bid sections auto-generated from capability library. Estimated 2h to complete response vs. 12h from scratch.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Deadline tab -->
             <div class="cs-proto-panel" data-proto-panel="deadlines">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Deadline Tracker &mdash; Next 30 Days</span>
+                <span class="proto-toolbar-label">Deadline tracker &mdash; zero missed submissions since go-live</span>
                 <span class="proto-badge amber">2 deadlines this week</span>
               </div>
               <div class="proto-timeline">
                 <div class="proto-timeline-item urgent">
-                  <div class="proto-tl-date">14 Mar</div>
+                  <div class="proto-tl-date">3 days</div>
                   <div class="proto-tl-dot urgent"></div>
-                  <div class="proto-tl-content">
-                    <div class="proto-tl-title">TND-2024-1831 · Dept. of Infrastructure</div>
-                    <div class="proto-tl-detail">Draft in progress &middot; 3 days remaining</div>
-                  </div>
+                  <div class="proto-tl-content"><div class="proto-tl-title">TND-1831 &middot; Dept. of Infrastructure &middot; $240k</div><div class="proto-tl-detail">Draft in progress &middot; 2 sections remaining &middot; auto-reminder sent to team</div></div>
                 </div>
                 <div class="proto-timeline-item">
-                  <div class="proto-tl-date">21 Mar</div>
+                  <div class="proto-tl-date">10 days</div>
                   <div class="proto-tl-dot ok"></div>
-                  <div class="proto-tl-content">
-                    <div class="proto-tl-title">TND-2024-1856 · ATO</div>
-                    <div class="proto-tl-detail">Ready to submit &middot; 10 days remaining</div>
-                  </div>
+                  <div class="proto-tl-content"><div class="proto-tl-title">TND-1856 &middot; ATO &middot; $85k</div><div class="proto-tl-detail">Ready to submit &middot; internal review complete &middot; one click to lodge</div></div>
                 </div>
                 <div class="proto-timeline-item">
-                  <div class="proto-tl-date">28 Mar</div>
+                  <div class="proto-tl-date">17 days</div>
                   <div class="proto-tl-dot warn"></div>
-                  <div class="proto-tl-content">
-                    <div class="proto-tl-title">TND-2024-1902 · DFAT</div>
-                    <div class="proto-tl-detail">Under review &middot; 17 days remaining</div>
-                  </div>
+                  <div class="proto-tl-content"><div class="proto-tl-title">TND-1902 &middot; DFAT &middot; $1.2m</div><div class="proto-tl-detail">Under review &middot; large contract &middot; assign team member prompted</div></div>
                 </div>
                 <div class="proto-timeline-item muted">
-                  <div class="proto-tl-date">04 Apr</div>
+                  <div class="proto-tl-date">Skipped</div>
                   <div class="proto-tl-dot muted"></div>
-                  <div class="proto-tl-content">
-                    <div class="proto-tl-title">TND-2024-1915 · NDIS</div>
-                    <div class="proto-tl-detail">Low match — skipped</div>
-                  </div>
+                  <div class="proto-tl-content"><div class="proto-tl-title">TND-1915 &middot; NDIS &middot; $320k</div><div class="proto-tl-detail">AI match score 32 &mdash; auto-flagged as low priority, no action needed</div></div>
                 </div>
               </div>
             </div>
@@ -480,72 +341,80 @@
         <!-- Interactive prototype: data pipeline dashboard -->
         <div class="cs-prototype">
           <div class="cs-proto-header">
-            <span class="cs-proto-label">Live System Prototype</span>
-            <span class="cs-proto-sub">Interact with the actual interface design</span>
+            <span class="cs-proto-label">Live System Demo</span>
+            <span class="cs-proto-sub">Unleash Live &mdash; AI Event Data &amp; Analytics Pipeline</span>
           </div>
           <div class="cs-proto-tabs">
-            <button class="cs-proto-tab active" data-proto-tab="pipeline">Pipeline Monitor</button>
+            <button class="cs-proto-tab active" data-proto-tab="pipeline">Data Pipeline</button>
             <button class="cs-proto-tab" data-proto-tab="crm">CRM Sync</button>
-            <button class="cs-proto-tab" data-proto-tab="kpis">Analytics Dashboard</button>
+            <button class="cs-proto-tab" data-proto-tab="kpis">Executive Dashboard</button>
           </div>
           <div class="cs-proto-panels">
-            <!-- Pipeline tab -->
             <div class="cs-proto-panel active" data-proto-panel="pipeline">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">ETL Pipeline &mdash; Live Status</span>
-                <span class="proto-badge green">All systems nominal</span>
+                <span class="proto-toolbar-label">Live ETL pipeline &mdash; <strong style="color:var(--text)">events flowing in real-time from 4 venues</strong></span>
+                <span class="proto-badge green">All systems nominal &middot; 28s lag</span>
               </div>
-              <div class="pm-body" style="grid-template-columns:1fr 1fr;display:grid;">
-                <div class="pm-panel">
-                  <div class="pm-panel-title">Pipeline Stages</div>
-                  <div class="pm-node"><span class="pm-dot-status green"></span>Unleash Live Ingest<span class="pm-node-sub">REST webhook · real-time</span><span class="pm-badge running">Running</span></div>
-                  <div class="pm-node"><span class="pm-dot-status green"></span>ETL Normaliser<span class="pm-node-sub">Python · deduplicate + enrich</span><span class="pm-badge running">Running</span></div>
-                  <div class="pm-node"><span class="pm-dot-status green"></span>dbt Transforms<span class="pm-node-sub">15 models · 3 tests/model</span><span class="pm-badge running">Running</span></div>
-                  <div class="pm-node"><span class="pm-dot-status green"></span>Salesforce Sync<span class="pm-node-sub">REST API · 30s lag</span><span class="pm-badge running">Running</span></div>
-                  <div class="pm-node"><span class="pm-dot-status green"></span>Tableau Publisher<span class="pm-node-sub">extract refresh · 5 min</span><span class="pm-badge running">Running</span></div>
+              <div class="proto-impact-grid" style="margin-bottom:16px;">
+                <div class="proto-impact-card before">
+                  <div class="proto-impact-label">Before the pipeline</div>
+                  <div class="proto-impact-row"><span>AI event data</span><span class="red">Lost immediately</span></div>
+                  <div class="proto-impact-row"><span>CRM accuracy</span><span class="red">Stale / manual</span></div>
+                  <div class="proto-impact-row"><span>Executive reporting</span><span class="red">Weekly, manual</span></div>
+                  <div class="proto-impact-row"><span>Insights acted on</span><span class="red">Days later</span></div>
                 </div>
-                <div class="pm-panel">
-                  <div class="pm-panel-title">Pipeline Events</div>
-                  <div class="pm-events-scroll" id="ul-pm-events">
-                    <div class="pm-event"><span class="pm-time">10:15:02</span><span class="pm-event-name" style="color:#06b6d4;">ingest.batch</span><span class="pm-event-data">events=142 source=unleash_live</span></div>
-                    <div class="pm-event"><span class="pm-time">10:15:04</span><span class="pm-event-name" style="color:#818cf8;">etl.transform</span><span class="pm-event-data">normalised=142 dupes_dropped=3</span></div>
-                    <div class="pm-event"><span class="pm-time">10:15:07</span><span class="pm-event-name" style="color:#2dd4bf;">dbt.run</span><span class="pm-event-data">models=15 tests=45 passed=45</span></div>
-                    <div class="pm-event"><span class="pm-time">10:15:09</span><span class="pm-event-name" style="color:#a78bfa;">salesforce.sync</span><span class="pm-event-data">updated=38 created=4 errors=0</span></div>
-                    <div class="pm-event"><span class="pm-time">10:15:12</span><span class="pm-event-name" style="color:#f59e0b;">tableau.refresh</span><span class="pm-event-data">extract=complete rows=28442</span></div>
-                  </div>
+                <div class="proto-impact-card after">
+                  <div class="proto-impact-label">After the pipeline</div>
+                  <div class="proto-impact-row"><span>AI event data</span><span class="green">Captured &amp; stored</span></div>
+                  <div class="proto-impact-row"><span>CRM accuracy</span><span class="green">Real-time sync</span></div>
+                  <div class="proto-impact-row"><span>Executive reporting</span><span class="green">Live dashboards</span></div>
+                  <div class="proto-impact-row"><span>Insights acted on</span><span class="green">&lt;30 seconds</span></div>
                 </div>
+              </div>
+              <div style="background:#050a12;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">
+                <div class="pm-panel-title" style="margin-bottom:10px;">Pipeline stages &mdash; all running</div>
+                <div class="pm-node"><span class="pm-dot-status green"></span>Unleash Live ingest<span class="pm-node-sub">webhook &middot; real-time</span><span class="pm-badge running">Running</span></div>
+                <div class="pm-node"><span class="pm-dot-status green"></span>ETL normaliser<span class="pm-node-sub">dedup + enrich + validate</span><span class="pm-badge running">Running</span></div>
+                <div class="pm-node"><span class="pm-dot-status green"></span>dbt transforms<span class="pm-node-sub">15 models &middot; 45 tests passing</span><span class="pm-badge running">Running</span></div>
+                <div class="pm-node"><span class="pm-dot-status green"></span>Salesforce sync<span class="pm-node-sub">REST API &middot; 30s lag</span><span class="pm-badge running">Running</span></div>
+                <div class="pm-node"><span class="pm-dot-status green"></span>Tableau refresh<span class="pm-node-sub">extract &middot; every 5 min</span><span class="pm-badge running">Running</span></div>
               </div>
             </div>
-            <!-- CRM tab -->
             <div class="cs-proto-panel" data-proto-panel="crm">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Salesforce CRM &mdash; AI Event Sync</span>
-                <span class="proto-badge green">Real-time · 30s lag</span>
+                <span class="proto-toolbar-label">Salesforce CRM &mdash; AI event summaries synced automatically in real-time</span>
+                <span class="proto-badge green">38 records updated last batch</span>
               </div>
               <div style="overflow-x:auto;">
                 <table class="mock-table">
-                  <thead><tr><th>Account</th><th>Event Type</th><th>AI Signal</th><th>Crowd Density</th><th>Synced</th></tr></thead>
+                  <thead><tr><th>Account / Venue</th><th>AI Signal</th><th>Crowd Density</th><th>Action Triggered</th><th>Synced</th></tr></thead>
                   <tbody>
-                    <tr><td>Venue: ANZ Stadium</td><td>Crowd surge</td><td style="color:var(--warning);">High density — NW quadrant</td><td style="color:var(--warning);font-family:var(--font-mono);font-size:0.78rem;">87%</td><td style="color:var(--success);font-size:0.78rem;">10:15:09</td></tr>
-                    <tr><td>Venue: ICC Sydney</td><td>Flow alert</td><td style="color:var(--success);">Normal dispersal pattern</td><td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;">42%</td><td style="color:var(--success);font-size:0.78rem;">10:14:38</td></tr>
-                    <tr><td>Venue: Allianz Arena</td><td>Queue intelligence</td><td style="color:var(--accent);">Gate B bottleneck forming</td><td style="color:var(--accent);font-family:var(--font-mono);font-size:0.78rem;">64%</td><td style="color:var(--success);font-size:0.78rem;">10:13:52</td></tr>
+                    <tr><td>ANZ Stadium</td><td style="color:var(--warning);font-size:0.78rem;">High density &mdash; NW quadrant</td><td style="color:var(--warning);font-family:var(--font-mono);font-size:0.78rem;font-weight:700;">87%</td><td style="font-size:0.78rem;color:var(--text);">Alert sent to ops team</td><td style="color:var(--success);font-size:0.78rem;font-family:var(--font-mono);">10:15:09</td></tr>
+                    <tr><td>ICC Sydney</td><td style="color:var(--success);font-size:0.78rem;">Normal dispersal</td><td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;font-weight:700;">42%</td><td style="font-size:0.78rem;color:var(--muted);">No action &mdash; nominal</td><td style="color:var(--success);font-size:0.78rem;font-family:var(--font-mono);">10:14:38</td></tr>
+                    <tr><td>Allianz Arena</td><td style="color:var(--accent);font-size:0.78rem;">Gate B bottleneck forming</td><td style="color:var(--accent);font-family:var(--font-mono);font-size:0.78rem;font-weight:700;">64%</td><td style="font-size:0.78rem;color:var(--text);">Task created in Salesforce</td><td style="color:var(--success);font-size:0.78rem;font-family:var(--font-mono);">10:13:52</td></tr>
+                    <tr><td>Qudos Bank Arena</td><td style="color:var(--success);font-size:0.78rem;">Post-event dispersal</td><td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;font-weight:700;">18%</td><td style="font-size:0.78rem;color:var(--muted);">Event closed &mdash; log archived</td><td style="color:var(--success);font-size:0.78rem;font-family:var(--font-mono);">10:12:11</td></tr>
                   </tbody>
                 </table>
               </div>
+              <div class="proto-ml-summary" style="margin-top:14px;">
+                <div class="proto-ml-cell"><div class="proto-ml-label">CRM sync lag</div><div class="proto-ml-val green">&lt;30 seconds</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Records today</div><div class="proto-ml-val green">1,847 updated</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Sync errors</div><div class="proto-ml-val green">0</div></div>
+                <div class="proto-ml-cell"><div class="proto-ml-label">Was: manual updates</div><div class="proto-ml-val" style="color:var(--danger);">Days delayed</div></div>
+              </div>
             </div>
-            <!-- KPIs tab -->
             <div class="cs-proto-panel" data-proto-panel="kpis">
               <div class="proto-toolbar">
-                <span class="proto-toolbar-label">Analytics Dashboard &mdash; Live Event Metrics</span>
-                <span class="proto-badge green">Updated 10:15:12</span>
+                <span class="proto-toolbar-label">Executive dashboard &mdash; live data, updated every 5 minutes automatically</span>
+                <span class="proto-badge green">Last refresh: 10:15:12</span>
               </div>
               <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px;">
-                <div class="kpi-cell"><div class="kpi-name">Events Today</div><div class="kpi-value">28,442</div><div class="kpi-delta green">+12% vs avg</div></div>
-                <div class="kpi-cell"><div class="kpi-name">CRM Records Updated</div><div class="kpi-value">1,847</div><div class="kpi-delta green">Real-time</div></div>
-                <div class="kpi-cell"><div class="kpi-name">Pipeline Lag</div><div class="kpi-value">28s</div><div class="kpi-delta green">SLA: &lt;60s</div></div>
-                <div class="kpi-cell"><div class="kpi-name">dbt Test Pass Rate</div><div class="kpi-value">100%</div><div class="kpi-delta neutral">45/45 tests</div></div>
-                <div class="kpi-cell"><div class="kpi-name">Tableau Extracts</div><div class="kpi-value">96</div><div class="kpi-delta green">Today</div></div>
-                <div class="kpi-cell"><div class="kpi-name">Salesforce Sync Errors</div><div class="kpi-value">0</div><div class="kpi-delta green">Clean</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Events today</div><div class="kpi-value">28,442</div><div class="kpi-delta green">+12% vs avg</div></div>
+                <div class="kpi-cell"><div class="kpi-name">CRM records updated</div><div class="kpi-value">1,847</div><div class="kpi-delta green">Automated</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Pipeline lag</div><div class="kpi-value">28s</div><div class="kpi-delta green">SLA &lt;60s</div></div>
+                <div class="kpi-cell"><div class="kpi-name">dbt test pass rate</div><div class="kpi-value">100%</div><div class="kpi-delta neutral">45/45 tests</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Tableau refreshes</div><div class="kpi-value">96</div><div class="kpi-delta green">Today</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Manual work today</div><div class="kpi-value">0 min</div><div class="kpi-delta green">Fully automated</div></div>
               </div>
               <div class="bar-chart">
                 <div class="bar-row"><span class="bar-label">ANZ Stadium</span><div class="bar-track"><div class="bar-fill" style="width:87%;"></div></div><span class="bar-value">8,421 events</span></div>
