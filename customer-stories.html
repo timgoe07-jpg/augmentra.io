@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Stories — Augmentra</title>
+  <meta name="description" content="Three detailed customer stories: AI mortgage operations (Balaton Financial), government tender intelligence (Trovio), and SaaS data pipeline (Unleash Live)." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="dot-bg">
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AUGMEN<span class="accent">TRA</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="customer-stories.html">Customer Stories</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-cta">
+        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="services.html">Services</a>
+      <a href="customer-stories.html">Customer Stories</a>
+      <a href="security.html">Security</a>
+      <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow reveal-fade">Customer Stories</span>
+    <h1 class="reveal-up">Systems built.<br><span class="gradient-text">Problems solved.</span></h1>
+    <p class="sub reveal-up reveal-delay-1">Three engagements across financial services, government, and SaaS. Purpose-built systems that replaced manual processes with intelligent, reliable infrastructure.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- STORY 1: Balaton Financial -->
+    <div class="cs-visual reveal-up">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">Financial Services &middot; AI / Document Intelligence</span>
+          <h2>Balaton Financial — AI-Assisted Mortgage Operations</h2>
+          <p class="cs-problem-stmt">Mortgage operations running entirely on spreadsheets and email — 4 hours per application, no audit trail, brokers spending half their day chasing documents.</p>
+        </div>
+
+        <!-- Interactive prototype: live mortgage pipeline -->
+        <div class="cs-prototype">
+          <div class="cs-proto-header">
+            <span class="cs-proto-label">Live System Prototype</span>
+            <span class="cs-proto-sub">Interact with the actual interface design</span>
+          </div>
+          <!-- Pipeline kanban -->
+          <div class="cs-proto-tabs">
+            <button class="cs-proto-tab active" data-proto-tab="pipeline">Pipeline View</button>
+            <button class="cs-proto-tab" data-proto-tab="docs">Document Intelligence</button>
+            <button class="cs-proto-tab" data-proto-tab="audit">Audit Log</button>
+          </div>
+          <div class="cs-proto-panels">
+            <!-- Pipeline tab -->
+            <div class="cs-proto-panel active" data-proto-panel="pipeline">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Mortgage Pipeline &mdash; Live View</span>
+                <div class="proto-toolbar-actions">
+                  <span class="proto-badge green">12 Active</span>
+                  <span class="proto-badge amber">3 Blocked</span>
+                </div>
+              </div>
+              <div class="proto-kanban">
+                <div class="proto-kanban-col">
+                  <div class="proto-col-header">New Enquiry <span class="proto-col-count">4</span></div>
+                  <div class="proto-card">
+                    <div class="proto-card-name">Alex M.</div>
+                    <div class="proto-card-detail">$720k · PAYG</div>
+                    <div class="proto-card-score high">Score 91</div>
+                  </div>
+                  <div class="proto-card">
+                    <div class="proto-card-name">Jordan P.</div>
+                    <div class="proto-card-detail">$1.2m · Self-Employed</div>
+                    <div class="proto-card-score med">Score 62</div>
+                  </div>
+                </div>
+                <div class="proto-kanban-col">
+                  <div class="proto-col-header">Docs Requested <span class="proto-col-count">7</span></div>
+                  <div class="proto-card">
+                    <div class="proto-card-name">Sam K.</div>
+                    <div class="proto-card-detail">$450k · PAYG</div>
+                    <div class="proto-card-docs">4 / 5 <span class="proto-docs-bar"><span style="width:80%"></span></span></div>
+                  </div>
+                  <div class="proto-card proto-card-alert">
+                    <div class="proto-card-name">Maya R.</div>
+                    <div class="proto-card-detail">$890k · Self-Employed</div>
+                    <div class="proto-card-docs warn">2 / 7 <span class="proto-docs-bar"><span style="width:28%"></span></span></div>
+                  </div>
+                </div>
+                <div class="proto-kanban-col">
+                  <div class="proto-col-header">Under Assessment <span class="proto-col-count">3</span></div>
+                  <div class="proto-card">
+                    <div class="proto-card-name">Chris L.</div>
+                    <div class="proto-card-detail">$580k · PAYG</div>
+                    <div class="proto-card-status ok">ML: APPROVE</div>
+                  </div>
+                </div>
+                <div class="proto-kanban-col">
+                  <div class="proto-col-header">Submitted <span class="proto-col-count">2</span></div>
+                  <div class="proto-card">
+                    <div class="proto-card-name">Taylor B.</div>
+                    <div class="proto-card-detail">$650k · PAYG</div>
+                    <div class="proto-card-status pending">Awaiting lender</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Doc Intelligence tab -->
+            <div class="cs-proto-panel" data-proto-panel="docs">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Document Intelligence &mdash; ML Classifier Output</span>
+                <span class="proto-badge green">Model v2.4 · 94.1% accuracy</span>
+              </div>
+              <div class="proto-doc-list">
+                <div class="proto-doc-row">
+                  <div class="proto-doc-icon">PDF</div>
+                  <div class="proto-doc-info">
+                    <div class="proto-doc-name">payslip_march_2026.pdf</div>
+                    <div class="proto-doc-meta">Uploaded 09:42:01 · 847 KB</div>
+                  </div>
+                  <div class="proto-doc-result">
+                    <span class="proto-doc-type">PAYSLIP</span>
+                    <span class="proto-doc-conf high">0.97</span>
+                  </div>
+                  <div class="proto-doc-action ok">Verified</div>
+                </div>
+                <div class="proto-doc-row">
+                  <div class="proto-doc-icon">PDF</div>
+                  <div class="proto-doc-info">
+                    <div class="proto-doc-name">bank_statement_cba_q1.pdf</div>
+                    <div class="proto-doc-meta">Uploaded 09:42:34 · 1.2 MB</div>
+                  </div>
+                  <div class="proto-doc-result">
+                    <span class="proto-doc-type">BANK STMT</span>
+                    <span class="proto-doc-conf high">0.94</span>
+                  </div>
+                  <div class="proto-doc-action ok">Verified</div>
+                </div>
+                <div class="proto-doc-row">
+                  <div class="proto-doc-icon">JPG</div>
+                  <div class="proto-doc-info">
+                    <div class="proto-doc-name">drivers_licence_front.jpg</div>
+                    <div class="proto-doc-meta">Uploaded 09:43:12 · 312 KB</div>
+                  </div>
+                  <div class="proto-doc-result">
+                    <span class="proto-doc-type">ID DOC</span>
+                    <span class="proto-doc-conf high">0.99</span>
+                  </div>
+                  <div class="proto-doc-action ok">Verified</div>
+                </div>
+                <div class="proto-doc-row proto-doc-pending">
+                  <div class="proto-doc-icon muted">PDF</div>
+                  <div class="proto-doc-info">
+                    <div class="proto-doc-name">tax_return_2025.pdf</div>
+                    <div class="proto-doc-meta">Requested 09:40:00 · Auto-chased 10:10:00</div>
+                  </div>
+                  <div class="proto-doc-result">
+                    <span class="proto-doc-type muted">AWAITING</span>
+                    <span class="proto-doc-conf muted">—</span>
+                  </div>
+                  <div class="proto-doc-action warn">Pending</div>
+                </div>
+              </div>
+              <div class="proto-ml-summary">
+                <div class="proto-ml-cell">
+                  <div class="proto-ml-label">Income verified</div>
+                  <div class="proto-ml-val green">$142,000 p.a.</div>
+                </div>
+                <div class="proto-ml-cell">
+                  <div class="proto-ml-label">Expense ratio</div>
+                  <div class="proto-ml-val green">0.31</div>
+                </div>
+                <div class="proto-ml-cell">
+                  <div class="proto-ml-label">Risk band</div>
+                  <div class="proto-ml-val green">LOW</div>
+                </div>
+                <div class="proto-ml-cell">
+                  <div class="proto-ml-label">Compliance result</div>
+                  <div class="proto-ml-val green">PASS</div>
+                </div>
+              </div>
+            </div>
+            <!-- Audit tab -->
+            <div class="cs-proto-panel" data-proto-panel="audit">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Audit Log &mdash; Tamper-Evident Stream</span>
+                <span class="proto-badge green">SHA-256 chain intact</span>
+              </div>
+              <div class="audit-log" id="cs1-audit">
+                <div class="audit-header">
+                  <span>Timestamp</span><span>User</span><span>Action</span><span>Resource</span><span>Hash</span>
+                </div>
+                <div class="audit-row">
+                  <span class="col-time">09:42:01</span><span class="col-user">ml.system</span>
+                  <span class="col-action">CLASSIFY</span><span class="col-resource">doc_id:3821</span>
+                  <span class="col-hash">3f9a2c</span>
+                </div>
+                <div class="audit-row">
+                  <span class="col-time">09:42:07</span><span class="col-user">system</span>
+                  <span class="col-action">WRITE</span><span class="col-resource">applicant_id:8821</span>
+                  <span class="col-hash">c71e44</span>
+                </div>
+                <div class="audit-row">
+                  <span class="col-time">09:42:10</span><span class="col-user">compliance.engine</span>
+                  <span class="col-action">VALIDATE</span><span class="col-resource">deal_id:9043</span>
+                  <span class="col-hash">a2d891</span>
+                </div>
+                <div class="audit-row">
+                  <span class="col-time">09:42:13</span><span class="col-user">webhook.service</span>
+                  <span class="col-action">DISPATCH</span><span class="col-resource">pipedrive:deal:9043</span>
+                  <span class="col-hash">f8a201</span>
+                </div>
+                <div class="audit-row">
+                  <span class="col-time">09:42:16</span><span class="col-user">broker_07</span>
+                  <span class="col-action">APPROVE</span><span class="col-resource">deal_id:9043</span>
+                  <span class="col-hash">9de731</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-arch">
+          <div class="cs-arch-label">System Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Broker-facing React portal for document upload and pipeline visibility">Broker Portal</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Microsoft Azure Document Intelligence for OCR and structured data extraction from PDFs">Azure Doc Intelligence</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="TensorFlow + scikit-learn model trained on 15 income document categories. 94.1% accuracy.">ML Classifier</span>
+            </div>
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Pipedrive CRM updated via REST API whenever deal stage changes or documents are verified">Pipedrive CRM</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI backend: JWT auth, RBAC, workflow orchestration, and webhook dispatch">FastAPI Backend</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Rules engine: LVR checks, income thresholds, document completeness, compliance flags">Compliance Engine</span>
+            </div>
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-wide cs-arch-node-hoverable" data-tip="PostgreSQL with append-only audit_log table. Every write chains SHA-256 hash of previous row.">PostgreSQL + Audit Log</span>
+            </div>
+          </div>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-1">Expand architecture &#x2192;</button>
+        </div>
+
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-num">8 min</div><div class="cs-metric-label">Average processing time (was 4+ hours)</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">94%</div><div class="cs-metric-label">ML classification accuracy on income documents</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">100%</div><div class="cs-metric-label">Audit trail coverage — zero compliance gaps</div></div>
+        </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span>
+          <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Azure Doc Intelligence</span>
+          <span class="tag">Pipedrive API</span><span class="tag">React</span><span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY 2: Trovio -->
+    <div class="cs-visual reveal-up">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">Government Technology &middot; NLP / Data Engineering</span>
+          <h2>Trovio — Government Tender Intelligence</h2>
+          <p class="cs-problem-stmt">No centralised view of government project records — 8 portals checked manually every morning, match scoring done by eye, bid responses drafted from scratch each time.</p>
+        </div>
+
+        <!-- Interactive prototype: tender intelligence -->
+        <div class="cs-prototype">
+          <div class="cs-proto-header">
+            <span class="cs-proto-label">Live System Prototype</span>
+            <span class="cs-proto-sub">Interact with the actual interface design</span>
+          </div>
+          <div class="cs-proto-tabs">
+            <button class="cs-proto-tab active" data-proto-tab="tenders">Tender Pipeline</button>
+            <button class="cs-proto-tab" data-proto-tab="nlp">NLP Analysis</button>
+            <button class="cs-proto-tab" data-proto-tab="deadlines">Deadline Tracker</button>
+          </div>
+          <div class="cs-proto-panels">
+            <!-- Tender pipeline tab -->
+            <div class="cs-proto-panel active" data-proto-panel="tenders">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Tender Pipeline &mdash; 8 Portals Monitored</span>
+                <div class="proto-toolbar-actions">
+                  <span class="proto-badge green">4 High match</span>
+                  <span class="proto-badge amber">2 Review</span>
+                </div>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="mock-table">
+                  <thead>
+                    <tr><th>Tender ID</th><th>Agency</th><th>Value</th><th>Match Score</th><th>Deadline</th><th>Status</th><th>Action</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TND-2024-1831</td><td>Dept. of Infrastructure</td><td>$240k</td>
+                      <td><span class="mock-score high">94</span></td><td>14 Mar</td>
+                      <td style="color:var(--accent);font-size:0.78rem;">Draft in progress</td>
+                      <td><button class="proto-action-btn">View Draft</button></td>
+                    </tr>
+                    <tr>
+                      <td>TND-2024-1856</td><td>ATO</td><td>$85k</td>
+                      <td><span class="mock-score high">88</span></td><td>21 Mar</td>
+                      <td style="color:var(--success);font-size:0.78rem;">Ready to submit</td>
+                      <td><button class="proto-action-btn">Submit</button></td>
+                    </tr>
+                    <tr>
+                      <td>TND-2024-1902</td><td>DFAT</td><td>$1.2m</td>
+                      <td><span class="mock-score med">61</span></td><td>28 Mar</td>
+                      <td style="color:var(--warning);font-size:0.78rem;">Under review</td>
+                      <td><button class="proto-action-btn">Review</button></td>
+                    </tr>
+                    <tr>
+                      <td>TND-2024-1915</td><td>NDIS</td><td>$320k</td>
+                      <td><span class="mock-score low">32</span></td><td>04 Apr</td>
+                      <td style="color:var(--muted);font-size:0.78rem;opacity:0.6;">Low match — skip</td>
+                      <td><span style="font-size:0.75rem;color:var(--muted);">—</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- NLP tab -->
+            <div class="cs-proto-panel" data-proto-panel="nlp">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">NLP Analysis &mdash; TND-2024-1831</span>
+                <span class="proto-badge green">GPT-4 Summary Generated</span>
+              </div>
+              <div class="proto-nlp-layout">
+                <div class="proto-nlp-col">
+                  <div class="proto-nlp-section-label">Extracted entities</div>
+                  <div class="proto-nlp-tags">
+                    <span class="proto-nlp-tag entity">Data Engineering</span>
+                    <span class="proto-nlp-tag entity">Python</span>
+                    <span class="proto-nlp-tag entity">Azure</span>
+                    <span class="proto-nlp-tag entity">PostgreSQL</span>
+                    <span class="proto-nlp-tag entity">GovERP integration</span>
+                    <span class="proto-nlp-tag entity">Privacy Act compliance</span>
+                    <span class="proto-nlp-tag entity">12-month term</span>
+                  </div>
+                  <div class="proto-nlp-section-label" style="margin-top:14px;">Capability match</div>
+                  <div class="proto-nlp-bars">
+                    <div class="proto-nlp-bar-row">
+                      <span>Data Engineering</span>
+                      <div class="bar-track"><div class="bar-fill" style="width:95%;"></div></div>
+                      <span>95%</span>
+                    </div>
+                    <div class="proto-nlp-bar-row">
+                      <span>Azure Cloud</span>
+                      <div class="bar-track"><div class="bar-fill" style="width:90%;"></div></div>
+                      <span>90%</span>
+                    </div>
+                    <div class="proto-nlp-bar-row">
+                      <span>Govt compliance</span>
+                      <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
+                      <span>85%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="proto-nlp-col">
+                  <div class="proto-nlp-section-label">GPT-4 summary</div>
+                  <div class="proto-nlp-summary">
+                    <p>The Department of Infrastructure seeks a contractor to design and implement a data integration pipeline connecting legacy procurement databases to a new Azure-based analytics platform. Key requirements include Python-based ETL, PostgreSQL schema design, and compliance with the Privacy Act 1988.</p>
+                    <p style="margin-top:8px;color:var(--success);font-size:0.8rem;">High match — recommend pursuing. Deadline in 14 days.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Deadline tab -->
+            <div class="cs-proto-panel" data-proto-panel="deadlines">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Deadline Tracker &mdash; Next 30 Days</span>
+                <span class="proto-badge amber">2 deadlines this week</span>
+              </div>
+              <div class="proto-timeline">
+                <div class="proto-timeline-item urgent">
+                  <div class="proto-tl-date">14 Mar</div>
+                  <div class="proto-tl-dot urgent"></div>
+                  <div class="proto-tl-content">
+                    <div class="proto-tl-title">TND-2024-1831 · Dept. of Infrastructure</div>
+                    <div class="proto-tl-detail">Draft in progress &middot; 3 days remaining</div>
+                  </div>
+                </div>
+                <div class="proto-timeline-item">
+                  <div class="proto-tl-date">21 Mar</div>
+                  <div class="proto-tl-dot ok"></div>
+                  <div class="proto-tl-content">
+                    <div class="proto-tl-title">TND-2024-1856 · ATO</div>
+                    <div class="proto-tl-detail">Ready to submit &middot; 10 days remaining</div>
+                  </div>
+                </div>
+                <div class="proto-timeline-item">
+                  <div class="proto-tl-date">28 Mar</div>
+                  <div class="proto-tl-dot warn"></div>
+                  <div class="proto-tl-content">
+                    <div class="proto-tl-title">TND-2024-1902 · DFAT</div>
+                    <div class="proto-tl-detail">Under review &middot; 17 days remaining</div>
+                  </div>
+                </div>
+                <div class="proto-timeline-item muted">
+                  <div class="proto-tl-date">04 Apr</div>
+                  <div class="proto-tl-dot muted"></div>
+                  <div class="proto-tl-content">
+                    <div class="proto-tl-title">TND-2024-1915 · NDIS</div>
+                    <div class="proto-tl-detail">Low match — skipped</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-arch">
+          <div class="cs-arch-label">System Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Automated scraper monitoring AusTender, NSW eTender, QGov, and 5 other portals on a schedule">Govt Portals (x8)</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python scraper with rotating proxies, rate-limit handling, and deduplication">Web Scraper</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="spaCy + NLTK: entity extraction, keyword matching, semantic similarity scoring against capability profile">NLP Pipeline</span>
+            </div>
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="React dashboard: match rankings, deadline calendar, bid pipeline, draft editor">React Dashboard</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI serving scored opportunities; PostgreSQL storing tender records, match history, bid drafts">FastAPI + PostgreSQL</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="GPT-4 via Azure OpenAI: generates structured tender summaries and initial draft bid responses">OpenAI Summariser</span>
+            </div>
+          </div>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-2">Expand architecture &#x2192;</button>
+        </div>
+
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-num">8</div><div class="cs-metric-label">Portals monitored continuously</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">GPT-4</div><div class="cs-metric-label">Automated summarisation of tender documents</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">60%</div><div class="cs-metric-label">Reduction in opportunity identification time</div></div>
+        </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLTK</span>
+          <span class="tag">OpenAI API</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Azure</span><span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY 3: Unleash Live -->
+    <div class="cs-visual reveal-up">
+      <div class="cs-accent-bar"></div>
+      <div class="cs-visual-body">
+        <div class="cs-visual-header">
+          <span class="teaser-pill">SaaS Platform &middot; Data Engineering / Integrations</span>
+          <h2>Unleash Live — AI Event Data Pipeline</h2>
+          <p class="cs-problem-stmt">AI event data from the Unleash Live platform had no structured pipeline into CRM or analytics — insights generated by the AI system were lost immediately after generation.</p>
+        </div>
+
+        <!-- Interactive prototype: data pipeline dashboard -->
+        <div class="cs-prototype">
+          <div class="cs-proto-header">
+            <span class="cs-proto-label">Live System Prototype</span>
+            <span class="cs-proto-sub">Interact with the actual interface design</span>
+          </div>
+          <div class="cs-proto-tabs">
+            <button class="cs-proto-tab active" data-proto-tab="pipeline">Pipeline Monitor</button>
+            <button class="cs-proto-tab" data-proto-tab="crm">CRM Sync</button>
+            <button class="cs-proto-tab" data-proto-tab="kpis">Analytics Dashboard</button>
+          </div>
+          <div class="cs-proto-panels">
+            <!-- Pipeline tab -->
+            <div class="cs-proto-panel active" data-proto-panel="pipeline">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">ETL Pipeline &mdash; Live Status</span>
+                <span class="proto-badge green">All systems nominal</span>
+              </div>
+              <div class="pm-body" style="grid-template-columns:1fr 1fr;display:grid;">
+                <div class="pm-panel">
+                  <div class="pm-panel-title">Pipeline Stages</div>
+                  <div class="pm-node"><span class="pm-dot-status green"></span>Unleash Live Ingest<span class="pm-node-sub">REST webhook · real-time</span><span class="pm-badge running">Running</span></div>
+                  <div class="pm-node"><span class="pm-dot-status green"></span>ETL Normaliser<span class="pm-node-sub">Python · deduplicate + enrich</span><span class="pm-badge running">Running</span></div>
+                  <div class="pm-node"><span class="pm-dot-status green"></span>dbt Transforms<span class="pm-node-sub">15 models · 3 tests/model</span><span class="pm-badge running">Running</span></div>
+                  <div class="pm-node"><span class="pm-dot-status green"></span>Salesforce Sync<span class="pm-node-sub">REST API · 30s lag</span><span class="pm-badge running">Running</span></div>
+                  <div class="pm-node"><span class="pm-dot-status green"></span>Tableau Publisher<span class="pm-node-sub">extract refresh · 5 min</span><span class="pm-badge running">Running</span></div>
+                </div>
+                <div class="pm-panel">
+                  <div class="pm-panel-title">Pipeline Events</div>
+                  <div class="pm-events-scroll" id="ul-pm-events">
+                    <div class="pm-event"><span class="pm-time">10:15:02</span><span class="pm-event-name" style="color:#06b6d4;">ingest.batch</span><span class="pm-event-data">events=142 source=unleash_live</span></div>
+                    <div class="pm-event"><span class="pm-time">10:15:04</span><span class="pm-event-name" style="color:#818cf8;">etl.transform</span><span class="pm-event-data">normalised=142 dupes_dropped=3</span></div>
+                    <div class="pm-event"><span class="pm-time">10:15:07</span><span class="pm-event-name" style="color:#2dd4bf;">dbt.run</span><span class="pm-event-data">models=15 tests=45 passed=45</span></div>
+                    <div class="pm-event"><span class="pm-time">10:15:09</span><span class="pm-event-name" style="color:#a78bfa;">salesforce.sync</span><span class="pm-event-data">updated=38 created=4 errors=0</span></div>
+                    <div class="pm-event"><span class="pm-time">10:15:12</span><span class="pm-event-name" style="color:#f59e0b;">tableau.refresh</span><span class="pm-event-data">extract=complete rows=28442</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CRM tab -->
+            <div class="cs-proto-panel" data-proto-panel="crm">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Salesforce CRM &mdash; AI Event Sync</span>
+                <span class="proto-badge green">Real-time · 30s lag</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="mock-table">
+                  <thead><tr><th>Account</th><th>Event Type</th><th>AI Signal</th><th>Crowd Density</th><th>Synced</th></tr></thead>
+                  <tbody>
+                    <tr><td>Venue: ANZ Stadium</td><td>Crowd surge</td><td style="color:var(--warning);">High density — NW quadrant</td><td style="color:var(--warning);font-family:var(--font-mono);font-size:0.78rem;">87%</td><td style="color:var(--success);font-size:0.78rem;">10:15:09</td></tr>
+                    <tr><td>Venue: ICC Sydney</td><td>Flow alert</td><td style="color:var(--success);">Normal dispersal pattern</td><td style="color:var(--success);font-family:var(--font-mono);font-size:0.78rem;">42%</td><td style="color:var(--success);font-size:0.78rem;">10:14:38</td></tr>
+                    <tr><td>Venue: Allianz Arena</td><td>Queue intelligence</td><td style="color:var(--accent);">Gate B bottleneck forming</td><td style="color:var(--accent);font-family:var(--font-mono);font-size:0.78rem;">64%</td><td style="color:var(--success);font-size:0.78rem;">10:13:52</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- KPIs tab -->
+            <div class="cs-proto-panel" data-proto-panel="kpis">
+              <div class="proto-toolbar">
+                <span class="proto-toolbar-label">Analytics Dashboard &mdash; Live Event Metrics</span>
+                <span class="proto-badge green">Updated 10:15:12</span>
+              </div>
+              <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px;">
+                <div class="kpi-cell"><div class="kpi-name">Events Today</div><div class="kpi-value">28,442</div><div class="kpi-delta green">+12% vs avg</div></div>
+                <div class="kpi-cell"><div class="kpi-name">CRM Records Updated</div><div class="kpi-value">1,847</div><div class="kpi-delta green">Real-time</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Pipeline Lag</div><div class="kpi-value">28s</div><div class="kpi-delta green">SLA: &lt;60s</div></div>
+                <div class="kpi-cell"><div class="kpi-name">dbt Test Pass Rate</div><div class="kpi-value">100%</div><div class="kpi-delta neutral">45/45 tests</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Tableau Extracts</div><div class="kpi-value">96</div><div class="kpi-delta green">Today</div></div>
+                <div class="kpi-cell"><div class="kpi-name">Salesforce Sync Errors</div><div class="kpi-value">0</div><div class="kpi-delta green">Clean</div></div>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-row"><span class="bar-label">ANZ Stadium</span><div class="bar-track"><div class="bar-fill" style="width:87%;"></div></div><span class="bar-value">8,421 events</span></div>
+                <div class="bar-row"><span class="bar-label">ICC Sydney</span><div class="bar-track"><div class="bar-fill" style="width:64%;"></div></div><span class="bar-value">6,218 events</span></div>
+                <div class="bar-row"><span class="bar-label">Allianz Arena</span><div class="bar-track"><div class="bar-fill" style="width:51%;"></div></div><span class="bar-value">4,941 events</span></div>
+                <div class="bar-row"><span class="bar-label">Qudos Bank</span><div class="bar-track"><div class="bar-fill" style="width:38%;"></div></div><span class="bar-value">3,674 events</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-arch">
+          <div class="cs-arch-label">System Architecture</div>
+          <div class="cs-arch-diagram">
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="AI event stream from Unleash Live — crowd density, flow patterns, queue intelligence">Unleash Live API</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python ETL: normalises heterogeneous event formats, deduplicates, enriches with venue metadata">ETL Pipeline</span>
+              <span class="cs-arch-arrow"> &#x2500;&#x25b6; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Salesforce updated in real-time via REST API. Event summaries mapped to Account/Contact records.">Salesforce CRM</span>
+            </div>
+            <div class="cs-arch-row cs-arch-row-indent"><span class="cs-arch-branch">&#x2502;</span></div>
+            <div class="cs-arch-row">
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="Tableau dashboards connected to dbt-modelled PostgreSQL tables. Used by executives for real-time event analytics.">Tableau Dashboards</span>
+              <span class="cs-arch-arrow"> &#x25c4;&#x2500; </span>
+              <span class="cs-arch-node cs-arch-node-hoverable" data-tip="dbt models transforming raw events into business-ready metrics: venue KPIs, trend analysis, period comparisons">dbt transforms</span>
+            </div>
+          </div>
+          <button class="cs-arch-expand-btn" data-modal="cs-modal-3">Expand architecture &#x2192;</button>
+        </div>
+
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-num">Real-time</div><div class="cs-metric-label">CRM sync from AI event stream (&lt;30s lag)</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">Tableau</div><div class="cs-metric-label">Executive dashboards from live pipeline data</div></div>
+          <div class="cs-metric"><div class="cs-metric-num">SEM/SEO</div><div class="cs-metric-label">Automation pipeline for marketing workflows</div></div>
+        </div>
+        <div class="tags" style="margin-top:20px;">
+          <span class="tag">Python</span><span class="tag">Salesforce API</span><span class="tag">Tableau</span>
+          <span class="tag">dbt</span><span class="tag">PostgreSQL</span><span class="tag">REST APIs</span><span class="tag">FastAPI</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="nda-note">Additional customer stories available under NDA. All client data and architecture details remain strictly confidential.</p>
+
+  </div>
+</section>
+
+<!-- Architecture Modals -->
+<div class="cs-modal-overlay" id="cs-modal-1" hidden role="dialog" aria-modal="true" aria-label="Balaton Financial Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-1" aria-label="Close">&#x2715;</button>
+    <h3>Balaton Financial — Full System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="React SPA with role-based views for brokers, admins, and management">Broker Portal (React)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Azure Document Intelligence: OCR, table extraction, structured field parsing from PDFs and images">Azure Doc Intelligence</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="TensorFlow + scikit-learn ensemble. Trained on 15 document categories. 94.1% top-1 accuracy.">ML Classifier</span></div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Pipedrive CRM updated via REST API on deal stage changes, document verifications, and compliance results">Pipedrive CRM</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI: JWT auth, RBAC middleware, Celery task dispatch, webhook outbound, OpenAPI docs">FastAPI Backend</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Rules engine: LVR &lt;= 0.80, income &gt;= $80k, all required docs present, no compliance flags raised">Compliance Engine</span></div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-wide cs-arch-node-hoverable" data-tip="PostgreSQL with append-only audit_log. Each row stores SHA-256(previous_hash + event_data). Tamper-evident by design.">PostgreSQL + Append-Only Audit Log (SHA-256)</span></div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
+  </div>
+</div>
+
+<div class="cs-modal-overlay" id="cs-modal-2" hidden role="dialog" aria-modal="true" aria-label="Trovio Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-2" aria-label="Close">&#x2715;</button>
+    <h3>Trovio — Full System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Automated scraper: AusTender, NSW eTender, QGov Marketplace, VendorPanel, and 4 others. Celery beat schedule every 4 hours.">Govt Portals (x8)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python + Playwright scraper with rotating user agents, rate-limit handling, and deduplication by tender ID">Web Scraper</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="spaCy NER + NLTK: extract tech stack, domain, contract value, duration. TF-IDF + cosine similarity against capability profile.">NLP Scoring Pipeline</span></div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="React SPA: match rankings, deadline calendar, bid lifecycle (draft → review → submit), win/loss tracker">React Dashboard</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI: serves scored tender list, bid CRUD, user management. PostgreSQL stores tender metadata, match history, bid drafts.">FastAPI + PostgreSQL</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="GPT-4 via Azure OpenAI: takes tender description + capability profile, returns structured summary + initial draft bid sections">OpenAI Summariser (GPT-4)</span></div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
+  </div>
+</div>
+
+<div class="cs-modal-overlay" id="cs-modal-3" hidden role="dialog" aria-modal="true" aria-label="Unleash Live Architecture">
+  <div class="cs-modal-box">
+    <button class="cs-modal-close" data-modal="cs-modal-3" aria-label="Close">&#x2715;</button>
+    <h3>Unleash Live — Full System Architecture</h3>
+    <div class="cs-modal-diagram">
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="AI event stream: crowd density, flow patterns, queue intelligence, anomaly signals. Webhook POST to ingestion endpoint.">Unleash Live API</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python ETL: normalise heterogeneous formats, deduplicate by event_id + timestamp, enrich with venue/client metadata from PostgreSQL">ETL Pipeline (Python)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Salesforce REST API: AI event summaries mapped to Account/Contact/Opportunity records. Real-time sync, &lt;30s lag.">Salesforce CRM</span></div>
+      <div class="cs-arch-branch-line">&#x2502;</div>
+      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Tableau connected via PostgreSQL extract. Executive dashboards: venue KPIs, event heatmaps, trend analysis, SEM attribution.">Tableau Dashboards</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="15 dbt models. Transforms raw event rows into venue_metrics, daily_summary, client_rollup. 45 data quality tests.">dbt transforms (PostgreSQL)</span></div>
+    </div>
+    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
+  </div>
+</div>
+
+<section class="cta-bar">
+  <div class="container">
+    <h2>Ready to build something that works?</h2>
+    <p class="sub">Start with a description of your problem. I'll respond within one business day with an initial assessment.</p>
+    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-body">
+      <div>
+        <div class="footer-logo">AUGMEN<span class="accent">TRA</span></div>
+        <div class="footer-tagline">Custom-built intelligence for your business.</div>
+        <div class="footer-note">All work delivered under NDA as standard.</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="customer-stories.html">Customer Stories</a>
+        <a href="security.html">Security</a>
+        <a href="quote.html">Get a Quote</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Augmentra. Independent technology contractor.</span>
+      <a href="mailto:hello@augmentra.io">hello@augmentra.io</a>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
