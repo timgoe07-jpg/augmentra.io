@@ -3907,3 +3907,16 @@ section.section[style*="background"] {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Force footer-logo inline — no whitespace gaps */
+.footer-logo {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 9px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
