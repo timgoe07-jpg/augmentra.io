@@ -3897,3 +3897,13 @@ section.section[style*="background"] {
   border-radius: 5px;
   opacity: 0.9;
 }
+
+/* Footer wordmark — no gap, gradient TRA matches nav */
+.footer-wm { display: inline-flex; align-items: baseline; letter-spacing: 0.06em; font-size: 1.05rem; font-weight: 800; }
+.footer-wm-aug { color: var(--text); }
+.footer-wm-tra {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
