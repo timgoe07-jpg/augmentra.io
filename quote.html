@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("cR3plZD0SGBULMBT-");</script>
 </head>
 <body class="dot-bg">
 
@@ -160,7 +162,7 @@
           </div>
 
           <div style="margin-top:8px;">
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Enquiry</button>
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;">Send Enquiry</button>
           </div>
 
         </form>
@@ -247,6 +249,98 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('quote-form');
+  var successDiv = document.getElementById('form-success');
+  var submitBtn = document.getElementById('submit-btn');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Basic validation — check required fields have values
+    var valid = true;
+    var required = [
+      { id: 'f-name',         errId: 'f-name-err',         msg: 'Please enter your full name.' },
+      { id: 'f-company',      errId: 'f-company-err',      msg: 'Please enter your company.' },
+      { id: 'f-email',        errId: 'f-email-err',        msg: 'Please enter a valid email.' },
+      { id: 'f-industry',     errId: 'f-industry-err',     msg: 'Please enter your industry.' },
+      { id: 'f-project-type', errId: 'f-project-type-err', msg: 'Please select a project type.' },
+      { id: 'f-description',  errId: 'f-description-err',  msg: 'Please describe what you need.' },
+      { id: 'f-timeline',     errId: 'f-timeline-err',     msg: 'Please select a timeline.' },
+      { id: 'f-budget',       errId: 'f-budget-err',       msg: 'Please select a budget range.' }
+    ];
+
+    required.forEach(function (field) {
+      var el = document.getElementById(field.id);
+      var err = document.getElementById(field.errId);
+      if (el && !el.value.trim()) {
+        el.classList.add('error');
+        if (err) { err.textContent = field.msg; err.classList.add('visible'); }
+        valid = false;
+      } else if (el) {
+        el.classList.remove('error');
+        if (err) err.classList.remove('visible');
+      }
+    });
+
+    // Email format check
+    var emailEl = document.getElementById('f-email');
+    if (emailEl && emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
+      emailEl.classList.add('error');
+      var emailErr = document.getElementById('f-email-err');
+      if (emailErr) { emailErr.textContent = 'Please enter a valid email address.'; emailErr.classList.add('visible'); }
+      valid = false;
+    }
+
+    if (!valid) {
+      var firstErr = form.querySelector('.form-input.error, .form-select.error, .form-textarea.error');
+      if (firstErr) { firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' }); firstErr.focus(); }
+      return;
+    }
+
+    // Build template params
+    var params = {
+      from_name:    document.getElementById('f-name').value.trim(),
+      from_email:   document.getElementById('f-email').value.trim(),
+      company:      document.getElementById('f-company').value.trim(),
+      phone:        (document.getElementById('f-phone') || {}).value || 'Not provided',
+      industry:     document.getElementById('f-industry').value.trim(),
+      project_type: document.getElementById('f-project-type').value,
+      message:      document.getElementById('f-description').value.trim(),
+      integrations: (document.getElementById('f-integrations') || {}).value || 'Not specified',
+      timeline:     document.getElementById('f-timeline').value,
+      budget:       document.getElementById('f-budget').value
+    };
+
+    // Disable button + show loading
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+    var SERVICE_ID  = 'service_vif191n';
+    var AUTOREPLY   = 'template_j7m0ero';   // auto-reply to lead
+    var NOTIFY      = 'template_z6onb3j';   // notification to Tim
+
+    // Send both emails
+    emailjs.send(SERVICE_ID, NOTIFY, params)
+      .then(function () {
+        return emailjs.send(SERVICE_ID, AUTOREPLY, params);
+      })
+      .then(function () {
+        form.style.display = 'none';
+        if (successDiv) {
+          successDiv.classList.add('visible');
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+      .catch(function (err) {
+        console.error('EmailJS error:', err);
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Enquiry'; }
+        alert('Something went wrong sending your enquiry. Please email us directly at admin@augmentra.io');
+      });
+  });
+}());
+</script>
 <script>
   // Wire success element reference used in main.js
   // The form-success div needs an id for direct reference
