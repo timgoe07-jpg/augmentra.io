@@ -300,62 +300,33 @@
       return;
     }
 
-    // Build template params
-    var fromName    = document.getElementById('f-name').value.trim();
-    var fromEmail   = document.getElementById('f-email').value.trim();
-    var company     = document.getElementById('f-company').value.trim();
-    var phone       = document.getElementById('f-phone') ? document.getElementById('f-phone').value.trim() || 'Not provided' : 'Not provided';
-    var industry    = document.getElementById('f-industry').value.trim();
-    var projectType = document.getElementById('f-project-type').value;
-    var description = document.getElementById('f-description').value.trim();
+    // Build template params — individual fields, no multiline body
+    var fromName     = document.getElementById('f-name').value.trim();
+    var fromEmail    = document.getElementById('f-email').value.trim();
+    var company      = document.getElementById('f-company').value.trim();
+    var phone        = document.getElementById('f-phone') ? document.getElementById('f-phone').value.trim() || 'Not provided' : 'Not provided';
+    var industry     = document.getElementById('f-industry').value.trim();
+    var projectType  = document.getElementById('f-project-type').value;
+    var description  = document.getElementById('f-description').value.trim();
     var integrations = document.getElementById('f-integrations') ? document.getElementById('f-integrations').value.trim() || 'Not specified' : 'Not specified';
-    var timeline    = document.getElementById('f-timeline').value;
-    var budget      = document.getElementById('f-budget').value;
+    var timeline     = document.getElementById('f-timeline').value;
+    var budget       = document.getElementById('f-budget').value;
 
-    var notifyBody = [
-      'New enquiry from augmentra.io',
-      '',
-      'Name:         ' + fromName,
-      'Company:      ' + company,
-      'Email:        ' + fromEmail,
-      'Phone:        ' + phone,
-      'Industry:     ' + industry,
-      'Project type: ' + projectType,
-      'Budget:       ' + budget,
-      'Timeline:     ' + timeline,
-      '',
-      'Description:',
-      description,
-      '',
-      'Integrations / existing systems:',
-      integrations
-    ].join('\n');
+    var sharedFields = {
+      from_name:    fromName,
+      from_email:   fromEmail,
+      company:      company,
+      phone:        phone,
+      industry:     industry,
+      project_type: projectType,
+      description:  description,
+      integrations: integrations,
+      timeline:     timeline,
+      budget:       budget
+    };
 
-    var replyBody = [
-      'Hi ' + fromName + ',',
-      '',
-      "Thanks for reaching out — I've received your enquiry and will get back to you within one business day.",
-      '',
-      "Here's a summary of what you submitted:",
-      '',
-      'Company:      ' + company,
-      'Industry:     ' + industry,
-      'Project type: ' + projectType,
-      'Budget:       ' + budget,
-      'Timeline:     ' + timeline,
-      '',
-      'Description:',
-      description,
-      '',
-      '—',
-      'Tim Görner',
-      'Augmentra',
-      'admin@augmentra.io',
-      'augmentra.io'
-    ].join('\n');
-
-    var notifyParams = { from_name: fromName, from_email: fromEmail, company: company, body: notifyBody };
-    var replyParams  = { from_name: fromName, from_email: fromEmail, company: company, body: replyBody };
+    var notifyParams = sharedFields;
+    var replyParams  = sharedFields;
 
     // Disable button + show loading
     if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
