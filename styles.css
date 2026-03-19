@@ -3842,3 +3842,58 @@ section.section[style*="background"] {
   .ul-campaign-row { flex-direction: column; align-items: flex-start; }
   .ul-camp-metrics { justify-content: flex-start; }
 }
+
+/* ============================================================
+   NAV WORDMARK — aesthetic split treatment
+   ============================================================ */
+.nav-logo {
+  gap: 10px;
+}
+.nav-logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  filter: drop-shadow(0 0 8px rgba(59,130,246,0.45));
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+.nav-logo:hover .nav-logo-icon {
+  filter: drop-shadow(0 0 14px rgba(59,130,246,0.75));
+  transform: scale(1.05);
+}
+
+.nav-wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* "AUGMEN" — white, tight tracking */
+.nav-wm-aug {
+  color: var(--text);
+  letter-spacing: 0.07em;
+}
+
+/* "TRA" — gradient accent */
+.nav-wm-tra {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.07em;
+  font-weight: 800;
+}
+
+/* Footer logo matching treatment */
+.footer-logo {
+  gap: 10px;
+}
+.footer-logo-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  opacity: 0.9;
+}
