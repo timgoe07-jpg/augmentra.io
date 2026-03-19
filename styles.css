@@ -3734,3 +3734,111 @@ section.section[style*="background"] {
   .hd-time-right { text-align: left; }
   .hd-ai-summary { flex-wrap: wrap; gap: 8px; }
 }
+
+/* ============================================================
+   NAV LOGO — SVG mark + wordmark
+   ============================================================ */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.nav-logo:hover { text-decoration: none; color: var(--text); }
+.nav-logo span { display: flex; align-items: center; }
+.nav-logo-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(59,130,246,0.4));
+  transition: filter var(--transition);
+}
+.nav-logo:hover .nav-logo-icon {
+  filter: drop-shadow(0 0 10px rgba(59,130,246,0.7));
+}
+
+/* Footer logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.footer-logo-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   CUSTOMER STORY — context tags
+   ============================================================ */
+.cs-context-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.cs-context-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+
+/* ============================================================
+   UNLEASH LIVE — MARKETING PANEL
+   ============================================================ */
+.ul-marketing-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+}
+.ul-mkt-col {}
+.ul-campaign-list { display: flex; flex-direction: column; gap: 8px; }
+.ul-campaign-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+.ul-campaign-row:hover { border-color: rgba(59,130,246,0.3); }
+.ul-camp-name { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.ul-camp-detail { font-size: 0.68rem; color: var(--muted); font-family: var(--font-mono); }
+.ul-camp-metrics { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+.ul-camp-stat {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.ul-camp-stat.green { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.ul-camp-stat.neutral { background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .ul-marketing-grid { grid-template-columns: 1fr; }
+  .ul-campaign-row { flex-direction: column; align-items: flex-start; }
+  .ul-camp-metrics { justify-content: flex-start; }
+}

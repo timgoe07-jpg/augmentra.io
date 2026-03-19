@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Augmentra</title>
+  <script>
+    // GitHub Pages clean URL routing
+    // Map clean paths to .html files
+    var routes = {
+      '/': '/',
+      '/home': '/',
+      '/services': '/services.html',
+      '/customer-stories': '/customer-stories.html',
+      '/security': '/security.html',
+      '/quote': '/quote.html',
+    };
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+    // strip trailing slash except root
+    var dest = routes[path];
+    if (dest) {
+      var qs = window.location.search;
+      window.location.replace(dest + qs);
+    } else {
+      window.location.replace('/');
+    }
+  </script>
+</head>
+<body></body>
+</html>
