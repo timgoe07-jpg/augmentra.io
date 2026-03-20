@@ -1986,3 +1986,169 @@ html { font-size: 16px; }
   /* Stack tabs — 2 col on tiny screens */
   .stack-tab-btn      { font-size: 0.68rem; padding: 7px 3px; }
 }
+
+/* ============================================================
+   INTERACTIVE SHOW/HIDE — CORE RULES
+   (tab panels, filters, scroll reveals, modals)
+   ============================================================ */
+
+/* ---- Hero Dashboard tabs ---- */
+.hd-panel            { display: none; }
+.hd-panel.active     { display: block; }
+.hd-tab              { cursor: pointer; background: transparent; border: none; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; transition: color var(--transition), border-color var(--transition); white-space: nowrap; }
+.hd-tab:hover        { color: var(--text); }
+.hd-tab.active       { color: var(--text); border-bottom-color: var(--accent); }
+
+/* ---- Tech stack tabs ---- */
+.stack-tab-panel           { display: none; }
+.stack-tab-panel.active    { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-tab-btn             { cursor: pointer; background: transparent; border: 1px solid transparent; border-bottom: 2px solid transparent; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: color var(--transition), border-color var(--transition); white-space: nowrap; }
+.stack-tab-btn:hover       { color: var(--text); }
+.stack-tab-btn.active      { color: var(--text); border-bottom-color: var(--accent); }
+.stack-tab-buttons         { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 20px; overflow-x: auto; }
+
+/* ---- Services page side-nav panels ---- */
+.svc-panel           { display: none; }
+.svc-panel.active    { display: block; }
+
+/* ---- Customer Stories prototype tabs ---- */
+.cs-proto-panel           { display: none; }
+.cs-proto-panel.active    { display: block; }
+.cs-proto-tab             { cursor: pointer; background: transparent; border: none; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; transition: color var(--transition), border-color var(--transition); white-space: nowrap; }
+.cs-proto-tab:hover       { color: var(--text); }
+.cs-proto-tab.active      { color: var(--text); border-bottom-color: var(--accent); }
+
+/* ---- Use case filter hidden state ---- */
+.uc-filterable.hidden { display: none; }
+
+/* ---- Use case filter buttons ---- */
+.uc-filter-btn        { cursor: pointer; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 7px 14px; font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: color var(--transition), border-color var(--transition), background var(--transition); }
+.uc-filter-btn:hover  { color: var(--text); border-color: rgba(59,130,246,0.4); }
+.uc-filter-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(59,130,246,0.06); }
+.uc-filters           { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+
+/* ---- Scroll reveal ---- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.reveal-fade.visible {
+  opacity: 1;
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ---- Architecture node tooltips ---- */
+.cs-arch-node-hoverable {
+  position: relative;
+  cursor: default;
+}
+.cs-arch-node-hoverable::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0d1424;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text);
+  white-space: normal;
+  width: 220px;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.cs-arch-node-hoverable:hover::after {
+  opacity: 1;
+}
+
+/* ---- Case study arch expand button ---- */
+.cs-arch-expand-btn {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  transition: color var(--transition), border-color var(--transition);
+  margin-top: 12px;
+}
+.cs-arch-expand-btn:hover { color: var(--text); border-color: var(--accent); }
+
+/* ---- Architecture modals ---- */
+.cs-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.cs-modal-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  max-width: 820px;
+  width: 100%;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.cs-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.cs-modal-close:hover { color: var(--text); }
+.cs-modal-box h3 { font-size: 1.2rem; margin-bottom: 24px; }
+.cs-modal-diagram { margin-bottom: 16px; }
+.cs-modal-tips { font-size: 0.78rem; color: var(--muted); font-style: italic; }
+.cs-arch-branch-line { font-family: var(--font-mono); color: var(--muted); opacity: 0.4; padding-left: 20px; line-height: 1; margin: 2px 0; }
+
+/* ---- Flip panels (use cases before/after) ---- */
+.uc-flip-btn {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  transition: color var(--transition), border-color var(--transition);
+}
+.uc-flip-btn:hover { color: var(--text); border-color: var(--accent); }
+.uc-flip-panel { margin-top: 12px; }
+.uc-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.uc-before, .uc-after { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; line-height: 1.6; }
+.uc-before { border-left: 3px solid var(--danger); background: rgba(239,68,68,0.04); }
+.uc-after  { border-left: 3px solid var(--success); background: rgba(34,197,94,0.04); }
+.uc-ba-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.uc-before .uc-ba-label { color: var(--danger); }
+.uc-after  .uc-ba-label { color: var(--success); }
