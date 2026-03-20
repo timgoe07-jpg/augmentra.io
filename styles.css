@@ -2105,6 +2105,7 @@ html { font-size: 16px; }
   z-index: 1000;
   padding: 24px;
 }
+.cs-modal-overlay[hidden] { display: none; }
 .cs-modal-box {
   background: var(--card);
   border: 1px solid var(--border);

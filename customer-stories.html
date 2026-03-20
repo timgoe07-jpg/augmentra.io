@@ -556,48 +556,6 @@
   </div>
 </section>
 
-<!-- Architecture Modals -->
-<div class="cs-modal-overlay" id="cs-modal-1" hidden role="dialog" aria-modal="true" aria-label="Balaton Financial Architecture">
-  <div class="cs-modal-box">
-    <button class="cs-modal-close" data-modal="cs-modal-1" aria-label="Close">&#x2715;</button>
-    <h3>Balaton Financial — Full System Architecture</h3>
-    <div class="cs-modal-diagram">
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="React SPA with role-based views for brokers, admins, and management">Broker Portal (React)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Azure Document Intelligence: OCR, table extraction, structured field parsing from PDFs and images">Azure Doc Intelligence</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="TensorFlow + scikit-learn ensemble. Trained on 15 document categories. 94.1% top-1 accuracy.">ML Classifier</span></div>
-      <div class="cs-arch-branch-line">&#x2502;</div>
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Pipedrive CRM updated via REST API on deal stage changes, document verifications, and compliance results">Pipedrive CRM</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI: JWT auth, RBAC middleware, Celery task dispatch, webhook outbound, OpenAPI docs">FastAPI Backend</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Rules engine: LVR &lt;= 0.80, income &gt;= $80k, all required docs present, no compliance flags raised">Compliance Engine</span></div>
-      <div class="cs-arch-branch-line">&#x2502;</div>
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-wide cs-arch-node-hoverable" data-tip="PostgreSQL with append-only audit_log. Each row stores SHA-256(previous_hash + event_data). Tamper-evident by design.">PostgreSQL + Append-Only Audit Log (SHA-256)</span></div>
-    </div>
-    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
-  </div>
-</div>
-
-<div class="cs-modal-overlay" id="cs-modal-2" hidden role="dialog" aria-modal="true" aria-label="Trovio Architecture">
-  <div class="cs-modal-box">
-    <button class="cs-modal-close" data-modal="cs-modal-2" aria-label="Close">&#x2715;</button>
-    <h3>Trovio — Full System Architecture</h3>
-    <div class="cs-modal-diagram">
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Automated scraper: AusTender, NSW eTender, QGov Marketplace, VendorPanel, and 4 others. Celery beat schedule every 4 hours.">Govt Portals (x8)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python + Playwright scraper with rotating user agents, rate-limit handling, and deduplication by tender ID">Web Scraper</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="spaCy NER + NLTK: extract tech stack, domain, contract value, duration. TF-IDF + cosine similarity against capability profile.">NLP Scoring Pipeline</span></div>
-      <div class="cs-arch-branch-line">&#x2502;</div>
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="React SPA: match rankings, deadline calendar, bid lifecycle (draft → review → submit), win/loss tracker">React Dashboard</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="FastAPI: serves scored tender list, bid CRUD, user management. PostgreSQL stores tender metadata, match history, bid drafts.">FastAPI + PostgreSQL</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="GPT-4 via Azure OpenAI: takes tender description + capability profile, returns structured summary + initial draft bid sections">OpenAI Summariser (GPT-4)</span></div>
-    </div>
-    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
-  </div>
-</div>
-
-<div class="cs-modal-overlay" id="cs-modal-3" hidden role="dialog" aria-modal="true" aria-label="Unleash Live Architecture">
-  <div class="cs-modal-box">
-    <button class="cs-modal-close" data-modal="cs-modal-3" aria-label="Close">&#x2715;</button>
-    <h3>Unleash Live — Full System Architecture</h3>
-    <div class="cs-modal-diagram">
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="AI event stream: crowd density, flow patterns, queue intelligence, anomaly signals. Webhook POST to ingestion endpoint.">Unleash Live API</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Python ETL: normalise heterogeneous formats, deduplicate by event_id + timestamp, enrich with venue/client metadata from PostgreSQL">ETL Pipeline (Python)</span><span class="cs-arch-arrow"> &#x2500;&#x25b6; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Salesforce REST API: AI event summaries mapped to Account/Contact/Opportunity records. Real-time sync, &lt;30s lag.">Salesforce CRM</span></div>
-      <div class="cs-arch-branch-line">&#x2502;</div>
-      <div class="cs-arch-row"><span class="cs-arch-node cs-arch-node-hoverable" data-tip="Tableau connected via PostgreSQL extract. Executive dashboards: venue KPIs, event heatmaps, trend analysis, SEM attribution.">Tableau Dashboards</span><span class="cs-arch-arrow"> &#x25c4;&#x2500; </span><span class="cs-arch-node cs-arch-node-hoverable" data-tip="15 dbt models. Transforms raw event rows into venue_metrics, daily_summary, client_rollup. 45 data quality tests.">dbt transforms (PostgreSQL)</span></div>
-    </div>
-    <div class="cs-modal-tips">Hover each component to see its role in the system.</div>
-  </div>
-</div>
-
 <section class="cta-bar">
   <div class="container">
     <h2>Ready to build something that works?</h2>

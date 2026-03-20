@@ -337,36 +337,6 @@
   }());
 
   /* ----------------------------------------------------------
-     CASE STUDY / CUSTOMER STORY — architecture modals
-     ---------------------------------------------------------- */
-  (function () {
-    document.querySelectorAll('.cs-arch-expand-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var m = document.getElementById(this.getAttribute('data-modal'));
-        if (m) { m.hidden = false; document.body.style.overflow = 'hidden'; }
-      });
-    });
-    document.querySelectorAll('.cs-modal-close').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var m = document.getElementById(this.getAttribute('data-modal'));
-        if (m) { m.hidden = true; document.body.style.overflow = ''; }
-      });
-    });
-    document.querySelectorAll('.cs-modal-overlay').forEach(function (overlay) {
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) { overlay.hidden = true; document.body.style.overflow = ''; }
-      });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.cs-modal-overlay:not([hidden])').forEach(function (m) {
-          m.hidden = true; document.body.style.overflow = '';
-        });
-      }
-    });
-  }());
-
-  /* ----------------------------------------------------------
      SCROLL REVEAL — IntersectionObserver
      ---------------------------------------------------------- */
   (function () {
