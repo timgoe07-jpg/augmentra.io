@@ -62,10 +62,17 @@
   if (statNums.length && 'IntersectionObserver' in window) {
     var animateStat = function (el) {
       var raw = el.getAttribute('data-target') || el.textContent.trim();
+      // Preserve inner stat-suffix span (e.g. "hrs")
+      var suffixEl = el.querySelector('.stat-suffix');
+      if (suffixEl) {
+        raw = el.getAttribute('data-target') || el.textContent.trim().replace(suffixEl.textContent, '').trim();
+        suffixEl.parentNode.removeChild(suffixEl);
+      }
       // Extract numeric portion and suffix
       var match = raw.match(/^(\d+)(.*)/);
       if (!match) {
         // Non-numeric like "Zero" — no animation
+        if (suffixEl) el.appendChild(suffixEl);
         return;
       }
       var target = parseInt(match[1], 10);
@@ -87,6 +94,7 @@
           requestAnimationFrame(step);
         } else {
           el.textContent = raw;
+          if (suffixEl) el.appendChild(suffixEl);
         }
       };
 
