@@ -1926,27 +1926,33 @@ html { font-size: 16px; }
   .ps-content p       { font-size: 0.85rem; }
   .ps-connector::before { height: 24px; }
 
-  /* Tech stack tabs */
+  /* Tech stack tabs — scrollable row on mobile, full labels visible */
   .stack-tab-buttons  {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    border-bottom: none;
-    margin-bottom: 14px;
-  }
-  .stack-tab-btn {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 0;
-    font-size: 0.72rem;
-    padding: 8px 4px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-bottom: 16px;
   }
-  .stack-tab-btn.active { border-color: var(--accent); background: rgba(59,130,246,0.08); }
+  .stack-tab-buttons::-webkit-scrollbar { display: none; }
+  .stack-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    padding: 10px 14px;
+    text-align: center;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .stack-tab-btn.active { border-bottom-color: var(--accent); background: transparent; color: var(--text); }
   .stack-tab-panel    { gap: 6px; }
   .stack-pill::after  { display: none; }
 
@@ -1981,8 +1987,14 @@ html { font-size: 16px; }
   .cs-visual-body     { padding: 16px; }
   .cs-metrics         { flex-direction: column; gap: 12px; }
   .cs-metric-num      { font-size: 1.6rem; }
-  .cs-arch-diagram    { font-size: 0.68rem; padding: 12px; }
-  .cs-arch-row        { flex-wrap: wrap; gap: 4px; }
+  .cs-arch-diagram    { font-size: 0.72rem; padding: 12px; overflow-x: visible !important; }
+  .cs-arch-row        { flex-direction: column !important; align-items: flex-start !important; flex-wrap: nowrap !important; gap: 0 !important; min-width: unset !important; white-space: normal !important; }
+  .cs-arch-arrow      { transform: rotate(90deg); display: block; width: 24px; padding: 2px 0; font-size: 1rem; }
+  .cs-arch-node       { white-space: normal !important; word-break: break-word !important; display: block !important; width: 100% !important; box-sizing: border-box !important; }
+  .cs-arch-node-wide  { min-width: unset !important; width: 100% !important; }
+  .cs-arch-row-indent { padding-left: 0 !important; border-left: 2px solid rgba(59,130,246,0.2); margin-left: 16px; margin-top: 6px; }
+  .cs-arch-branch     { display: none !important; }
+  .cs-arch-branch-line { display: none !important; }
   .cs-proto-tabs      { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; flex-wrap: nowrap; }
   .cs-proto-tab       { padding: 10px 12px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
   .cs-proto-panels    { padding: 14px; }
@@ -2076,7 +2088,7 @@ html { font-size: 16px; }
 
   .industries-v2      { grid-template-columns: 1fr; }
   .proto-kanban       { grid-template-columns: 1fr !important; }
-  .stack-tab-buttons  { grid-template-columns: repeat(2, 1fr); }
+  .stack-tab-btn      { font-size: 0.78rem; padding: 10px 12px; }
   .sec-summary-grid   { grid-template-columns: 1fr 1fr !important; }
   .kpi-grid           { grid-template-columns: 1fr 1fr; }
   .hd-kpi-strip       { grid-template-columns: 1fr 1fr; }
@@ -2085,7 +2097,7 @@ html { font-size: 16px; }
   .ps-content         { margin-left: 44px; }
 
   /* Stack tabs — 2 col on tiny screens */
-  .stack-tab-btn      { font-size: 0.68rem; padding: 7px 3px; }
+  .stack-tab-btn      { font-size: 0.75rem; padding: 9px 11px; }
 }
 
 /* ============================================================
