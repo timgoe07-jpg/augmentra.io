@@ -825,6 +825,13 @@ p { color: var(--muted); line-height: 1.7; }
   padding: 3px 9px;
 }
 
+.cs-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
 .teaser-card h3 {
   font-size: 1.1rem;
 }
