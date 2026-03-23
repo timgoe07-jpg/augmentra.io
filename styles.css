@@ -1741,6 +1741,202 @@ p { color: var(--muted); line-height: 1.7; }
 
 .footer-bottom a:hover { color: var(--text); text-decoration: none; }
 
+/* Footer social icons */
+.footer-social-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.footer-social-link:hover {
+  background: rgba(59,130,246,0.12);
+  color: var(--text);
+  border-color: rgba(59,130,246,0.4);
+}
+
+/* ============================================================
+   SOCIALS PAGE
+   ============================================================ */
+
+.socials-hero {
+  padding: 120px 0 64px;
+  text-align: center;
+}
+
+.socials-hero-inner {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.socials-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 14px 0 20px;
+}
+
+.socials-hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.socials-grid-section {
+  padding: 24px 0 80px;
+}
+
+.socials-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.social-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 24px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: background var(--transition), border-color var(--transition), transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: 14px;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  border-color: transparent;
+}
+
+.social-card:hover::before { opacity: 1; }
+
+/* Per-platform accent colours */
+.social-card--linkedin:hover { background: #0a0e1a; box-shadow: 0 8px 32px rgba(10,102,194,0.25); border-color: rgba(10,102,194,0.5); }
+.social-card--linkedin .social-card-icon { color: #0a66c2; }
+
+.social-card--twitter:hover { background: #0a0a0f; box-shadow: 0 8px 32px rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+.social-card--twitter .social-card-icon { color: #e7e9ea; }
+
+.social-card--instagram:hover { background: #110a0e; box-shadow: 0 8px 32px rgba(228,64,95,0.2); border-color: rgba(228,64,95,0.4); }
+.social-card--instagram .social-card-icon { color: #e4405f; }
+
+.social-card--facebook:hover { background: #080d16; box-shadow: 0 8px 32px rgba(24,119,242,0.2); border-color: rgba(24,119,242,0.4); }
+.social-card--facebook .social-card-icon { color: #1877f2; }
+
+.social-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+}
+
+.social-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-card-body {
+  flex: 1;
+}
+
+.social-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.social-card-handle {
+  font-size: 0.8rem;
+  color: var(--accent, #3b82f6);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.social-card-desc {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.social-card-arrow {
+  flex-shrink: 0;
+  color: var(--muted);
+  opacity: 0.4;
+  transition: opacity var(--transition), transform var(--transition);
+  align-self: center;
+}
+
+.social-card-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.social-card:hover .social-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.socials-cta-section {
+  padding: 0 0 100px;
+}
+
+.socials-cta-inner {
+  text-align: center;
+  padding: 56px 40px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.socials-cta-inner h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.socials-cta-inner p {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
 /* ============================================================
    RESPONSIVE — 1024px
    ============================================================ */
