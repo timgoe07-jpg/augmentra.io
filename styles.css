@@ -1817,39 +1817,25 @@ p { color: var(--muted); line-height: 1.7; }
   border: 1px solid var(--border);
   text-decoration: none;
   color: var(--text);
-  transition: background var(--transition), border-color var(--transition), transform 0.15s ease, box-shadow 0.15s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.social-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity var(--transition);
-  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .social-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  border-color: transparent;
+  transform: translateY(-2px);
 }
 
-.social-card:hover::before { opacity: 1; }
-
 /* Per-platform accent colours */
-.social-card--linkedin:hover { background: #0a0e1a; box-shadow: 0 8px 32px rgba(10,102,194,0.25); border-color: rgba(10,102,194,0.5); }
+.social-card--linkedin { }
+.social-card--linkedin:hover { border-color: rgba(10,102,194,0.6); box-shadow: 0 4px 24px rgba(10,102,194,0.18); }
 .social-card--linkedin .social-card-icon { color: #0a66c2; }
 
-.social-card--twitter:hover { background: #0a0a0f; box-shadow: 0 8px 32px rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+.social-card--twitter:hover { border-color: rgba(200,200,200,0.3); box-shadow: 0 4px 24px rgba(255,255,255,0.06); }
 .social-card--twitter .social-card-icon { color: #e7e9ea; }
 
-.social-card--instagram:hover { background: #110a0e; box-shadow: 0 8px 32px rgba(228,64,95,0.2); border-color: rgba(228,64,95,0.4); }
+.social-card--instagram:hover { border-color: rgba(228,64,95,0.5); box-shadow: 0 4px 24px rgba(228,64,95,0.15); }
 .social-card--instagram .social-card-icon { color: #e4405f; }
 
-.social-card--facebook:hover { background: #080d16; box-shadow: 0 8px 32px rgba(24,119,242,0.2); border-color: rgba(24,119,242,0.4); }
+.social-card--facebook:hover { border-color: rgba(24,119,242,0.5); box-shadow: 0 4px 24px rgba(24,119,242,0.15); }
 .social-card--facebook .social-card-icon { color: #1877f2; }
 
 .social-card-icon {
