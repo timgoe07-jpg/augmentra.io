@@ -4057,3 +4057,62 @@ html { font-size: 16px; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ── Privacy / Legal page ─────────────────────────────────────────────────── */
+.privacy-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.privacy-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.privacy-block h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.privacy-block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 1rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+}
+.privacy-block p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+.privacy-block ul {
+  color: var(--text-muted);
+  line-height: 1.75;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.privacy-block ul li {
+  margin-bottom: 0.3rem;
+}
+.privacy-block code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.875em;
+  color: var(--cyan);
+  font-family: 'Courier New', monospace;
+}
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.text-link:hover {
+  border-bottom-color: var(--accent);
+}
